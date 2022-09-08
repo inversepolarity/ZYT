@@ -28,4 +28,4 @@ Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elem
 
 ![chrome](https://raw.githubusercontent.com/inversepolarity/ZenTube/main/chrome.png)
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="evenzero" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/evenzero)
