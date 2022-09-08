@@ -14,4 +14,6 @@ Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elem
 - Hide or show feed filter chip bar
 - More improvements in the works...
 
+### [Download / Installation Instructions](https://github.com/inversepolarity/Even-Less-Addictive-Youtube/releases/tag/v1.0)
+
 ![ELAY](https://raw.githubusercontent.com/inversepolarity/Even-Less-Addictive-Youtube/main/EALY.png)
