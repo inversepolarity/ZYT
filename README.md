@@ -1,4 +1,5 @@
 # Even Less Addictive YouTube
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elements from Youtube to make it less addictive. Mix and match between the following options:
 
@@ -12,3 +13,5 @@ Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elem
 - Hide or show ad thumbnails
 - Hide or show feed filter chip bar
 - More improvements in the works...
+
+![ELAY](https://raw.githubusercontent.com/inversepolarity/Even-Less-Addictive-Youtube/main/EALY.png)
