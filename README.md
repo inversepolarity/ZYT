@@ -4,7 +4,7 @@
 
 ![firefox](https://raw.githubusercontent.com/inversepolarity/ZenTube/main/ff.png)
 
-### [Install For Chrome](https://github.com/inversepolarity/Even-Less-Addictive-Youtube/releases/tag/v1.0)
+### [Install for Chrome](https://github.com/inversepolarity/Even-Less-Addictive-Youtube/releases/tag/v1.0)
 
 ### [Install for Firefox](https://addons.mozilla.org/en-US/firefox/addon/even-less-addictive-youtube/)
 
