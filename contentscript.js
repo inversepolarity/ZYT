@@ -68,8 +68,9 @@ function toggleCSS() {
     customStyles.innerHTML += ".ytd-logo { display: none; }"
   }  
   if(settings.logo == undefined || settings.channelThumb == false) {
-    customStyles.innerHTML += "img.yt-img-shadow { display: none; }"
+    customStyles.innerHTML += "#avatar .yt-img-shadow { display: none; }"
   }  
+
 }
 
 /*
