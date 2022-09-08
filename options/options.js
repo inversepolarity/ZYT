@@ -12,7 +12,8 @@ var defaultSettings = {
   communityPosts: false,
   adThumbs: false,
   chipBar:false,
-  logo: false
+  logo: false,
+  channelThumb:false
 };
 
 var settings = defaultSettings;
@@ -34,7 +35,8 @@ function storeSettings() {
       communityPosts: false,
       adThumbs: false,
       chipBar:false,
-      logo: false
+      logo: false,
+      channelThumb:false      
     };
 
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
@@ -70,6 +72,9 @@ function storeSettings() {
         if (item.getAttribute("data-type") == "logo") {
           save.logo = true;
         }
+        if (item.getAttribute("data-type") == "channelThumb") {
+          save.channelThumb = true;
+        }        
       }
       console.log(item)
     }
@@ -120,6 +125,9 @@ function updateUI(restoredSettings) {
     if (item.getAttribute("data-type") == "logo") {
       item.checked = restoredSettings.logo;
     }
+    if (item.getAttribute("data-type") == "channelThumb") {
+      item.checked = restoredSettings.channelThumb;
+    }
   }
 }
 
@@ -142,5 +150,5 @@ document.getElementById("endvideos").addEventListener("click", storeSettings);
 document.getElementById("posts").addEventListener("click", storeSettings);
 document.getElementById("adthumbs").addEventListener("click", storeSettings);
 document.getElementById("chipbar").addEventListener("click", storeSettings);
-document.getElementById("logo").addEventListener("click", storeSettings);
+document.getElementById("cthumb").addEventListener("click", storeSettings);
 

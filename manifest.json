@@ -16,18 +16,20 @@
       "js": ["browser-polyfill.js","contentscript.js"]
     }
   ],
+
   "browser_action": {
     "default_icon": "icons/favicon4_144.png",
     "default_title": "Less Addictive Youtube",
     "default_popup": "options/options.html"
   },
+
   "permissions": [
     "storage"
   ],
+
   "browser_specific_settings": {
   "gecko": {
-    "id": "suraj@evenzero.in"
+    "id": "test@gmail.com"
   }
 }
-
 }

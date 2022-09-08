@@ -12,7 +12,8 @@ var defaultSettings = {
   communityPosts: false,
   adThumbs:false,
   chipBar:false,
-  logo: false
+  logo: false,
+  channelThumb:false  
 };
 var settings = defaultSettings;
 
@@ -65,6 +66,9 @@ function toggleCSS() {
   }
   if(settings.logo == undefined || settings.logo == false) {
     customStyles.innerHTML += ".ytd-logo { display: none; }"
+  }  
+  if(settings.logo == undefined || settings.channelThumb == false) {
+    customStyles.innerHTML += "img.yt-img-shadow { display: none; }"
   }  
 }
 
