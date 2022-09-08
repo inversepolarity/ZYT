@@ -41,7 +41,7 @@ function toggleCSS() {
     customStyles.innerHTML += "#thumbnail .yt-img-shadow { display: none; }";
   }
   if(settings.preview == undefined || settings.preview == false) {
-    customStyles.innerHTML += ".ytd-moving-thumbnail-renderer { display: none; }";
+    customStyles.innerHTML += "#preview { display: none; }";
   }
   if(settings.sidebar == undefined || settings.sidebar == false) {
     customStyles.innerHTML += ".ytd-watch-next-secondary-results-renderer { display: none; }";
