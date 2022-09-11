@@ -151,4 +151,5 @@ document.getElementById("posts").addEventListener("click", storeSettings);
 document.getElementById("adthumbs").addEventListener("click", storeSettings);
 document.getElementById("chipbar").addEventListener("click", storeSettings);
 document.getElementById("cthumb").addEventListener("click", storeSettings);
+document.getElementById("logo").addEventListener("click", storeSettings);
 
