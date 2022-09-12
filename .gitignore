@@ -107,3 +107,5 @@ dist
 .zip
 .DS_Store
 web-ext-artifacts/
+
+build/.DS_Store
