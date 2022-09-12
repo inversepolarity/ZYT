@@ -66,13 +66,12 @@ function toggleCSS() {
   if(settings.chipBar == undefined || settings.chipBar == false) {
     customStyles.innerHTML += ".ytd-feed-filter-chip-bar-renderer { display: none; }"
   }
-  if(settings.logo == undefined || settings.logo == false) {
-    customStyles.innerHTML += ".ytd-logo { display: none; }"
-  }  
-  if(settings.logo == undefined || settings.channelThumb == false) {
+  if(settings.channelThumb == undefined || settings.channelThumb == false) {
     customStyles.innerHTML += "#avatar .yt-img-shadow { display: none; }"
   }  
-
+  if(settings.logo == undefined || settings.logo == false) {
+    customStyles.innerHTML += "#logo { display: none; }"
+  }  
 }
 
 /*

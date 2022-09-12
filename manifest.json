@@ -1,8 +1,8 @@
 {
     "description": "Make youtube less addictive",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "ZenTube",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "author": "surajsharma",
     "homepage_url": "https://github.com/inversepolarity/Even-Less-Addictive-Youtube",
     "icons": {
@@ -16,7 +16,7 @@
         }
     ],
 
-    "browser_action": {
+    "action": {
         "default_icon": "icons/favicon4_144.png",
         "default_title": "Less Addictive Youtube",
         "default_popup": "options/options.html"

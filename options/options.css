@@ -40,3 +40,7 @@ label:hover {
   margin-bottom: 0.5em;
   color: orange;
 }
+
+p{
+  color: lightgray;
+}
