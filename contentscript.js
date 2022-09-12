@@ -71,6 +71,7 @@ function toggleCSS() {
   }  
   if(settings.logo == undefined || settings.logo == false) {
     customStyles.innerHTML += "#logo { display: none; }"
+    customStyles.innerHTML += "ytd-topbar-logo-renderer { display: none; }"
   }  
 }
 
