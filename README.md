@@ -4,9 +4,9 @@
 
 ![firefox](https://raw.githubusercontent.com/inversepolarity/ZenTube/main/ff.png)
 
-### [Install for Chrome](https://chrome.google.com/webstore/detail/zentube/ghfgfebinnjlnbidclplakjfielgpokd)
+### Installation
 
-### [Install for Firefox](https://addons.mozilla.org/en-US/firefox/addon/even-less-addictive-youtube/)
+[![Firefox](https://img.shields.io/badge/Firefox_Browser-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/even-less-addictive-youtube/) [![Chrome](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white)](https://bit.ly/3S3dTvT) [![Edge](https://img.shields.io/badge/Microsoft_Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)](https://bit.ly/3S3dTvT) [![Brave](https://img.shields.io/badge/Brave-FF1B2D?style=for-the-badge&logo=Brave&logoColor=white)](https://bit.ly/3S3dTvT)
 
 ---
 
