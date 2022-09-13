@@ -27,5 +27,3 @@ Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elem
 -   More improvements in the works...
 
 ![chrome](https://raw.githubusercontent.com/inversepolarity/ZenTube/main/chrome.png)
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/evenzero)
