@@ -1,15 +1,15 @@
 .ytd-moving-thumbnail-renderer {
-  display: none;
+    opacity: 0;
 }
 
 .ytd-watch-next-secondary-results-renderer {
-  display: none;
+    opacity: 0;
 }
 
 .ytd-comments {
-  display: none;
+    opacity: 0;
 }
 
-.ytd-rich-shelf-renderer{ 
-  display: none;
+.ytd-rich-shelf-renderer {
+    opacity: 0;
 }
