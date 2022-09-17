@@ -109,3 +109,4 @@ dist
 web-ext-artifacts/
 
 build/.DS_Store
+*.sh
