@@ -294,5 +294,3 @@ function messagePageScript() {
 }
 
 document.getElementById("content").addEventListener("click", messagePageScript);
-console.clear();
-console.log("content script up");
