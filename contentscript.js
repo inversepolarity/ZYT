@@ -77,8 +77,7 @@ function toggleCSS() {
         css += "ytd-topbar-logo-renderer { opacity: 0; }";
     }
 
-    // document.body.insertBefore(customStyles, document.body.firstChild);
-    customStyles.innerHTML = css;
+    customStyles.innerText = css;
 
     if (customStyles.styleSheet) {
         // IE
