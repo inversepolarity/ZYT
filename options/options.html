@@ -11,56 +11,145 @@
 
     <body>
         <section class="clear-options data-types">
-            <div class="title">ZenTube options:</div>
-            <hr />
-            <label
-                >Show video comments
-                <input id="comments" type="checkbox" data-type="comments" />
-            </label>
-            <label
-                >Show video thumbnails
-                <input id="thumbnails" type="checkbox" data-type="thumbnails" />
-            </label>
-            <label
-                >Show suggested videos sidebar
-                <input id="sidebar" type="checkbox" data-type="sidebar" />
-            </label>
-            <label
-                >Show video preview on mouse over
-                <input id="preview" type="checkbox" data-type="preview" />
-            </label>
-            <label
-                >Show recommended channel / 2 videos end screen
-                <input id="nextvideos" type="checkbox" data-type="nextvideos" />
-            </label>
-            <label
-                >Show video end screen (where autoplay is off)
-                <input id="endvideos" type="checkbox" data-type="endvideos" />
-            </label>
-            <label
-                >Show community posts
-                <input id="posts" type="checkbox" data-type="communityPosts" />
-            </label>
-            <label
-                >Show Ad Thumbnails
-                <input id="adthumbs" type="checkbox" data-type="adThumb" />
-            </label>
-            <label
-                >Show Feed Filter Chip Bar
-                <input id="chipbar" type="checkbox" data-type="chipBar" />
-            </label>
-            <label
-                >Show Channel Avatar
-                <input id="cthumb" type="checkbox" data-type="channelThumb" />
-            </label>
-            <label
-                >Show Logo
-                <input id="logo" type="checkbox" data-type="logo" />
-            </label>
-            <br />
-            <button class="button-12" role="button" id="reload" reload>
-                Reload for full effect
-            </button>
+            <div class="logo">
+                <div class="title">ZenTube</div>
+                <img src="../icons/logo2.png" height="16" />
+            </div>
+
+            <div id="popup">
+                <div class="toggle">
+                    Comments
+                    <label class="switch switch200">
+                        <input
+                            type="checkbox"
+                            id="comments"
+                            data-type="comments"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Thumbnails
+                    <label class="switch switch200">
+                        <input
+                            id="thumbnails"
+                            type="checkbox"
+                            data-type="thumbnails"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Sidebar
+                    <label class="switch switch200">
+                        <input
+                            id="sidebar"
+                            type="checkbox"
+                            data-type="sidebar"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Preview
+                    <label class="switch switch200">
+                        <input
+                            id="preview"
+                            type="checkbox"
+                            data-type="preview"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    End screen channel recommendation
+                    <label class="switch switch200">
+                        <input
+                            id="nextvideos"
+                            type="checkbox"
+                            data-type="nextvideos"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Video end screen
+                    <label class="switch switch200">
+                        <input
+                            id="endvideos"
+                            type="checkbox"
+                            data-type="endvideos"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Community posts
+                    <label class="switch switch200">
+                        <input
+                            id="posts"
+                            type="checkbox"
+                            data-type="communityPosts"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Ad Thumbnails
+                    <label class="switch switch200">
+                        <input
+                            id="adthumbs"
+                            type="checkbox"
+                            data-type="adThumb"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Feed Filter Chip Bar
+                    <label class="switch switch200">
+                        <input
+                            id="chipbar"
+                            type="checkbox"
+                            data-type="chipBar"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Channel Avatar
+                    <label class="switch switch200">
+                        <input
+                            id="cthumb"
+                            type="checkbox"
+                            data-type="channelThumb"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    YouTube Logo
+                    <label class="switch switch200">
+                        <input id="logo" type="checkbox" data-type="logo" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <br />
+                <button class="button-12" role="button" id="reload" reload>
+                    Reload for full effect
+                </button>
+            </div>
         </section>
 
         <script src="options.js"></script>
