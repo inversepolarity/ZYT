@@ -1,6 +1,6 @@
 {
     "description": "Zen mode for youtube",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "ZenTube",
     "version": "1.0.8",
     "author": "surajsharma",
@@ -16,7 +16,7 @@
         }
     ],
 
-    "browser_action": {
+    "action": {
         "default_icon": "icons/favicon4_144.png",
         "default_title": "Less Addictive Youtube",
         "default_popup": "options/options.html"
