@@ -3,9 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-<div style="{display:flex; justify-content:space-between}">
-<img src="https://github.com/inversepolarity/ZenTube/blob/main/zentube.png" height="390"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/inversepolarity/ZenTube/blob/main/chrome.png" height="400"/>
-</div>
+
+<img src="https://github.com/inversepolarity/ZenTube/blob/main/zentube.png" height="400"/>
+
 <a href="https://www.producthunt.com/posts/zentube?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zentube" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=359529&theme=dark" alt="Zentube - Zen&#0032;mode&#0032;for&#0032;YouTube | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 ### Installation
