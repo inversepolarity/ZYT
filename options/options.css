@@ -1,6 +1,6 @@
 body {
-    width: 25em;
-    font-family: "Open Sans Light", sans-serif;
+    width: 20em;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
     font-size: 0.9em;
     font-weight: 300;
     background-color: #000;
@@ -31,12 +31,25 @@ label:hover {
     cursor: pointer;
 }
 
+.logo {
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+
+.icon {
+    margin-top: -5px;
+}
+
 .title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: red;
-    font-weight: 600;
+    color: lightgray;
+    font-weight: 100;
     background-color: black;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
 }
 
 p {
@@ -51,10 +64,10 @@ p {
     padding: 6px 14px;
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
     border-radius: 6px;
-    border: 1px solid red;
+    border: 1px solid rgba(250, 50, 50, 0.1);
 
     background: rgba(50, 50, 50, 0.2);
-    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1),
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.5),
         inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5),
         0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
     color: #dfdedf;
@@ -82,7 +95,7 @@ p {
     justify-content: space-between;
     align-items: center; /* Vertical */
     font-size: 1rem;
-    padding: 4px;
+    padding: 2px;
     font-weight: 300;
     border-radius: 10px;
 }
@@ -156,7 +169,26 @@ input:checked + .slider {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+.footer {
+    background-color: black;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+
+.ip {
+    filter: saturate(0%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+}
+.ip:hover {
+    filter: saturate(100%);
+    cursor: pointer;
+}
+
+i {
+    font-size: 0.7em;
 }

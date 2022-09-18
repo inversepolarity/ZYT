@@ -13,14 +13,11 @@ var defaultSettings = {
     adThumbs: false,
     chipBar: false,
     logo: false,
-    channelThumb: false
+    channelThumb: false,
+    reload: null
 };
-var settings = defaultSettings;
 
-//const CSS_thumbnail = "#thumbnail .yt-img-shadow {opacity:0 }";
-//const CSS_thumbnail_preview = ".ytd-moving-thumbnail-renderer {opacity:0 }";
-//const CSS_sidebar = ".ytd-watch-next-secondary-results-renderer {opacity:0 }";
-//const CSS_comments = ".ytd-comments {opacity:0 }";
+var settings = defaultSettings;
 
 //yt-img-shadow
 const TITLE_APPLY = "Apply CSS";
@@ -32,50 +29,74 @@ Main function
 */
 function toggleCSS() {
     var customStyles = document.createElement("style");
+
+    let undefOrFalse = undefined || false;
+
     let css =
-        ".opacityToggleOn{  opacity: 1; transition: all 1s; } .opacityToggleOff{  opacity: 1; transition: all 1s; }";
+        ".opacityToggleOn{\
+            opacity:1;\
+            transition: all 1s;\
+        } \
+        .opacityToggleOff { \
+            opacity: 1;\
+            transition: all 1s; \
+        }";
 
     customStyles.setAttribute("type", "text/css");
 
-    if (settings.thumbnails == undefined || settings.thumbnails == false) {
-        css += "#thumbnail .yt-img-shadow { opacity: 0; }";
-    }
-    if (settings.preview == undefined || settings.preview == false) {
-        css += "#preview {opacity:0 } ";
-        css += "#mouseover-overlay {opacity:0 } ";
-        css += "#hover-overlays {opacity:0 } ";
-    }
-    if (settings.sidebar == undefined || settings.sidebar == false) {
-        css += ".ytd-watch-next-secondary-results-renderer {opacity:0 }";
-    }
-    if (settings.comments == undefined || settings.comments == false) {
-        css += ".ytd-comments {opacity:0 }";
-    }
-    if (settings.nextvideos == undefined || settings.nextvideos == false) {
-        css += ".ytp-ce-video {opacity:0 } .ytp-ce-channel {opacity:0 }";
-    }
-    if (settings.endvideos == undefined || settings.endvideos == false) {
-        css += ".ytp-endscreen-content {opacity:0 }";
-    }
-    if (
-        settings.communityPosts == undefined ||
-        settings.communityPosts == false
-    ) {
-        css += ".ytd-rich-shelf-renderer {opacity:0 }";
-    }
-    if (settings.adThumbs == undefined || settings.adThumbs == false) {
-        css += ".ytd-display-ad-renderer {opacity:0 }";
-    }
-    if (settings.chipBar == undefined || settings.chipBar == false) {
-        css += ".ytd-feed-filter-chip-bar-renderer {opacity:0 }";
-    }
-    if (settings.channelThumb == undefined || settings.channelThumb == false) {
-        css += "#avatar .yt-img-shadow { opacity: 0; }";
-    }
-    if (settings.logo == undefined || settings.logo == false) {
-        css += "#logo {opacity:0 }";
-        css += "ytd-topbar-logo-renderer { opacity: 0; }";
-    }
+    Object.keys(settings).forEach((setting) => {
+        switch (setting) {
+            case "reload":
+                return;
+            case "storedBefore":
+                return;
+            default:
+                if (settings[setting] == undefOrFalse) {
+                    switch (setting) {
+                        case "thumbnails":
+                            css += "#thumbnail .yt-img-shadow {opacity: 0;}";
+                            return;
+                        case "preview":
+                            css +=
+                                ".ytd-moving-thumbnail-renderer {opacity:0 } #preview {opacity:0;} #mouseover-overlay {opacity:0;} #hover-overlays {opacity:0;}";
+                            return;
+                        case "sidebar":
+                            css +=
+                                ".ytd-watch-next-secondary-results-renderer {opacity:0}";
+                            return;
+                        case "comments":
+                            css += ".ytd-comments {opacity:0}";
+                            return;
+                        case "nextvideos":
+                            css +=
+                                ".ytp-ce-video {opacity:0} .ytp-ce-channel {opacity:0}";
+                            return;
+                        case "endvideos":
+                            css += ".ytp-endscreen-content {opacity:0}";
+                            return;
+                        case "communityPosts":
+                            css += ".ytd-rich-shelf-renderer {opacity:0}";
+                            return;
+                        case "adThumbs":
+                            css += ".ytd-display-ad-renderer {opacity:0}";
+                            return;
+                        case "chipBar":
+                            css +=
+                                ".ytd-feed-filter-chip-bar-renderer {opacity:0 }";
+                            return;
+                        case "channelThumb":
+                            css += "#avatar .yt-img-shadow {opacity: 0;}";
+                            return;
+                        case "logo":
+                            css +=
+                                "#logo {opacity:0 } ytd-topbar-logo-renderer { opacity: 0; }";
+                            return;
+                    }
+                }
+
+                return;
+        }
+    });
 
     customStyles.innerText = css;
 
@@ -97,18 +118,6 @@ function protocolIsApplicable(url) {
 }
 
 /*
-Initialize the page action
-*/
-function initializePageAction() {
-    const gettingStoredSettings = browser.storage.local.get();
-
-    gettingStoredSettings.then((result) => {
-        settings = result;
-        toggleCSS();
-    }, onError);
-}
-
-/*
 On startup, check whether we have stored settings.
 If we don't, then store the default settings.
 */
@@ -119,39 +128,12 @@ function checkStoredSettings(storedSettings) {
 }
 
 /*
-Generic error logger.
-*/
-function onError(e) {
-    console.error(e);
-}
-
-const gettingStoredSettings = browser.storage.local.get();
-gettingStoredSettings.then(checkStoredSettings, onError);
-
-initializePageAction();
-
-/*
 Listen for messages from the page itself
 If the message was from the page script, show an alert.
 */
-window.onmessage = (event) => {
-    // console.log(`Received message: ${Object.keys(event.data)}`);
-    if (
-        event.source == window &&
-        event.data &&
-        event.data.direction == "zentube"
-    ) {
-        console.clear();
-        console.log(event.data.message);
-    }
-};
-
-/*
-Listen for messages from the page itself
-If the message was from the page script, show an alert.
-*/
-browser.runtime.onMessage.addListener(async (request) => {
+async function msgListener(request, sender) {
     let msg = JSON.parse(request);
+    console.log(msg);
     switch (msg.element) {
         case "logo":
             document
@@ -171,7 +153,7 @@ browser.runtime.onMessage.addListener(async (request) => {
 
             return;
 
-        case "cthumb":
+        case "channelThumb":
             document
                 .querySelectorAll("#avatar .yt-img-shadow")
                 .forEach((el) => {
@@ -182,7 +164,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                 });
             return;
 
-        case "chipbar":
+        case "chipBar":
             document
                 .querySelectorAll(".ytd-feed-filter-chip-bar-renderer")
                 .forEach((el) => {
@@ -193,7 +175,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                 });
             return;
 
-        case "adthumbs":
+        case "adThumbs":
             document
                 .querySelectorAll(".ytd-display-ad-renderer")
                 .forEach((el) => {
@@ -204,7 +186,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                 });
             return;
 
-        case "posts":
+        case "communityPosts":
             document
                 .querySelectorAll(".ytd-rich-shelf-renderer")
                 .forEach((el) => {
@@ -225,6 +207,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                     el.style.opacity = msg.settings.endvideos ? 1 : 0;
                 });
             return;
+
         case "nextvideos":
             document.querySelectorAll(".ytp-ce-video").forEach((el) => {
                 msg.settings.chipBar
@@ -233,6 +216,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                 el.style.opacity = msg.settings.nextvideos ? 1 : 0;
             });
             return;
+
         case "preview":
             document
                 .querySelectorAll("#preview #mouseover-overlay #hover-overlays")
@@ -243,6 +227,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                     el.style.opacity = msg.settings.preview ? 1 : 0;
                 });
             return;
+
         case "sidebar":
             document
                 .querySelectorAll(".ytd-watch-next-secondary-results-renderer")
@@ -253,6 +238,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                     el.style.opacity = msg.settings.sidebar ? 1 : 0;
                 });
             return;
+
         case "thumnbnails":
             document
                 .querySelectorAll("#thumbnail .yt-img-shadow")
@@ -263,6 +249,7 @@ browser.runtime.onMessage.addListener(async (request) => {
                     el.style.opacity = msg.settings.thumbnails ? 1 : 0;
                 });
             return;
+
         case "comments":
             document.querySelectorAll(".ytd-comments").forEach((el) => {
                 msg.settings.chipBar
@@ -275,19 +262,28 @@ browser.runtime.onMessage.addListener(async (request) => {
         default:
             return Promise.resolve({ response: "Hi from popup" });
     }
-});
-
-/*
-Send a message to the page script.
-*/
-function messagePageScript() {
-    window.postMessage(
-        {
-            direction: "zentube",
-            message: "♻️"
-        },
-        "*"
-    );
 }
 
-document.getElementById("content").addEventListener("click", messagePageScript);
+/*
+Generic error logger.
+*/
+function onError(e) {
+    console.error(e);
+}
+
+/*
+Initialize the page action
+*/
+function initializePageAction() {
+    const gettingStoredSettings = browser.storage.local.get();
+    gettingStoredSettings.then((result) => {
+        settings = result;
+        toggleCSS();
+        browser.runtime.onMessage.addListener(msgListener);
+    }, onError);
+}
+
+const gettingStoredSettings = browser.storage.local.get();
+gettingStoredSettings.then(checkStoredSettings, onError);
+
+initializePageAction();

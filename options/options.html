@@ -12,8 +12,13 @@
     <body>
         <section class="clear-options data-types">
             <div class="logo">
+                <img
+                    class="icon"
+                    alt="logo"
+                    src="../icons/logo2.png"
+                    height="16"
+                />
                 <div class="title">ZenTube</div>
-                <img src="../icons/logo2.png" height="16" />
             </div>
 
             <div id="popup">
@@ -30,7 +35,7 @@
                 </div>
 
                 <div class="toggle">
-                    Thumbnails (reload required)
+                    Thumbnails
                     <label class="switch switch200">
                         <input
                             id="thumbnails"
@@ -42,7 +47,7 @@
                 </div>
 
                 <div class="toggle">
-                    Sidebar
+                    Video Sidebar
                     <label class="switch switch200">
                         <input
                             id="sidebar"
@@ -66,7 +71,7 @@
                 </div>
 
                 <div class="toggle">
-                    End screen channel recommendation
+                    End screen: channel videos
                     <label class="switch switch200">
                         <input
                             id="nextvideos"
@@ -78,7 +83,7 @@
                 </div>
 
                 <div class="toggle">
-                    Video end screen
+                    End screen: all videos
                     <label class="switch switch200">
                         <input
                             id="endvideos"
@@ -93,7 +98,7 @@
                     Community posts
                     <label class="switch switch200">
                         <input
-                            id="posts"
+                            id="communityPosts"
                             type="checkbox"
                             data-type="communityPosts"
                         />
@@ -105,9 +110,9 @@
                     Ad Thumbnails
                     <label class="switch switch200">
                         <input
-                            id="adthumbs"
+                            id="adThumbs"
                             type="checkbox"
-                            data-type="adThumb"
+                            data-type="adThumbs"
                         />
                         <span class="slider"></span>
                     </label>
@@ -117,7 +122,7 @@
                     Feed Filter Chip Bar
                     <label class="switch switch200">
                         <input
-                            id="chipbar"
+                            id="chipBar"
                             type="checkbox"
                             data-type="chipBar"
                         />
@@ -126,10 +131,10 @@
                 </div>
 
                 <div class="toggle">
-                    Channel Avatar (reload required)
+                    Channel Avatar
                     <label class="switch switch200">
                         <input
-                            id="cthumb"
+                            id="channelThumb"
                             type="checkbox"
                             data-type="channelThumb"
                         />
@@ -146,9 +151,18 @@
                 </div>
 
                 <br />
+            </div>
+            <div class="footer">
                 <button class="button-12" role="button" id="reload" reload>
                     Reload for full effect
                 </button>
+                <img
+                    id="icon"
+                    class="icon ip"
+                    alt="logo"
+                    src="../icons/ip_seal.svg"
+                    height="16"
+                />
             </div>
         </section>
 
