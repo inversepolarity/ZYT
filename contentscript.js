@@ -152,8 +152,6 @@ If the message was from the page script, show an alert.
 */
 browser.runtime.onMessage.addListener(async (request) => {
     let msg = JSON.parse(request);
-
-    // console.log("📨 Message received", msg);
     switch (msg.element) {
         case "logo":
             document

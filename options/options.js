@@ -80,9 +80,7 @@ function storeSettings() {
                     save.channelThumb = true;
                 }
             }
-            // console.log(item);
         }
-
         return save;
     }
 
@@ -97,8 +95,6 @@ or the default settings if the stored settings are empty.
 */
 
 function updateUI(restoredSettings) {
-    console.log(restoredSettings);
-
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
 
     for (let item of checkboxes) {
