@@ -28,4 +28,5 @@ Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elem
 -   Hide or show ad thumbnails
 -   Hide or show feed filter chip bar
 -   Hide or show channel thumbnails
+-   Hide or show live chat
 -   More improvements in the works...
