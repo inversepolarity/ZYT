@@ -14,6 +14,7 @@ var defaultSettings = {
     chipBar: false,
     logo: false,
     channelThumb: false,
+    chat: false,
     reload: null
 };
 
@@ -69,7 +70,7 @@ function toggleCSS() {
                             return;
                         case "nextvideos":
                             css +=
-                                ".ytp-ce-video {opacity:0} .ytp-ce-channel {opacity:0}";
+                                ".ytp-ce-video {opacity:0} .ytp-ce-channel {opacity:0} .ytp-ce-covering-overlay{opacity:0}";
                             return;
                         case "endvideos":
                             css += ".ytp-endscreen-content {opacity:0}";
@@ -82,18 +83,20 @@ function toggleCSS() {
                             return;
                         case "chipBar":
                             css +=
-                                ".ytd-feed-filter-chip-bar-renderer {opacity:0 }";
+                                ".ytd-feed-filter-chip-bar-renderer {opacity:0}";
                             return;
                         case "channelThumb":
                             css += "#avatar .yt-img-shadow {opacity: 0;}";
                             return;
                         case "logo":
                             css +=
-                                "#logo {opacity:0 } ytd-topbar-logo-renderer { opacity: 0; }";
+                                "#logo {opacity:0} ytd-topbar-logo-renderer {opacity: 0;}";
+                            return;
+                        case "chat":
+                            css += "#chat {opacity:0}";
                             return;
                     }
                 }
-
                 return;
         }
     });
@@ -256,6 +259,15 @@ async function msgListener(request, sender) {
                     ? el.classList.add("opacityToggleOn")
                     : el.classList.add("opacityToggleOff");
                 el.style.opacity = msg.settings.comments ? 1 : 0;
+            });
+            return;
+
+        case "chat":
+            document.querySelectorAll("#chat").forEach((el) => {
+                msg.settings.chat
+                    ? el.classList.add("opacityToggleOn")
+                    : el.classList.add("opacityToggleOff");
+                el.style.opacity = msg.settings.chat ? 1 : 0;
             });
             return;
 

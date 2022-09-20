@@ -14,6 +14,7 @@ var defaultSettings = {
     chipBar: false,
     logo: false,
     channelThumb: false,
+    chat: false,
     reload: null
 };
 
@@ -38,7 +39,8 @@ function storeSettings() {
             adThumbs: false,
             chipBar: false,
             logo: false,
-            channelThumb: false
+            channelThumb: false,
+            chat: false
         };
 
         const checkboxes = document.querySelectorAll(
@@ -103,11 +105,12 @@ const gettingStoredSettings = browser.storage.local.get();
 gettingStoredSettings.then(updateUI, onError);
 
 /*
-Event Listeners
+Click Event Listeners 
 */
 
 Object.keys(settings).forEach((setting) => {
     let el = document.getElementById(setting);
+
     console.log(setting, typeof setting, el);
 
     if (el) {
