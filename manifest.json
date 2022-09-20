@@ -2,7 +2,7 @@
     "description": "Zen mode for youtube",
     "manifest_version": 3,
     "name": "ZenTube",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "author": "surajsharma",
     "homepage_url": "https://github.com/inversepolarity/Even-Less-Addictive-Youtube",
     "icons": {
