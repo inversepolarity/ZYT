@@ -15,7 +15,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null
+    reload: null,
 };
 
 var settings = defaultSettings;
@@ -29,8 +29,6 @@ const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 Main function
 */
 function toggleCSS() {
-    var customStyles = document.createElement("style");
-
     let undefOrFalse = undefined || false;
 
     let css =
@@ -42,8 +40,6 @@ function toggleCSS() {
             opacity: 1;\
             transition: all 1s; \
         }";
-
-    customStyles.setAttribute("type", "text/css");
 
     Object.keys(settings).forEach((setting) => {
         switch (setting) {
@@ -101,14 +97,16 @@ function toggleCSS() {
         }
     });
 
-    customStyles.innerText = css;
+    var customStyles = document.createElement("style");
 
-    if (customStyles.styleSheet) {
-        // IE
-        document.getElementsByTagName("head")[0].appendChild(customStyles);
-    } else {
-        document.head.appendChild(customStyles);
-    }
+    customStyles.setAttribute("type", "text/css");
+
+    customStyles.setAttribute("id", "zentube");
+
+    customStyles.appendChild(document.createTextNode(css));
+
+    // customStyles.innerText = css;
+    document.documentElement.appendChild(customStyles);
 }
 
 /*
