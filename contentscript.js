@@ -2,7 +2,7 @@
 Default settings. If there is nothing in storage, use these values.
 */
 var defaultSettings = {
-    storedBefore: true,
+    storedBefore: false,
     comments: false,
     thumbnails: false,
     sidebar: false,
@@ -30,6 +30,7 @@ Main function
 */
 function toggleCSS() {
     let undefOrFalse = undefined || false;
+    var customStyles = document.createElement("style");
 
     let css =
         ".opacityToggleOn{\
@@ -97,15 +98,9 @@ function toggleCSS() {
         }
     });
 
-    var customStyles = document.createElement("style");
-
     customStyles.setAttribute("type", "text/css");
-
     customStyles.setAttribute("id", "zentube");
-
     customStyles.appendChild(document.createTextNode(css));
-
-    // customStyles.innerText = css;
     document.documentElement.appendChild(customStyles);
 }
 
@@ -123,8 +118,11 @@ On startup, check whether we have stored settings.
 If we don't, then store the default settings.
 */
 function checkStoredSettings(storedSettings) {
-    if (storedSettings.storedBefore == false) {
-        browser.storage.local.set(defaultSettings);
+    if (
+        storedSettings.storedBefore == false ||
+        Object.keys(storedSettings).length == 0
+    ) {
+        return browser.storage.local.set(defaultSettings);
     }
 }
 
@@ -284,16 +282,26 @@ function onError(e) {
 /*
 Initialize the page action
 */
-function initializePageAction() {
-    const gettingStoredSettings = browser.storage.local.get();
-    gettingStoredSettings.then((result) => {
-        settings = result;
-        toggleCSS();
-        browser.runtime.onMessage.addListener(msgListener);
-    }, onError);
+async function initializePageAction() {
+    try {
+        const gettingStoredSettings = await browser.storage.local.get();
+        settings = gettingStoredSettings;
+        console.log(settings);
+        if (settings) {
+            toggleCSS();
+            browser.runtime.onMessage.addListener(msgListener);
+        }
+    } catch (err) {
+        onError(err);
+    }
 }
 
-const gettingStoredSettings = browser.storage.local.get();
-gettingStoredSettings.then(checkStoredSettings, onError);
-
-initializePageAction();
+(async () => {
+    try {
+        const gettingStoredSettings = await browser.storage.local.get();
+        const storageSet = await checkStoredSettings(gettingStoredSettings);
+        initializePageAction();
+    } catch (err) {
+        onError(err);
+    }
+})();
