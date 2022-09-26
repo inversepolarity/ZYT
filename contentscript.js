@@ -20,7 +20,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null
+    reload: null,
 };
 
 var settings = defaultSettings;
@@ -33,12 +33,12 @@ let classes = {
     preview: "#preview",
     nextvideos: ".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay",
     endvideos: ".ytp-endscreen-content",
-    communityPosts: ".ytd-rich-shelf-renderer",
+    communityPosts: "ytd-rich-shelf-renderer",
     adThumbs: ".ytd-display-ad-renderer",
     chipBar: ".ytd-feed-filter-chip-bar-renderer",
     logo: "#logo .ytd-topbar-logo-renderer",
     channelThumb: "#avatar .yt-img-shadow",
-    chat: "#chat"
+    chat: "#chat",
 };
 
 function addTransitionClass() {
@@ -57,7 +57,7 @@ function addTransitionClass() {
 function toggleCSS() {
     var customStyles = document.createElement("style");
 
-    let css = ".transition {transition: all 1s;}";
+    let css = "";
 
     Object.keys(classes).forEach((setting) => {
         css += `${classes[setting]}{opacity:${settings[setting] ? 100 : 0};}`;
@@ -107,6 +107,7 @@ async function msgListener(request, sender) {
                 toggleCSS();
             }
     }
+    return true;
 }
 
 /*
@@ -119,15 +120,16 @@ function onError(e) {
 /*
 Initialize the page action
 */
+
 async function initializePageAction() {
+    await browser.runtime.onMessage.addListener(msgListener);
+
     try {
         const gettingStoredSettings = await browser.storage.local.get();
         settings = gettingStoredSettings;
-        console.log(settings);
         if (settings) {
             addTransitionClass();
             toggleCSS();
-            browser.runtime.onMessage.addListener(msgListener);
         }
     } catch (err) {
         onError(err);
