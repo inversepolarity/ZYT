@@ -124,7 +124,7 @@ p {
     cursor: pointer;
     border: 4px solid transparent;
     overflow: hidden;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 .slider:before {
@@ -135,7 +135,7 @@ p {
     background-color: #777;
     border-radius: 30px;
     transform: translateX(-30px); /*translateX(-(w-h))*/
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 input:checked + .slider:before {
@@ -170,20 +170,20 @@ input:checked + .slider {
 }
 
 .footer {
-    background-color: black;
     display: flex;
-    justify-content: space-between;
+    height: 15px;
+    justify-content: center;
     align-items: center;
     justify-items: center;
+    font-size: 0.8em;
+    color: lightgray;
 }
 
 .ip {
     filter: saturate(0%);
-    position: absolute;
-    bottom: 0;
-    right: 0;
     margin: 5px;
 }
+
 .ip:hover {
     filter: saturate(100%);
     cursor: pointer;

@@ -68,8 +68,10 @@ or the default settings if the stored settings are empty.
 function updateUI(restoredSettings) {
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
 
-    for (let item of checkboxes) {
-        item.checked = restoredSettings[item.getAttribute("data-type")];
+    if (checkboxes.length) {
+        for (let item of checkboxes) {
+            item.checked = restoredSettings[item.getAttribute("data-type")];
+        }
     }
 }
 
@@ -100,60 +102,38 @@ On opening the options page,
 fetch stored settings and update the UI with them.
 */
 
-const gettingStoredSettings = browser.storage.local.get();
-
-gettingStoredSettings.then(updateUI, onError);
-
-/*
-Click Event Listeners 
-*/
-
-Object.keys(settings).forEach((setting) => {
-    let el = document.getElementById(setting);
-
-    console.log(setting, typeof setting, el);
-
-    if (el) {
-        switch (setting) {
-            case "reload":
-                el &&
-                    el.addEventListener("click", async (evt) => {
-                        let tabs = await browser.tabs.query({
-                            url: "*://*.youtube.com/*"
-                        });
-                        function onReloaded() {
-                            console.log(`Reloaded`);
-                        }
-
-                        function onError(error) {
-                            console.log(`Error: ${error}`);
-                        }
-
-                        tabs.forEach((t) => {
-                            browser.tabs
-                                .reload(t.id, { bypassCache: true })
-                                .then(onReloaded, onError);
-                        });
-                    });
-                return;
-
-            default:
-                el &&
-                    el.addEventListener("click", (evt) => {
-                        let set = storeSettings();
-                        messagePageScript({
-                            element: setting,
-                            event: evt,
-                            settings: set
-                        });
-                    });
-                return;
+(async () => {
+    try {
+        const gettingStoredSettings = await browser.storage.local.get();
+        if (gettingStoredSettings) {
+            updateUI(gettingStoredSettings);
         }
+
+        /*Click Event Listeners */
+        Object.keys(settings).forEach((setting) => {
+            let el = document.getElementById(setting);
+            if (el) {
+                switch (setting) {
+                    default:
+                        el &&
+                            el.addEventListener("click", (evt) => {
+                                let set = storeSettings();
+                                messagePageScript({
+                                    element: setting,
+                                    event: evt,
+                                    settings: set
+                                });
+                            });
+                        return;
+                }
+            }
+        });
+
+        let icon = document.getElementById("icon");
+        icon.addEventListener("click", () => {
+            browser.tabs.create({ active: true, url: "https://evenzero.in" });
+        });
+    } catch (err) {
+        onError(err);
     }
-});
-
-let icon = document.getElementById("icon");
-
-icon.addEventListener("click", () => {
-    browser.tabs.create({ active: true, url: "https://evenzero.in" });
-});
+})();
