@@ -97,12 +97,10 @@ If the message was from the page script, show an alert.
 */
 async function msgListener(request, sender) {
     let msg = JSON.parse(request);
-    console.log(msg);
     switch (msg.element) {
         default:
             const gettingStoredSettings = await browser.storage.local.get();
             settings = gettingStoredSettings;
-            console.log(settings);
             if (settings) {
                 toggleCSS();
             }

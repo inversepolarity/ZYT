@@ -15,7 +15,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null
+    reload: null,
 };
 
 var settings = defaultSettings;
@@ -40,7 +40,7 @@ function storeSettings() {
             chipBar: false,
             logo: false,
             channelThumb: false,
-            chat: false
+            chat: false,
         };
 
         const checkboxes = document.querySelectorAll(
@@ -79,22 +79,22 @@ function onError(e) {
     console.error(e);
 }
 
+async function sendMessageToTabs(tabs, msg) {
+    for (const tab of tabs) {
+        try {
+            await browser.tabs.sendMessage(tab.id, JSON.stringify(msg));
+            console.log(`🪛 ${msg.element} sent to ${tab.id}`);
+        } catch (e) {
+            console.error(`Error: ${e}`);
+        }
+    }
+    return true;
+}
+
 /*Find all tabs, send a message to the page script.*/
 async function messagePageScript(msg) {
     let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
-
-    async function sendMessageToTabs(tabs) {
-        for (const tab of tabs) {
-            try {
-                await browser.tabs.sendMessage(tab.id, JSON.stringify(msg));
-                console.log("🪛 message sent to page", msg.element);
-                return;
-            } catch (e) {
-                console.error(`Error: ${e}`);
-            }
-        }
-    }
-    let res = await sendMessageToTabs(tabs);
+    let res = await sendMessageToTabs(tabs, msg);
 }
 
 /*
@@ -121,7 +121,7 @@ fetch stored settings and update the UI with them.
                                 messagePageScript({
                                     element: setting,
                                     event: evt,
-                                    settings: set
+                                    settings: set,
                                 });
                             });
                         return;
