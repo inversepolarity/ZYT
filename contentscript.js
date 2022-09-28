@@ -20,7 +20,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null
+    reload: null,
 };
 
 var settings = defaultSettings;
@@ -38,12 +38,19 @@ var classes = {
     chipBar: [".ytd-feed-filter-chip-bar-renderer"],
     logo: ["#logo .ytd-topbar-logo-renderer"],
     channelThumb: ["#avatar .yt-img-shadow"],
-    chat: ["#chat"]
+    chat: ["#chat"],
 };
 
 function addTransitionClass() {
+    let el = document.getElementById("zentubeTransitions");
+
+    if (el) {
+        el.parentNode.removeChild(el);
+    }
+
     let css = "";
     var customStyles = document.createElement("style");
+
     Object.keys(classes).forEach((setting) => {
         classes[setting].forEach((identifier) => {
             css += `${identifier}{transition: all 0.2s;}`;
@@ -57,6 +64,12 @@ function addTransitionClass() {
 }
 
 function toggleCSS() {
+    let el = document.getElementById("zentube");
+
+    if (el) {
+        el.parentNode.removeChild(el);
+    }
+
     var customStyles = document.createElement("style");
 
     let css = "";
