@@ -140,16 +140,11 @@ p {
 
 input:checked + .slider:before {
     transform: translateX(30px); /*translateX(w-h)*/
-    background-color: limeGreen;
-}
-
-input:checked + .slider {
-    box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen;
 }
 
 .switch200 .slider:before {
     /* width: 200%; */
-    transform: translateX(-82px); /*translateX(-(w-h))*/
+    transform: translateX(-42px); /*translateX(-(w-h))*/
 }
 
 .switch200 input:checked + .slider:before {
@@ -172,11 +167,11 @@ input:checked + .slider {
 .footer {
     display: flex;
     height: 15px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     justify-items: center;
     font-size: 0.8em;
-    color: lightgray;
+    font-style: italic;
 }
 
 .ip {
@@ -189,6 +184,10 @@ input:checked + .slider {
     cursor: pointer;
 }
 
-i {
-    font-size: 0.7em;
+#brand {
+    color: #555;
+}
+
+#version {
+    color: #555;
 }

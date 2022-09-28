@@ -20,13 +20,13 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null,
+    reload: null
 };
 
 var settings = defaultSettings;
-const APPLICABLE_PROTOCOLS = ["http:", "https:"];
+var APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
-let classes = {
+var classes = {
     comments: [".ytd-comments"],
     thumbnails: ["#thumbnail .yt-img-shadow"],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
@@ -38,7 +38,7 @@ let classes = {
     chipBar: [".ytd-feed-filter-chip-bar-renderer"],
     logo: ["#logo .ytd-topbar-logo-renderer"],
     channelThumb: ["#avatar .yt-img-shadow"],
-    chat: ["#chat"],
+    chat: ["#chat"]
 };
 
 function addTransitionClass() {

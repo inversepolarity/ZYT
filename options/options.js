@@ -15,7 +15,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null,
+    reload: null
 };
 
 var settings = defaultSettings;
@@ -40,7 +40,7 @@ function storeSettings() {
             chipBar: false,
             logo: false,
             channelThumb: false,
-            chat: false,
+            chat: false
         };
 
         const checkboxes = document.querySelectorAll(
@@ -97,6 +97,25 @@ async function messagePageScript(msg) {
     let res = await sendMessageToTabs(tabs, msg);
 }
 
+async function injectScript() {
+    /* are any yt tabs open?*/
+
+    try {
+        let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
+
+        tabs.forEach(async (t) => {
+            const injection = await browser.scripting.executeScript({
+                target: { tabId: t.id },
+                files: ["contentscript.js"]
+            });
+            console.log(injection);
+        });
+    } catch (error) {
+        onError(error);
+    }
+    return true;
+}
+
 /*
 On opening the options page, 
 fetch stored settings and update the UI with them.
@@ -121,7 +140,7 @@ fetch stored settings and update the UI with them.
                                 messagePageScript({
                                     element: setting,
                                     event: evt,
-                                    settings: set,
+                                    settings: set
                                 });
                             });
                         return;
@@ -133,6 +152,11 @@ fetch stored settings and update the UI with them.
         icon.addEventListener("click", () => {
             browser.tabs.create({ active: true, url: "https://evenzero.in" });
         });
+
+        let ver = document.getElementById("version");
+        ver.innerText = "Ver: " + browser.runtime.getManifest().version;
+
+        await injectScript();
     } catch (err) {
         onError(err);
     }
