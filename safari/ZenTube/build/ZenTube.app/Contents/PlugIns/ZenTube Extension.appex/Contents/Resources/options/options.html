@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script
+            type="application/javascript"
+            src="../browser-polyfill.js"
+        ></script>
+        <link rel="stylesheet" href="options.css" />
+    </head>
+
+    <body>
+        <section class="clear-options data-types">
+            <div class="logo">
+                <img
+                    class="icon"
+                    alt="logo"
+                    src="../icons/logo2.png"
+                    height="16"
+                />
+                <div class="title">ZenTube</div>
+            </div>
+
+            <div id="popup">
+                <div class="toggle">
+                    Video Comments
+                    <label class="switch switch200">
+                        <input
+                            type="checkbox"
+                            id="comments"
+                            data-type="comments"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Video Thumbnails
+                    <label class="switch switch200">
+                        <input
+                            id="thumbnails"
+                            type="checkbox"
+                            data-type="thumbnails"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    In-video Sidebar
+                    <label class="switch switch200">
+                        <input
+                            id="sidebar"
+                            type="checkbox"
+                            data-type="sidebar"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Preview on hover
+                    <label class="switch switch200">
+                        <input
+                            id="preview"
+                            type="checkbox"
+                            data-type="preview"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Video end recs: channel
+                    <label class="switch switch200">
+                        <input
+                            id="nextvideos"
+                            type="checkbox"
+                            data-type="nextvideos"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Video end recs: all
+                    <label class="switch switch200">
+                        <input
+                            id="endvideos"
+                            type="checkbox"
+                            data-type="endvideos"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Latest posts
+                    <label class="switch switch200">
+                        <input
+                            id="communityPosts"
+                            type="checkbox"
+                            data-type="communityPosts"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Ad Thumbnails
+                    <label class="switch switch200">
+                        <input
+                            id="adThumbs"
+                            type="checkbox"
+                            data-type="adThumbs"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Feed Filter Chip Bar
+                    <label class="switch switch200">
+                        <input
+                            id="chipBar"
+                            type="checkbox"
+                            data-type="chipBar"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    Channel Avatar
+                    <label class="switch switch200">
+                        <input
+                            id="channelThumb"
+                            type="checkbox"
+                            data-type="channelThumb"
+                        />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    In-video Chat
+                    <label class="switch switch200">
+                        <input id="chat" type="checkbox" data-type="chat" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    YouTube Logo
+                    <label class="switch switch200">
+                        <input id="logo" type="checkbox" data-type="logo" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <br />
+            </div>
+            <div class="footer">
+                <p id="brand">inversepolarity</p>
+                <img
+                    id="icon"
+                    class="icon ip"
+                    alt="logo"
+                    src="../icons/ip_seal.svg"
+                    height="16"
+                />
+                <p id="version"></p>
+            </div>
+        </section>
+
+        <script src="options.js"></script>
+    </body>
+</html>
