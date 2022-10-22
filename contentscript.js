@@ -34,7 +34,7 @@ var classes = {
     nextvideos: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
     endvideos: [".ytp-endscreen-content"],
     communityPosts: ["ytd-rich-shelf-renderer"],
-    adThumbs: [".ytd-display-ad-renderer"],
+    adThumbs: [".ytd-display-ad-renderer",".ytd-ad-slot-renderer"],
     chipBar: [".ytd-feed-filter-chip-bar-renderer"],
     logo: ["#logo .ytd-topbar-logo-renderer"],
     channelThumb: ["#avatar .yt-img-shadow"],
