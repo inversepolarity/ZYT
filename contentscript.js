@@ -29,7 +29,7 @@ var APPLICABLE_PROTOCOLS = ["http:", "https:"];
 var classes = {
     comments: [".ytd-comments"],
     thumbnails: [
-        "#thumbnail img.yt-core-image--fill-parent-height.yt-core-image--fill-parent-width.yt-core-image.yt-core-image--content-mode-scale-aspect-fill.yt-core-image--loaded"
+        "img.yt-core-image--fill-parent-height.yt-core-image--fill-parent-width.yt-core-image.yt-core-image--content-mode-scale-aspect-fill"
     ],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
     preview: ["#preview", "#hover-overlay", "#mouseover-overlay"],
