@@ -20,7 +20,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
-    reload: null
+    reload: null,
 };
 
 var settings = defaultSettings;
@@ -29,10 +29,15 @@ var APPLICABLE_PROTOCOLS = ["http:", "https:"];
 var classes = {
     comments: [".ytd-comments"],
     thumbnails: [
-        "img.yt-core-image--fill-parent-height.yt-core-image--fill-parent-width.yt-core-image.yt-core-image--content-mode-scale-aspect-fill"
+        "img.yt-core-image--fill-parent-height.yt-core-image--fill-parent-width.yt-core-image.yt-core-image--content-mode-scale-aspect-fill",
     ],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
-    preview: ["#preview", "#hover-overlay", "#mouseover-overlay"],
+    preview: [
+        "#preview",
+        "#hover-overlay",
+        "#mouseover-overlay",
+        "div.style-scope.ytd-video-preview",
+    ],
     nextvideos: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
     endvideos: [".ytp-endscreen-content"],
     communityPosts: ["ytd-rich-shelf-renderer"],
@@ -40,7 +45,7 @@ var classes = {
     chipBar: [".ytd-feed-filter-chip-bar-renderer"],
     logo: ["#logo .ytd-topbar-logo-renderer"],
     channelThumb: ["#avatar .yt-img-shadow"],
-    chat: ["#chat"]
+    chat: ["#chat"],
 };
 
 function addTransitionClass() {
