@@ -28,16 +28,9 @@ var APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
 var classes = {
     comments: [".ytd-comments"],
-    thumbnails: [
-        "img.yt-core-image--fill-parent-height.yt-core-image--fill-parent-width.yt-core-image.yt-core-image--content-mode-scale-aspect-fill",
-    ],
+    thumbnails: [".yt-core-image--loaded"],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
-    preview: [
-        "#preview",
-        "#hover-overlay",
-        "#mouseover-overlay",
-        "div.style-scope.ytd-video-preview",
-    ],
+    preview: ["div.style-scope.ytd-video-preview"],
     nextvideos: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
     endvideos: [".ytp-endscreen-content"],
     communityPosts: ["ytd-rich-shelf-renderer"],
