@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# ⚠️ No longer an actively maintained project. You may clone and use `web-ext` tool to build.
+# ⚠️ No longer an actively maintained project. You may clone and use `web-ext` tool to build
 
 <img src="https://github.com/inversepolarity/ZenTube/blob/main/promo/zentube.png" height="400"/>
 

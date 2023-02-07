@@ -28,7 +28,7 @@ var APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
 var classes = {
     comments: [".ytd-comments"],
-    thumbnails: [".yt-core-image--loaded"],
+    thumbnails: [".yt-core-image, .yt-core-image--loaded"],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
     preview: ["div.style-scope.ytd-video-preview"],
     nextvideos: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
