@@ -1,8 +1,8 @@
 {
     "description": "Zen mode for YouTube",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "ZenTube",
-    "version": "1.0.26",
+    "version": "1.0.24",
     "author": "surajsharma",
     "homepage_url": "https://evenzero.in",
     "icons": {
@@ -10,7 +10,7 @@
     },
 
     "background": {
-        "scripts": ["background.js"]
+        "service_worker": "background.js"
     },
 
     "content_scripts": [
@@ -21,11 +21,12 @@
         }
     ],
 
-    "browser_action": {
+    "action": {
         "default_icon": "icons/favicon4_144.png",
         "default_title": "Less Addictive Youtube",
         "default_popup": "options/options.html"
     },
 
-    "permissions": ["storage", "tabs", "scripting"]
+    "permissions": ["storage", "tabs", "scripting"],
+    "host_permissions": ["*://*.youtube.com/*"]
 }
