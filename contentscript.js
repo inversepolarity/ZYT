@@ -30,7 +30,7 @@ var classes = {
     comments: [".ytd-comments"],
     thumbnails: [".yt-core-image, .yt-core-image--loaded"],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
-    preview: ["div.style-scope.ytd-video-preview"],
+    preview: ["div.style-scope.ytd-video-preview #mouseover-overlay"],
     nextvideos: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
     endvideos: [".ytp-endscreen-content"],
     communityPosts: ["ytd-rich-shelf-renderer"],
