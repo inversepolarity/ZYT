@@ -28,6 +28,7 @@ var APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
 var classes = {
     comments: [".ytd-comments"],
+    likes: [".yt-core-attributed-string"],
     thumbnails: [".yt-core-image, .yt-core-image--loaded"],
     sidebar: [".ytd-watch-next-secondary-results-renderer"],
     preview: ["div.style-scope.ytd-video-preview, #mouseover-overlay"],

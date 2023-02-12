@@ -15,6 +15,7 @@ var defaultSettings = {
     logo: false,
     channelThumb: false,
     chat: false,
+    likes:false,
     reload: null
 };
 
@@ -40,7 +41,8 @@ function storeSettings() {
             chipBar: false,
             logo: false,
             channelThumb: false,
-            chat: false
+            chat: false,
+            likes:false
         };
 
         const checkboxes = document.querySelectorAll(
