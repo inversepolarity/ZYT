@@ -2,7 +2,7 @@
     "description": "Zen mode for YouTube",
     "manifest_version": 2,
     "name": "ZenTube",
-    "version": "1.0.27",
+    "version": "1.0.28",
     "author": "surajsharma",
     "homepage_url": "https://evenzero.in",
     "icons": {

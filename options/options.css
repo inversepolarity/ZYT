@@ -167,11 +167,24 @@ input:checked + .slider:before {
 .footer {
     display: flex;
     height: 15px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     justify-items: center;
     font-size: 0.8em;
     font-style: italic;
+}
+
+.footer_seal{
+    margin-top: -5px;
+
+}
+
+.footer_label {
+    display: flex;
+    flex-direction: column;
+    height:33px;
+    margin-top:-10px;
+
 }
 
 .ip {
@@ -190,4 +203,5 @@ input:checked + .slider:before {
 
 #version {
     color: #555;
+    margin-top:-10px;
 }

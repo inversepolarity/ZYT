@@ -1,0 +1,995 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8407E883299C0E9000236F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E882299C0E9000236F5C /* AppDelegate.swift */; };
+		8407E885299C0E9000236F5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E884299C0E9000236F5C /* SceneDelegate.swift */; };
+		8407E888299C0E9000236F5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8407E886299C0E9000236F5C /* LaunchScreen.storyboard */; };
+		8407E88B299C0E9000236F5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8407E889299C0E9000236F5C /* Main.storyboard */; };
+		8407E894299C0E9000236F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E893299C0E9000236F5C /* AppDelegate.swift */; };
+		8407E897299C0E9000236F5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8407E895299C0E9000236F5C /* Main.storyboard */; };
+		8407E89F299C0E9000236F5C /* ZenTube Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8407E89E299C0E9000236F5C /* ZenTube Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8407E8A9299C0E9000236F5C /* ZenTube Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8407E8A8299C0E9000236F5C /* ZenTube Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8407E8AF299C0E9000236F5C /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 8407E872299C0E8E00236F5C /* Main.html */; };
+		8407E8B0299C0E9000236F5C /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 8407E872299C0E8E00236F5C /* Main.html */; };
+		8407E8B1299C0E9000236F5C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8407E874299C0E8E00236F5C /* Icon.png */; };
+		8407E8B2299C0E9000236F5C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8407E874299C0E8E00236F5C /* Icon.png */; };
+		8407E8B3299C0E9000236F5C /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 8407E875299C0E8E00236F5C /* Style.css */; };
+		8407E8B4299C0E9000236F5C /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 8407E875299C0E8E00236F5C /* Style.css */; };
+		8407E8B5299C0E9000236F5C /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E876299C0E8E00236F5C /* Script.js */; };
+		8407E8B6299C0E9000236F5C /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E876299C0E8E00236F5C /* Script.js */; };
+		8407E8B7299C0E9000236F5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E877299C0E8E00236F5C /* ViewController.swift */; };
+		8407E8B8299C0E9000236F5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E877299C0E8E00236F5C /* ViewController.swift */; };
+		8407E8B9299C0E9000236F5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8407E878299C0E9000236F5C /* Assets.xcassets */; };
+		8407E8BA299C0E9000236F5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8407E878299C0E9000236F5C /* Assets.xcassets */; };
+		8407E8BB299C0E9000236F5C /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E87A299C0E9000236F5C /* SafariWebExtensionHandler.swift */; };
+		8407E8BC299C0E9000236F5C /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E87A299C0E9000236F5C /* SafariWebExtensionHandler.swift */; };
+		8407E8DC299C0E9100236F5C /* options in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8CE299C0E9100236F5C /* options */; };
+		8407E8DD299C0E9100236F5C /* browser-polyfill.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D0299C0E9100236F5C /* browser-polyfill.js */; };
+		8407E8DE299C0E9100236F5C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D1299C0E9100236F5C /* LICENSE */; };
+		8407E8DF299C0E9100236F5C /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D2299C0E9100236F5C /* background.js */; };
+		8407E8E0299C0E9100236F5C /* web-ext-artifacts in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D3299C0E9100236F5C /* web-ext-artifacts */; };
+		8407E8E1299C0E9100236F5C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D4299C0E9100236F5C /* README.md */; };
+		8407E8E2299C0E9100236F5C /* videoPreviewImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D5299C0E9100236F5C /* videoPreviewImage.png */; };
+		8407E8E3299C0E9100236F5C /* safari in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D6299C0E9100236F5C /* safari */; };
+		8407E8E4299C0E9100236F5C /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D7299C0E9100236F5C /* icons */; };
+		8407E8E5299C0E9100236F5C /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D8299C0E9100236F5C /* manifest.json */; };
+		8407E8E6299C0E9100236F5C /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D9299C0E9100236F5C /* contentscript.js */; };
+		8407E8E7299C0E9100236F5C /* promo in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8DA299C0E9100236F5C /* promo */; };
+		8407E8E8299C0E9100236F5C /* ff_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8DB299C0E9100236F5C /* ff_manifest.json */; };
+		8407E8E9299C0E9100236F5C /* options in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8CE299C0E9100236F5C /* options */; };
+		8407E8EA299C0E9100236F5C /* browser-polyfill.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D0299C0E9100236F5C /* browser-polyfill.js */; };
+		8407E8EB299C0E9100236F5C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D1299C0E9100236F5C /* LICENSE */; };
+		8407E8EC299C0E9100236F5C /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D2299C0E9100236F5C /* background.js */; };
+		8407E8ED299C0E9100236F5C /* web-ext-artifacts in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D3299C0E9100236F5C /* web-ext-artifacts */; };
+		8407E8EE299C0E9100236F5C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D4299C0E9100236F5C /* README.md */; };
+		8407E8EF299C0E9100236F5C /* videoPreviewImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D5299C0E9100236F5C /* videoPreviewImage.png */; };
+		8407E8F0299C0E9100236F5C /* safari in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D6299C0E9100236F5C /* safari */; };
+		8407E8F1299C0E9100236F5C /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D7299C0E9100236F5C /* icons */; };
+		8407E8F2299C0E9100236F5C /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D8299C0E9100236F5C /* manifest.json */; };
+		8407E8F3299C0E9100236F5C /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8D9299C0E9100236F5C /* contentscript.js */; };
+		8407E8F4299C0E9100236F5C /* promo in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8DA299C0E9100236F5C /* promo */; };
+		8407E8F5299C0E9100236F5C /* ff_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8407E8DB299C0E9100236F5C /* ff_manifest.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8407E8A0299C0E9000236F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8407E86C299C0E8D00236F5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8407E89D299C0E9000236F5C;
+			remoteInfo = "ZenTube Extension (iOS)";
+		};
+		8407E8AA299C0E9000236F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8407E86C299C0E8D00236F5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8407E8A7299C0E9000236F5C;
+			remoteInfo = "ZenTube Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8407E8C2299C0E9000236F5C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8407E89F299C0E9000236F5C /* ZenTube Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E8C9299C0E9000236F5C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8407E8A9299C0E9000236F5C /* ZenTube Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8407E873299C0E8E00236F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		8407E874299C0E8E00236F5C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8407E875299C0E8E00236F5C /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		8407E876299C0E8E00236F5C /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		8407E877299C0E8E00236F5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8407E878299C0E9000236F5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8407E87A299C0E9000236F5C /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		8407E87F299C0E9000236F5C /* ZenTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8407E882299C0E9000236F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8407E884299C0E9000236F5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8407E887299C0E9000236F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8407E88A299C0E9000236F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8407E88C299C0E9000236F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8407E891299C0E9000236F5C /* ZenTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8407E893299C0E9000236F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8407E896299C0E9000236F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8407E898299C0E9000236F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8407E899299C0E9000236F5C /* ZenTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZenTube.entitlements; sourceTree = "<group>"; };
+		8407E89E299C0E9000236F5C /* ZenTube Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ZenTube Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8407E8A3299C0E9000236F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8407E8A8299C0E9000236F5C /* ZenTube Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ZenTube Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8407E8AD299C0E9000236F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8407E8AE299C0E9000236F5C /* ZenTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZenTube.entitlements; sourceTree = "<group>"; };
+		8407E8CE299C0E9100236F5C /* options */ = {isa = PBXFileReference; lastKnownFileType = folder; name = options; path = ../../../options; sourceTree = "<group>"; };
+		8407E8CF299C0E9100236F5C /* browser-polyfill.js.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = "browser-polyfill.js.map"; path = "../../../browser-polyfill.js.map"; sourceTree = "<group>"; };
+		8407E8D0299C0E9100236F5C /* browser-polyfill.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "browser-polyfill.js"; path = "../../../browser-polyfill.js"; sourceTree = "<group>"; };
+		8407E8D1299C0E9100236F5C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
+		8407E8D2299C0E9100236F5C /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../background.js; sourceTree = "<group>"; };
+		8407E8D3299C0E9100236F5C /* web-ext-artifacts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "web-ext-artifacts"; path = "../../../web-ext-artifacts"; sourceTree = "<group>"; };
+		8407E8D4299C0E9100236F5C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
+		8407E8D5299C0E9100236F5C /* videoPreviewImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = videoPreviewImage.png; path = ../../../videoPreviewImage.png; sourceTree = "<group>"; };
+		8407E8D6299C0E9100236F5C /* safari */ = {isa = PBXFileReference; lastKnownFileType = folder; name = safari; path = ../..; sourceTree = "<group>"; };
+		8407E8D7299C0E9100236F5C /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../icons; sourceTree = "<group>"; };
+		8407E8D8299C0E9100236F5C /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../manifest.json; sourceTree = "<group>"; };
+		8407E8D9299C0E9100236F5C /* contentscript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = contentscript.js; path = ../../../contentscript.js; sourceTree = "<group>"; };
+		8407E8DA299C0E9100236F5C /* promo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = promo; path = ../../../promo; sourceTree = "<group>"; };
+		8407E8DB299C0E9100236F5C /* ff_manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ff_manifest.json; path = ../../../ff_manifest.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8407E87C299C0E9000236F5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E88E299C0E9000236F5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E89B299C0E9000236F5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E8A5299C0E9000236F5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8407E86B299C0E8D00236F5C = {
+			isa = PBXGroup;
+			children = (
+				8407E870299C0E8E00236F5C /* Shared (App) */,
+				8407E879299C0E9000236F5C /* Shared (Extension) */,
+				8407E881299C0E9000236F5C /* iOS (App) */,
+				8407E892299C0E9000236F5C /* macOS (App) */,
+				8407E8A2299C0E9000236F5C /* iOS (Extension) */,
+				8407E8AC299C0E9000236F5C /* macOS (Extension) */,
+				8407E880299C0E9000236F5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8407E870299C0E8E00236F5C /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				8407E877299C0E8E00236F5C /* ViewController.swift */,
+				8407E878299C0E9000236F5C /* Assets.xcassets */,
+				8407E871299C0E8E00236F5C /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		8407E871299C0E8E00236F5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8407E872299C0E8E00236F5C /* Main.html */,
+				8407E874299C0E8E00236F5C /* Icon.png */,
+				8407E875299C0E8E00236F5C /* Style.css */,
+				8407E876299C0E8E00236F5C /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8407E879299C0E9000236F5C /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				8407E8CD299C0E9100236F5C /* Resources */,
+				8407E87A299C0E9000236F5C /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		8407E880299C0E9000236F5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8407E87F299C0E9000236F5C /* ZenTube.app */,
+				8407E891299C0E9000236F5C /* ZenTube.app */,
+				8407E89E299C0E9000236F5C /* ZenTube Extension.appex */,
+				8407E8A8299C0E9000236F5C /* ZenTube Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8407E881299C0E9000236F5C /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				8407E882299C0E9000236F5C /* AppDelegate.swift */,
+				8407E884299C0E9000236F5C /* SceneDelegate.swift */,
+				8407E886299C0E9000236F5C /* LaunchScreen.storyboard */,
+				8407E889299C0E9000236F5C /* Main.storyboard */,
+				8407E88C299C0E9000236F5C /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		8407E892299C0E9000236F5C /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				8407E893299C0E9000236F5C /* AppDelegate.swift */,
+				8407E895299C0E9000236F5C /* Main.storyboard */,
+				8407E898299C0E9000236F5C /* Info.plist */,
+				8407E899299C0E9000236F5C /* ZenTube.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		8407E8A2299C0E9000236F5C /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				8407E8A3299C0E9000236F5C /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		8407E8AC299C0E9000236F5C /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				8407E8AD299C0E9000236F5C /* Info.plist */,
+				8407E8AE299C0E9000236F5C /* ZenTube.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		8407E8CD299C0E9100236F5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8407E8CE299C0E9100236F5C /* options */,
+				8407E8CF299C0E9100236F5C /* browser-polyfill.js.map */,
+				8407E8D0299C0E9100236F5C /* browser-polyfill.js */,
+				8407E8D1299C0E9100236F5C /* LICENSE */,
+				8407E8D2299C0E9100236F5C /* background.js */,
+				8407E8D3299C0E9100236F5C /* web-ext-artifacts */,
+				8407E8D4299C0E9100236F5C /* README.md */,
+				8407E8D5299C0E9100236F5C /* videoPreviewImage.png */,
+				8407E8D6299C0E9100236F5C /* safari */,
+				8407E8D7299C0E9100236F5C /* icons */,
+				8407E8D8299C0E9100236F5C /* manifest.json */,
+				8407E8D9299C0E9100236F5C /* contentscript.js */,
+				8407E8DA299C0E9100236F5C /* promo */,
+				8407E8DB299C0E9100236F5C /* ff_manifest.json */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8407E87E299C0E9000236F5C /* ZenTube (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8407E8C3299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube (iOS)" */;
+			buildPhases = (
+				8407E87B299C0E9000236F5C /* Sources */,
+				8407E87C299C0E9000236F5C /* Frameworks */,
+				8407E87D299C0E9000236F5C /* Resources */,
+				8407E8C2299C0E9000236F5C /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8407E8A1299C0E9000236F5C /* PBXTargetDependency */,
+			);
+			name = "ZenTube (iOS)";
+			productName = "ZenTube (iOS)";
+			productReference = 8407E87F299C0E9000236F5C /* ZenTube.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8407E890299C0E9000236F5C /* ZenTube (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8407E8CA299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube (macOS)" */;
+			buildPhases = (
+				8407E88D299C0E9000236F5C /* Sources */,
+				8407E88E299C0E9000236F5C /* Frameworks */,
+				8407E88F299C0E9000236F5C /* Resources */,
+				8407E8C9299C0E9000236F5C /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8407E8AB299C0E9000236F5C /* PBXTargetDependency */,
+			);
+			name = "ZenTube (macOS)";
+			productName = "ZenTube (macOS)";
+			productReference = 8407E891299C0E9000236F5C /* ZenTube.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8407E89D299C0E9000236F5C /* ZenTube Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8407E8BF299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube Extension (iOS)" */;
+			buildPhases = (
+				8407E89A299C0E9000236F5C /* Sources */,
+				8407E89B299C0E9000236F5C /* Frameworks */,
+				8407E89C299C0E9000236F5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZenTube Extension (iOS)";
+			productName = "ZenTube Extension (iOS)";
+			productReference = 8407E89E299C0E9000236F5C /* ZenTube Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8407E8A7299C0E9000236F5C /* ZenTube Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8407E8C6299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube Extension (macOS)" */;
+			buildPhases = (
+				8407E8A4299C0E9000236F5C /* Sources */,
+				8407E8A5299C0E9000236F5C /* Frameworks */,
+				8407E8A6299C0E9000236F5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZenTube Extension (macOS)";
+			productName = "ZenTube Extension (macOS)";
+			productReference = 8407E8A8299C0E9000236F5C /* ZenTube Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8407E86C299C0E8D00236F5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					8407E87E299C0E9000236F5C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					8407E890299C0E9000236F5C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					8407E89D299C0E9000236F5C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					8407E8A7299C0E9000236F5C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 8407E86F299C0E8D00236F5C /* Build configuration list for PBXProject "ZenTube" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8407E86B299C0E8D00236F5C;
+			productRefGroup = 8407E880299C0E9000236F5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8407E87E299C0E9000236F5C /* ZenTube (iOS) */,
+				8407E890299C0E9000236F5C /* ZenTube (macOS) */,
+				8407E89D299C0E9000236F5C /* ZenTube Extension (iOS) */,
+				8407E8A7299C0E9000236F5C /* ZenTube Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8407E87D299C0E9000236F5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8B1299C0E9000236F5C /* Icon.png in Resources */,
+				8407E888299C0E9000236F5C /* LaunchScreen.storyboard in Resources */,
+				8407E8AF299C0E9000236F5C /* Main.html in Resources */,
+				8407E8B5299C0E9000236F5C /* Script.js in Resources */,
+				8407E8B9299C0E9000236F5C /* Assets.xcassets in Resources */,
+				8407E88B299C0E9000236F5C /* Main.storyboard in Resources */,
+				8407E8B3299C0E9000236F5C /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E88F299C0E9000236F5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8B2299C0E9000236F5C /* Icon.png in Resources */,
+				8407E8B4299C0E9000236F5C /* Style.css in Resources */,
+				8407E897299C0E9000236F5C /* Main.storyboard in Resources */,
+				8407E8B6299C0E9000236F5C /* Script.js in Resources */,
+				8407E8BA299C0E9000236F5C /* Assets.xcassets in Resources */,
+				8407E8B0299C0E9000236F5C /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E89C299C0E9000236F5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8EE299C0E9100236F5C /* README.md in Resources */,
+				8407E8EC299C0E9100236F5C /* background.js in Resources */,
+				8407E8F2299C0E9100236F5C /* manifest.json in Resources */,
+				8407E8EB299C0E9100236F5C /* LICENSE in Resources */,
+				8407E8F5299C0E9100236F5C /* ff_manifest.json in Resources */,
+				8407E8F1299C0E9100236F5C /* icons in Resources */,
+				8407E8EA299C0E9100236F5C /* browser-polyfill.js in Resources */,
+				8407E8F4299C0E9100236F5C /* promo in Resources */,
+				8407E8F0299C0E9100236F5C /* safari in Resources */,
+				8407E8E9299C0E9100236F5C /* options in Resources */,
+				8407E8F3299C0E9100236F5C /* contentscript.js in Resources */,
+				8407E8EF299C0E9100236F5C /* videoPreviewImage.png in Resources */,
+				8407E8ED299C0E9100236F5C /* web-ext-artifacts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E8A6299C0E9000236F5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8E1299C0E9100236F5C /* README.md in Resources */,
+				8407E8DF299C0E9100236F5C /* background.js in Resources */,
+				8407E8E5299C0E9100236F5C /* manifest.json in Resources */,
+				8407E8DE299C0E9100236F5C /* LICENSE in Resources */,
+				8407E8E8299C0E9100236F5C /* ff_manifest.json in Resources */,
+				8407E8E4299C0E9100236F5C /* icons in Resources */,
+				8407E8DD299C0E9100236F5C /* browser-polyfill.js in Resources */,
+				8407E8E7299C0E9100236F5C /* promo in Resources */,
+				8407E8E3299C0E9100236F5C /* safari in Resources */,
+				8407E8DC299C0E9100236F5C /* options in Resources */,
+				8407E8E6299C0E9100236F5C /* contentscript.js in Resources */,
+				8407E8E2299C0E9100236F5C /* videoPreviewImage.png in Resources */,
+				8407E8E0299C0E9100236F5C /* web-ext-artifacts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8407E87B299C0E9000236F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8B7299C0E9000236F5C /* ViewController.swift in Sources */,
+				8407E883299C0E9000236F5C /* AppDelegate.swift in Sources */,
+				8407E885299C0E9000236F5C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E88D299C0E9000236F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8B8299C0E9000236F5C /* ViewController.swift in Sources */,
+				8407E894299C0E9000236F5C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E89A299C0E9000236F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8BB299C0E9000236F5C /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8407E8A4299C0E9000236F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8407E8BC299C0E9000236F5C /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8407E8A1299C0E9000236F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8407E89D299C0E9000236F5C /* ZenTube Extension (iOS) */;
+			targetProxy = 8407E8A0299C0E9000236F5C /* PBXContainerItemProxy */;
+		};
+		8407E8AB299C0E9000236F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8407E8A7299C0E9000236F5C /* ZenTube Extension (macOS) */;
+			targetProxy = 8407E8AA299C0E9000236F5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8407E872299C0E8E00236F5C /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8407E873299C0E8E00236F5C /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		8407E886299C0E9000236F5C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8407E887299C0E9000236F5C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8407E889299C0E9000236F5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8407E88A299C0E9000236F5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8407E895299C0E9000236F5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8407E896299C0E9000236F5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8407E8BD299C0E9000236F5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8407E8BE299C0E9000236F5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8407E8C0299C0E9000236F5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ZenTube Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube.Extension;
+				PRODUCT_NAME = "ZenTube Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8407E8C1299C0E9000236F5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ZenTube Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube.Extension;
+				PRODUCT_NAME = "ZenTube Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8407E8C4299C0E9000236F5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ZenTube;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube;
+				PRODUCT_NAME = ZenTube;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8407E8C5299C0E9000236F5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ZenTube;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube;
+				PRODUCT_NAME = ZenTube;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8407E8C7299C0E9000236F5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/ZenTube.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ZenTube Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube.Extension;
+				PRODUCT_NAME = "ZenTube Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8407E8C8299C0E9000236F5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/ZenTube.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ZenTube Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube.Extension;
+				PRODUCT_NAME = "ZenTube Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8407E8CB299C0E9000236F5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/ZenTube.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ZenTube;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube;
+				PRODUCT_NAME = ZenTube;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8407E8CC299C0E9000236F5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/ZenTube.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ZenTube;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.evenzero.ZenTube;
+				PRODUCT_NAME = ZenTube;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8407E86F299C0E8D00236F5C /* Build configuration list for PBXProject "ZenTube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8407E8BD299C0E9000236F5C /* Debug */,
+				8407E8BE299C0E9000236F5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8407E8BF299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8407E8C0299C0E9000236F5C /* Debug */,
+				8407E8C1299C0E9000236F5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8407E8C3299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8407E8C4299C0E9000236F5C /* Debug */,
+				8407E8C5299C0E9000236F5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8407E8C6299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8407E8C7299C0E9000236F5C /* Debug */,
+				8407E8C8299C0E9000236F5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8407E8CA299C0E9000236F5C /* Build configuration list for PBXNativeTarget "ZenTube (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8407E8CB299C0E9000236F5C /* Debug */,
+				8407E8CC299C0E9000236F5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8407E86C299C0E8D00236F5C /* Project object */;
+}
