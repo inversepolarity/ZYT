@@ -21,155 +21,20 @@
                 <div class="title">ZenTube</div>
             </div>
 
+            <div class="custom-select">
+              <select id="dropdown">
+                <option value="0">Select Page</option>
+                <option value="1" selected>Home</option>
+                <option value="2">Video</option>
+                <option value="3">Everywhere</option>
+              </select>
+            </div>
+
             <div id="popup">
-                <div class="toggle">
-                    Video Comments
-                    <label class="switch switch200">
-                        <input
-                            type="checkbox"
-                            id="comments"
-                            data-type="comments"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="toggle">
-                    Video Likes
-                    <label class="switch switch200">
-                        <input
-                            type="checkbox"
-                            id="likes"
-                            data-type="likes"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="toggle">
-                    Video Thumbnails
-                    <label class="switch switch200">
-                        <input
-                            id="thumbnails"
-                            type="checkbox"
-                            data-type="thumbnails"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    In-video Sidebar
-                    <label class="switch switch200">
-                        <input
-                            id="sidebar"
-                            type="checkbox"
-                            data-type="sidebar"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Preview on hover
-                    <label class="switch switch200">
-                        <input
-                            id="preview"
-                            type="checkbox"
-                            data-type="preview"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Video end recs: channel
-                    <label class="switch switch200">
-                        <input
-                            id="nextvideos"
-                            type="checkbox"
-                            data-type="nextvideos"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Video end recs: all
-                    <label class="switch switch200">
-                        <input
-                            id="endvideos"
-                            type="checkbox"
-                            data-type="endvideos"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Latest posts
-                    <label class="switch switch200">
-                        <input
-                            id="communityPosts"
-                            type="checkbox"
-                            data-type="communityPosts"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Ad Thumbnails
-                    <label class="switch switch200">
-                        <input
-                            id="adThumbs"
-                            type="checkbox"
-                            data-type="adThumbs"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Feed Filter Chip Bar
-                    <label class="switch switch200">
-                        <input
-                            id="chipBar"
-                            type="checkbox"
-                            data-type="chipBar"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    Channel Avatar
-                    <label class="switch switch200">
-                        <input
-                            id="channelThumb"
-                            type="checkbox"
-                            data-type="channelThumb"
-                        />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    In-video Chat
-                    <label class="switch switch200">
-                        <input id="chat" type="checkbox" data-type="chat" />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle">
-                    YouTube Logo
-                    <label class="switch switch200">
-                        <input id="logo" type="checkbox" data-type="logo" />
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
+                
                 <br />
             </div>
+
             <div class="footer">
                 <div class="footer_seal">
                     <img
@@ -188,6 +53,8 @@
             </div>
         </section>
 
-        <script src="options.js"></script>
+        <script defer src="options.js"></script>
+        <script defer src="select.js"></script>
+
     </body>
 </html>
