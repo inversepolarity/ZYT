@@ -90,24 +90,24 @@ let currentPage = "Home";
 
 /* Popup handlers */
 function repopulatePopup(options) {
+  if (!options) return;
   const popup = document.getElementById("popup");
   const dropdown = document.getElementById("dropdown");
-  const currentPage = dropdown.options[dropdown.selectedIndex].text;
-
+  const cp = dropdown.options[dropdown.selectedIndex].text;
   //clear old fields
   while (popup.firstChild) {
     popup.removeChild(popup.lastChild);
   }
 
   //populate dropdown
-  Object.keys(options).forEach((page, index) => {
-    const selector = `<option value=${index + 1} selected>${page}</option>`;
-    dropdown.insertAdjacentHTML("afterbegin", selector);
-  });
-
+  // Object.keys(options).forEach((page, index) => {
+  //   const selector = `<option value=${index + 1} selected>${page}</option>`;
+  //   dropdown.insertAdjacentHTML("afterbegin", selector);
+  // });
   //add new fields
+
   Object.keys(options).forEach((page) => {
-    if (page === currentPage) {
+    if (page === cp) {
       Object.keys(options[page]).forEach((item) => {
         // insert toggle field
         const set = options[page][item];
