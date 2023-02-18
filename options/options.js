@@ -1,3 +1,13 @@
+/*
+TODO: Populate the dropdown based on data
+TODO: Fix the hidden text issue with video likes
+TODO: clicking on label toggles switch
+TODO: additional features
+TODO: new promo screenshots
+TODO: testing 
+TODO: rc 1.1.0
+*/
+
 /*Default settings. If there is nothing in storage, use these values.*/
 let defaultSettings = {
   options: {
@@ -76,9 +86,9 @@ let defaultSettings = {
   }
 };
 
-let previouslyPage = "Home";
+let currentPage = "Home";
 
-/* popup handlers */
+/* Popup handlers */
 function repopulatePopup(options) {
   const popup = document.getElementById("popup");
   const dropdown = document.getElementById("dropdown");
@@ -130,16 +140,15 @@ async function storeSettings() {
 
   function getChangedOptions() {
     let newOptions = newSettings.options;
-
-    const dropdown = document.getElementById("dropdown");
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
-    const currentPage = dropdown.options[dropdown.selectedIndex].text;
 
     if (!checkboxes) {
       return;
     }
 
     for (let item of checkboxes) {
+      const x = item.getAttribute("data-type");
+      console.log(newOptions, currentPage);
       newOptions[currentPage][item.getAttribute("data-type")]["show"] =
         item.checked;
     }
@@ -171,10 +180,10 @@ function updateUI(restoredSettings) {
 async function selectionChanged(value) {
   // called in select.js
 
-  if (value != previouslyPage) {
+  if (value != currentPage) {
     const gettingStoredSettings = await browser.storage.local.get();
     updateUI(gettingStoredSettings);
-    previouslyPage = value;
+    currentPage = value;
   }
 }
 
