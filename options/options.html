@@ -1,60 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <script
-            type="application/javascript"
-            src="../browser-polyfill.js"
-        ></script>
-        <link rel="stylesheet" href="options.css" />
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <script type="application/javascript" src="../browser-polyfill.js"></script>
+    <link rel="stylesheet" href="options.css" />
+  </head>
 
-    <body>
-        <section class="clear-options data-types">
-            <div class="logo">
-                <img
-                    class="icon"
-                    alt="logo"
-                    src="../icons/logo2.png"
-                    height="16"
-                />
-                <div class="title">ZenTube</div>
-            </div>
+  <body>
+    <div
+      class="unselectable"
+      unselectable="on"
+      onselectstart="return false;"
+    >
+      <section class="clear-options data-types">
+        <div class="logo">
+          <img class="icon" alt="logo" src="../icons/logo2.png" height="16" />
+          <div class="title">ZenTube</div>
+        </div>
 
-            <div class="custom-select">
-              <select id="dropdown">
-                <option value="0">Select Page</option>
-                <option value="1" selected>Home</option>
-                <option value="2">Video</option>
-                <option value="3">Everywhere</option>
-              </select>
-            </div>
+        <div class="custom-select">
+          <select id="dropdown">
+            <option value="0">Select Page</option>
+            <option value="1" selected>Home</option>
+            <option value="2">Video</option>
+            <option value="3">Everywhere</option>
+          </select>
+        </div>
 
-            <div id="popup">
-                
-                <br />
-            </div>
+        <div id="popup">
+          <br />
+        </div>
 
-            <div class="footer">
-                <div class="footer_seal">
-                    <img
-                        id="icon"
-                        class="icon ip"
-                        alt="logo"
-                        src="../icons/ip_seal.jpeg"
-                        height="33"
-                    />
-                   
-                </div>
-                <div class="footer_label">
-                    <p id="brand">inversepolarity</p>
-                    <p id="version"></p>
-                </div>
-            </div>
-        </section>
-
-        <script defer src="options.js"></script>
-        <script defer src="select.js"></script>
-
-    </body>
+        <div class="footer">
+          <div class="footer_seal">
+            <img
+              id="icon"
+              class="icon ip"
+              alt="logo"
+              src="../icons/ip_seal.jpeg"
+              height="33"
+            />
+          </div>
+          <div class="footer_label">
+            <p id="brand">inversepolarity</p>
+            <p id="version"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script defer src="options.js"></script>
+    <script defer src="select.js"></script>
+  </body>
 </html>

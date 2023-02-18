@@ -293,3 +293,12 @@ input:checked + .slider:before {
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.2);
   }
+
+
+  .unselectable{
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+  }

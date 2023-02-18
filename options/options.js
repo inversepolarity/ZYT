@@ -251,8 +251,7 @@ async function messagePageScript(msg) {
 }
 
 async function injectScript() {
-  /* are any yt tabs open?*/
-
+  /* inject content script into all yt tabs*/
   try {
     let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
 
@@ -261,7 +260,6 @@ async function injectScript() {
         target: { tabId: t.id },
         files: ["contentscript.js"]
       });
-      console.log(injection);
     });
   } catch (error) {
     onError(error);
@@ -318,15 +316,18 @@ async function injectScript() {
       // }
     });
 
+    /* ip link */
     let icon = document.getElementById("icon");
     icon.addEventListener("click", () => {
       browser.tabs.create({ active: true, url: "https://ko-fi.com/evenzero" });
     });
 
+    /* version display*/
     let ver = document.getElementById("version");
     ver.innerText = "Ver: " + browser.runtime.getManifest().version;
 
-    await injectScript();
+    /* inject contentscript */
+    // await injectScript();
   } catch (err) {
     onError(err);
   }
