@@ -76,6 +76,8 @@ let defaultSettings = {
   }
 };
 
+let previouslyPage = "Home";
+
 /* popup handlers */
 function repopulatePopup(options) {
   const popup = document.getElementById("popup");
@@ -86,6 +88,12 @@ function repopulatePopup(options) {
   while (popup.firstChild) {
     popup.removeChild(popup.lastChild);
   }
+
+  //populate dropdown
+  Object.keys(options).forEach((page, index) => {
+    const selector = `<option value=${index + 1} selected>${page}</option>`;
+    dropdown.insertAdjacentHTML("afterbegin", selector);
+  });
 
   //add new fields
   Object.keys(options).forEach((page) => {
@@ -161,8 +169,13 @@ function updateUI(restoredSettings) {
 }
 
 async function selectionChanged(value) {
-  const gettingStoredSettings = await browser.storage.local.get();
-  updateUI(gettingStoredSettings);
+  // called in select.js
+
+  if (value != previouslyPage) {
+    const gettingStoredSettings = await browser.storage.local.get();
+    updateUI(gettingStoredSettings);
+    previouslyPage = value;
+  }
 }
 
 /* Content Script handlers */
