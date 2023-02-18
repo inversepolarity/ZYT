@@ -1,17 +1,11 @@
 // This script interacts with the YT DOM
 
-let settings = defaultSettings;
-let APPLICABLE_PROTOCOLS = ["http:", "https:"];
-
 if (typeof browser === "undefined") {
-  let browser = chrome;
+  var browser = chrome;
 }
 
-let defaultSettings = {
-  /*Default settings. If there is nothing in storage, use these values.*/
-
-  storedBefore: false,
-  reload: null,
+var APPLICABLE_PROTOCOLS = ["http:", "https:"];
+var defaultSettings = {
   options: {
     Home: {
       thumbnails: {
@@ -27,7 +21,8 @@ let defaultSettings = {
       communityPosts: {
         label: "Latest posts",
         classes: ["ytd-rich-shelf-renderer"],
-        show: false
+        show: false,
+        id: "communityPosts"
       },
       adThumbs: {
         label: "Ad Thumbnails",
@@ -48,12 +43,12 @@ let defaultSettings = {
       },
       nextvideos: {
         show: false,
-        label: "End Reccomendations (Default)",
+        label: "End Recs (Default)",
         classes: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"]
       },
       endvideos: {
         show: false,
-        label: "End Reccomendations (Channel)",
+        label: "End Recs (Channel)",
         classes: [".ytp-endscreen-content"]
       },
       chat: {
@@ -87,6 +82,8 @@ let defaultSettings = {
   }
 };
 
+var settings = defaultSettings;
+
 function addTransitionClass() {
   /* for every class css, add a transition by
    * looping over the state object and populating a css string
@@ -101,11 +98,12 @@ function addTransitionClass() {
 
   let css = "";
   let customStyles = document.createElement("style");
+  const { options } = settings;
 
-  Object.keys(settings).forEach((setting) => {
-    setting.forEach((item) => {
-      item.classes.forEach((identifier) => {
-        css += `${identifier}{transition: all 0.2s;}`;
+  Object.keys(options).forEach((page) => {
+    Object.keys(options[page]).forEach((item) => {
+      options[page][item].classes.forEach((c) => {
+        css += `${c}{transition: all 0.2s;}`;
       });
     });
   });
@@ -128,14 +126,17 @@ function toggleCSS() {
     el.parentNode.removeChild(el);
   }
 
-  var customStyles = document.createElement("style");
+  let customStyles = document.createElement("style");
+  const { options } = settings;
 
   let css = "";
 
   Object.keys(settings).forEach((setting) => {
-    setting.forEach((item) => {
-      item.classes.forEach((identifier) => {
-        css += `${identifier}{opacity:${settings[setting] ? 100 : 0};}`;
+    Object.keys(options).forEach((page) => {
+      Object.keys(options[page]).forEach((item) => {
+        options[page][item].classes.forEach((c) => {
+          css += `${c}{opacity:${options[page][item]["show"] ? 100 : 0};}`;
+        });
       });
     });
   });
@@ -160,16 +161,9 @@ function checkStoredSettings(storedSettings) {
 On startup, check whether we have stored settings.
 If we don't, then store the default settings.
 */
-  if (
-    storedSettings.storedBefore == false ||
-    Object.keys(storedSettings).length == 0
-  ) {
+  if (Object.keys(storedSettings).length == 0) {
     return browser.storage.local.set(defaultSettings);
   }
-}
-
-function onError(e) {
-  console.error(e);
 }
 
 async function msgListener(request, sender) {
@@ -217,3 +211,7 @@ Initialize the page action
     onError(err);
   }
 })();
+
+function onError(e) {
+  console.error(e);
+}
