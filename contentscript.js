@@ -139,9 +139,8 @@ async function toggleCSS(init) {
   customStyles.setAttribute("id", "zentube");
   customStyles.appendChild(document.createTextNode(css));
 
-  if (el) {
-    el.parentNode.removeChild(el);
-  }
+  el.parentNode != null && el.parentNode.removeChild(el);
+
   document.documentElement.appendChild(customStyles);
 }
 
