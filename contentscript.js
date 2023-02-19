@@ -61,7 +61,9 @@ var defaultSettings = {
       likes: {
         show: false,
         label: "Likes",
-        classes: [".yt-core-attributed-string"]
+        classes: [
+          "ytd-menu-renderer.style-scope.ytd-watch-metadata .yt-core-attributed-string"
+        ]
       },
       comments: {
         show: false,
@@ -139,7 +141,7 @@ async function toggleCSS(init) {
   customStyles.setAttribute("id", "zentube");
   customStyles.appendChild(document.createTextNode(css));
 
-  el.parentNode != null && el.parentNode.removeChild(el);
+  el && el.parentNode != null && el.parentNode.removeChild(el);
 
   document.documentElement.appendChild(customStyles);
 }

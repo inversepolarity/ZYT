@@ -1,7 +1,4 @@
 /*
-TODO: Populate the dropdown based on data
-TODO: Fix the hidden text issue with video likes
-TODO: clicking on label toggles switch
 TODO: additional features
 TODO: new promo screenshots
 TODO: testing 
@@ -63,7 +60,9 @@ let defaultSettings = {
       likes: {
         show: false,
         label: "Likes",
-        classes: [".yt-core-attributed-string"]
+        classes: [
+          "ytd-menu-renderer.style-scope.ytd-watch-metadata .yt-core-attributed-string"
+        ]
       },
       comments: {
         show: false,
@@ -113,14 +112,25 @@ function repopulatePopup(options) {
       Object.keys(options[page]).forEach((item) => {
         // insert toggle field
         const togg = options[page][item];
+
         const field = togg.show
-          ? `<div class="toggle">${togg.label}<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item} checked><span class="slider"></span></label></div>`
-          : `<div class="toggle">${togg.label}<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item}><span class="slider"></span></label></div>`;
+          ? `<div class="toggle" id=${page + item}>${
+              togg.label
+            }<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item} checked><span class="slider"></span></label></div>`
+          : `<div class="toggle" id=${page + item}>${
+              togg.label
+            }<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item}><span class="slider"></span></label></div>`;
 
         popup.insertAdjacentHTML("afterbegin", field);
 
         //add event listener
+
         const el = document.getElementById(item);
+        const te = document.getElementById(page + item);
+        te &&
+          te.addEventListener("click", (evt) => {
+            el && el.click();
+          });
         el &&
           el.addEventListener("click", (evt) => {
             let set = storeSettings(item);
