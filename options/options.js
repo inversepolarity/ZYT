@@ -114,25 +114,42 @@ function repopulatePopup(options) {
         const togg = options[page][item];
 
         const field = togg.show
-          ? `<div class="toggle" id=${page + item}>${
-              togg.label
-            }<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item} checked><span class="slider"></span></label></div>`
-          : `<div class="toggle" id=${page + item}>${
-              togg.label
-            }<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item}><span class="slider"></span></label></div>`;
+          ? `<div class="toggle">
+                <span id=${page + item}>${togg.label}</span>
+                <label class="switch switch200">
+                  <input type="checkbox" id=${item} data-type=${item} checked>
+                  <span class="slider"></span>
+                </label>
+            </div>`
+          : `<div class="toggle">
+                <span id=${page + item}>${togg.label}</span>
+                <label class="switch switch200">
+                  <input type="checkbox" id=${item} data-type=${item}>
+                  <span class="slider"></span>
+                </label>
+             </div>`;
 
         popup.insertAdjacentHTML("afterbegin", field);
 
         //add event listener
-
         const el = document.getElementById(item);
-        const te = document.getElementById(page + item);
-        te &&
-          te.addEventListener("click", (evt) => {
-            el && el.click();
-          });
         el &&
           el.addEventListener("click", (evt) => {
+            let set = storeSettings(item);
+            messagePageScript({
+              element: item,
+              event: evt,
+              settings: set
+            });
+          });
+
+        const te = document.getElementById(page + item);
+
+        te &&
+          te.addEventListener("click", (evt) => {
+            const e = document.getElementById(item);
+            e && e.click();
+
             let set = storeSettings(item);
             messagePageScript({
               element: item,
