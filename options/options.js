@@ -91,29 +91,31 @@ let currentPage = "Home";
 /* Popup handlers */
 function repopulatePopup(options) {
   if (!options) return;
+
   const popup = document.getElementById("popup");
   const dropdown = document.getElementById("dropdown");
-  const cp = dropdown.options[dropdown.selectedIndex].text;
+  const currentPage = dropdown.options[dropdown.selectedIndex].text;
+
   //clear old fields
   while (popup.firstChild) {
     popup.removeChild(popup.lastChild);
   }
 
   //populate dropdown
-  // Object.keys(options).forEach((page, index) => {
-  //   const selector = `<option value=${index + 1} selected>${page}</option>`;
-  //   dropdown.insertAdjacentHTML("afterbegin", selector);
-  // });
-  //add new fields
+  Object.keys(options).forEach((page, index) => {
+    const selector = `<option value=${index + 1} selected>${page}</option>`;
+    dropdown.insertAdjacentHTML("afterbegin", selector);
+  });
 
+  //add new fields
   Object.keys(options).forEach((page) => {
-    if (page === cp) {
+    if (page === currentPage) {
       Object.keys(options[page]).forEach((item) => {
         // insert toggle field
-        const set = options[page][item];
-        const field = set.show
-          ? `<div class="toggle">${set.label}<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item} checked><span class="slider"></span></label></div>`
-          : `<div class="toggle">${set.label}<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item}><span class="slider"></span></label></div>`;
+        const togg = options[page][item];
+        const field = togg.show
+          ? `<div class="toggle">${togg.label}<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item} checked><span class="slider"></span></label></div>`
+          : `<div class="toggle">${togg.label}<label class="switch switch200"><input type="checkbox" id=${item} data-type=${item}><span class="slider"></span></label></div>`;
 
         popup.insertAdjacentHTML("afterbegin", field);
 
@@ -121,7 +123,7 @@ function repopulatePopup(options) {
         const el = document.getElementById(item);
         el &&
           el.addEventListener("click", (evt) => {
-            let set = storeSettings();
+            let set = storeSettings(item);
             messagePageScript({
               element: item,
               event: evt,
@@ -133,7 +135,7 @@ function repopulatePopup(options) {
   });
 }
 
-async function storeSettings() {
+async function storeSettings(changed) {
   /*fires when a button is clicked, syncs local storage */
 
   let newSettings = await browser.storage.local.get();
@@ -147,10 +149,9 @@ async function storeSettings() {
     }
 
     for (let item of checkboxes) {
-      const x = item.getAttribute("data-type");
-      console.log(newOptions, currentPage);
-      newOptions[currentPage][item.getAttribute("data-type")]["show"] =
-        item.checked;
+      if (item.id === changed) {
+        newOptions[currentPage][changed]["show"] = item.checked;
+      }
     }
 
     return newOptions;

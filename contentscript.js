@@ -1,4 +1,6 @@
-// This script interacts with the YT DOM
+/* This script interacts with the YT DOM
+  It is injected into all YT tabs at install and on popup open
+*/
 
 if (typeof browser === "undefined") {
   var browser = chrome;
@@ -84,7 +86,7 @@ var defaultSettings = {
 
 var settings = defaultSettings;
 
-function addTransitionClass() {
+async function addTransitionClass() {
   /* for every class css, add a transition by
    * looping over the state object and populating a css string
    * for each class this css string is then injected into the
@@ -98,7 +100,7 @@ function addTransitionClass() {
 
   let css = "";
   let customStyles = document.createElement("style");
-  const { options } = settings;
+  const { options } = await browser.storage.local.get();
 
   Object.keys(options).forEach((page) => {
     Object.keys(options[page]).forEach((item) => {
@@ -114,29 +116,21 @@ function addTransitionClass() {
   document.documentElement.appendChild(customStyles);
 }
 
-function toggleCSS() {
+async function toggleCSS(init) {
   /* for every css class, add appropriate opacity by
    * looping over the state object and populating a css string
    * for each class; this css string is then injected into the
    * page */
 
   let el = document.getElementById("zentube");
-
-  if (el) {
-    el.parentNode.removeChild(el);
-  }
-
   let customStyles = document.createElement("style");
-  const { options } = settings;
-
+  const { options } = await browser.storage.local.get();
   let css = "";
 
-  Object.keys(settings).forEach((setting) => {
-    Object.keys(options).forEach((page) => {
-      Object.keys(options[page]).forEach((item) => {
-        options[page][item].classes.forEach((c) => {
-          css += `${c}{opacity:${options[page][item]["show"] ? 100 : 0};}`;
-        });
+  Object.keys(options).forEach((page) => {
+    Object.keys(options[page]).forEach((item) => {
+      options[page][item].classes.forEach((c) => {
+        css += `${c}{opacity:${options[page][item]["show"] ? 100 : 0};}`;
       });
     });
   });
@@ -144,6 +138,10 @@ function toggleCSS() {
   customStyles.setAttribute("type", "text/css");
   customStyles.setAttribute("id", "zentube");
   customStyles.appendChild(document.createTextNode(css));
+
+  if (el) {
+    el.parentNode.removeChild(el);
+  }
   document.documentElement.appendChild(customStyles);
 }
 
@@ -175,11 +173,7 @@ If the message was from the page script, show an alert.
   let msg = JSON.parse(request);
   switch (msg.element) {
     default:
-      const gettingStoredSettings = await browser.storage.local.get();
-      settings = gettingStoredSettings;
-      if (settings) {
-        toggleCSS();
-      }
+      toggleCSS(false);
   }
   return true;
 }
@@ -192,10 +186,10 @@ Initialize the page action
 
   try {
     const gettingStoredSettings = await browser.storage.local.get();
-    settings = gettingStoredSettings;
-    if (settings) {
+
+    if (gettingStoredSettings) {
       addTransitionClass();
-      toggleCSS();
+      toggleCSS(true);
     }
   } catch (err) {
     onError(err);
