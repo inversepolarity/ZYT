@@ -115,14 +115,14 @@ function repopulatePopup(options) {
 
         const field = togg.show
           ? `<div class="toggle">
-                <span id=${page + item}>${togg.label}</span>
+                <span class="txt" id=${page + item}>${togg.label}</span>
                 <label class="switch switch200">
                   <input type="checkbox" id=${item} data-type=${item} checked>
                   <span class="slider"></span>
                 </label>
             </div>`
           : `<div class="toggle">
-                <span id=${page + item}>${togg.label}</span>
+                <span class="txt" id=${page + item}>${togg.label}</span>
                 <label class="switch switch200">
                   <input type="checkbox" id=${item} data-type=${item}>
                   <span class="slider"></span>

@@ -4,7 +4,7 @@ body {
 	font-size: 0.9em;
 	font-weight: 300;
 	background: rgb(17,17,17);
-	background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
+	background: linear-gradient(0deg, rgba(17, 17, 17, 1) 0%, rgba(5,5,5,1) 100%);
 	color: white;
 	-webkit-user-select: none important!;
 	/* Safari */
@@ -154,7 +154,7 @@ input:checked + .slider:before {
 	margin-top: 1px;
 	color: gray;
 }
-#popup > div:hover {
+#popup > div > span:hover{
 	cursor: pointer;
 	color: red;
 }
