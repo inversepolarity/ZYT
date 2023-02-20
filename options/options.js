@@ -149,13 +149,6 @@ function repopulatePopup(options) {
           te.addEventListener("click", (evt) => {
             const e = document.getElementById(item);
             e && e.click();
-
-            let set = storeSettings(item);
-            messagePageScript({
-              element: item,
-              event: evt,
-              settings: set
-            });
           });
       });
     }

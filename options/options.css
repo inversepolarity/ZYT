@@ -177,12 +177,12 @@ input:checked + .slider:before {
 	margin-top:-10px;
 }
 .ip {
-	filter: saturate(0%);
+	filter: invert(7%) sepia(0%) saturate(4094%) hue-rotate(315deg) brightness(100%) contrast(70%);
 	margin: 5px;
 	margin-left: -2px;
 }
 .ip:hover {
-	filter: saturate(100%);
+	filter: invert(31%) sepia(75%) saturate(3160%) hue-rotate(348deg) brightness(89%) contrast(91%);
 	cursor: pointer;
 }
 #brand {

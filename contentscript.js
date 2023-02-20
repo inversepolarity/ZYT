@@ -124,11 +124,8 @@ async function toggleCSS(init) {
    * for each class; this css string is then injected into the
    * page */
 
-  let el = document.getElementById("zentube");
-  let customStyles = document.createElement("style");
-  const { options } = await browser.storage.local.get();
   let css = "";
-
+  const { options } = await browser.storage.local.get();
   Object.keys(options).forEach((page) => {
     Object.keys(options[page]).forEach((item) => {
       options[page][item].classes.forEach((c) => {
@@ -137,13 +134,19 @@ async function toggleCSS(init) {
     });
   });
 
-  customStyles.setAttribute("type", "text/css");
-  customStyles.setAttribute("id", "zentube");
-  customStyles.appendChild(document.createTextNode(css));
+  let el = document.getElementById("zentube");
+  // el && el.parentNode != null && el.parentNode.removeChild(el);
 
-  el && el.parentNode != null && el.parentNode.removeChild(el);
-
-  document.documentElement.appendChild(customStyles);
+  if (!el) {
+    let customStyles = document.createElement("style");
+    customStyles.setAttribute("type", "text/css");
+    customStyles.setAttribute("id", "zentube");
+    customStyles.appendChild(document.createTextNode(css));
+    document.documentElement.appendChild(customStyles);
+  }
+  if (el) {
+    el.textContent = css;
+  }
 }
 
 function protocolIsApplicable(url) {
