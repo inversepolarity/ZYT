@@ -16,7 +16,7 @@
     "content_scripts": [
         {
             "matches": ["*://*.youtube.com/*"],
-            "js": ["browser-polyfill.js", "contentscript.js"],
+            "js": ["browser-polyfill.js", "defaultSettings.js", "contentscript.js"],
             "run_at": "document_start"
         }
     ],
