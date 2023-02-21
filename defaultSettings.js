@@ -1,9 +1,13 @@
-const defaultSettings = {
+var defaultSettings = {
   options: {
     Home: {
       preview: {
         label: "Preview on hover",
-        classes: ["div.style-scope.ytd-video-preview", "#mouseover-overlay"],
+        classes: [
+          "div.style-scope.ytd-video-preview",
+          "#mouseover-overlay",
+          "span.style-scope.ytd-thumbnail-overlay-loading-preview-renderer"
+        ],
         show: true
       },
       communityPosts: {
@@ -21,6 +25,20 @@ const defaultSettings = {
         show: true,
         label: "Feed Filter Chip Bar",
         classes: [".ytd-feed-filter-chip-bar-renderer"]
+      },
+      title: {
+        show: true,
+        label: "Video title",
+        classes: ["yt-formatted-string.style-scope.ytd-rich-grid-media"]
+      },
+      metadata: {
+        show: true,
+        label: "Video Metadata",
+        classes: [
+          "span.inline-metadata-item.style-scope.ytd-video-meta-block",
+          "yt-formatted-string.style-scope.ytd-channel-name",
+          "yt-icon.style-scope.ytd-badge-supported-renderer"
+        ]
       }
     },
     Video: {
@@ -55,13 +73,55 @@ const defaultSettings = {
         show: true,
         label: "Comments",
         classes: [".ytd-comments"]
+      },
+      playlist: {
+        show: true,
+        label: "Playlist",
+        classes: ["div.style-scope.ytd-playlist-panel-renderer"]
+      },
+      chapters: {
+        show: true,
+        label: "Chapters",
+        classes: [
+          "ytd-engagement-panel-section-list-renderer.style-scope.ytd-watch-flexy"
+        ]
+      },
+      subscribe: {
+        show: true,
+        label: "Subscribe Button",
+        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"]
+      },
+      title: {
+        show: true,
+        label: "Video Title",
+        classes: ["yt-formatted-string.style-scope.ytd-watch-metadata"]
+      },
+      sub_count: {
+        show: true,
+        label: "Subscriber count",
+        classes: ["yt-formatted-string.style-scope.ytd-video-owner-renderer"]
+      },
+      description: {
+        show: true,
+        label: "Description Box",
+        classes: ["div.item.style-scope.ytd-watch-metadata"]
       }
     },
     Everywhere: {
       thumbnails: {
         label: "Video Thumbnails",
-        classes: [".yt-core-image, .yt-core-image--loaded"],
+        classes: [
+          ".yt-core-image, .yt-core-image--loaded",
+          "span.style-scope.ytd-thumbnail-overlay-time-status-renderer"
+        ],
         show: true
+      },
+      resume: {
+        show: true,
+        label: "Resume bar",
+        classes: [
+          "div.style-scope.ytd-thumbnail-overlay-resume-playback-renderer"
+        ]
       },
       logo: {
         show: true,

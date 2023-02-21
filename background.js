@@ -10,7 +10,7 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
     tabs.forEach(async (t) => {
       const injection = await browser.scripting.executeScript({
         target: { tabId: t.id },
-        files: ["contentscript.js"]
+        files: ["defaultSettings.js", "contentscript.js"]
       });
 
       browser.tabs.reload(t.id);
