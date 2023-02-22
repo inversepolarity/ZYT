@@ -40,23 +40,25 @@ async function addTransitionClass() {
   document.documentElement.appendChild(customStyles);
 }
 
-async function toggleCSS(options) {
+async function toggleCSS() {
   /* for every css class, add appropriate opacity by
    * looping over the state object and populating a css string
    * for each class; this css string is then injected into the
    * page */
 
   let css = "";
-
-  Object.keys(options).forEach((page) => {
-    Object.keys(options[page]).forEach((item) => {
-      options[page][item].classes.forEach((c) => {
-        css += options[page][item]["show"]
-          ? `${c}{display:none}${c}{opacity:0}`
-          : "";
+  const settings = await browser.storage.local.get();
+  const { options } = settings;
+  options &&
+    Object.keys(options).forEach((page) => {
+      Object.keys(options[page]).forEach((item) => {
+        options[page][item].classes.forEach((c) => {
+          if (options[page][item]["show"]) {
+            css += `${c}{display:none; opacity:0}`;
+          }
+        });
       });
     });
-  });
 
   let el = document.getElementById("zentube");
   // el && el.parentNode.removeChild(el);
@@ -97,8 +99,8 @@ async function msgListener(request, sender) {
 Listen for messages from the page itself
 If the message was from the page script, show an alert.
 */
-  const { options } = await browser.storage.local.get();
-  toggleCSS(options);
+
+  toggleCSS();
   return true;
 }
 

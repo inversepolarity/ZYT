@@ -13,6 +13,7 @@ body {
 	/* IE 10 and IE 11 */
 	user-select: none important!;
 	/* Standard syntax */
+	overflow: hidden;
 }
 section.clear-options {
 	padding: 0.5em 0;

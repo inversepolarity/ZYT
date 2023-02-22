@@ -6,6 +6,7 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
   if (reason === "install") {
     /* are any yt tabs open?*/
     let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
+    await browser.storage.local.clear();
 
     tabs.forEach(async (t) => {
       const injection = await browser.scripting.executeScript({

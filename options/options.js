@@ -49,22 +49,28 @@ function repopulatePopup(options) {
 
         //add event listener
         const el = document.getElementById(item);
+
         el &&
-          el.addEventListener("click", (evt) => {
-            let set = storeSettings(item);
+          el.addEventListener("click", async (evt) => {
             messagePageScript({
               element: item,
               event: evt,
-              settings: set
+              settings: await storeSettings(item)
             });
           });
 
         const te = document.getElementById(page + item);
 
         te &&
-          te.addEventListener("click", (evt) => {
+          te.addEventListener("click", async (evt) => {
             const e = document.getElementById(item);
             e && e.click();
+
+            messagePageScript({
+              element: item,
+              event: evt,
+              settings: await storeSettings(item)
+            });
           });
       });
     }
@@ -96,7 +102,7 @@ async function storeSettings(changed) {
   const newOptions = getChangedOptions();
 
   newSettings.options = newOptions;
-  browser.storage.local.set(newSettings);
+  await browser.storage.local.set(newSettings);
   return newSettings;
 }
 
