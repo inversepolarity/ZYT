@@ -1,6 +1,4 @@
 /*
-TODO: additional features
-TODO: new promo screenshots
 TODO: testing 
 TODO: rc 1.1.0
 */
