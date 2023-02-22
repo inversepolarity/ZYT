@@ -30,15 +30,6 @@ var defaultSettings = {
         show: true,
         label: "Video title",
         classes: ["yt-formatted-string.style-scope.ytd-rich-grid-media"]
-      },
-      metadata: {
-        show: true,
-        label: "Video Metadata",
-        classes: [
-          "span.inline-metadata-item.style-scope.ytd-video-meta-block",
-          "yt-formatted-string.style-scope.ytd-channel-name",
-          "yt-icon.style-scope.ytd-badge-supported-renderer"
-        ]
       }
     },
     Video: {
@@ -104,16 +95,32 @@ var defaultSettings = {
       description: {
         show: true,
         label: "Description Box",
-        classes: ["div.item.style-scope.ytd-watch-metadata"]
+        classes: ["ytd-text-inline-expander.style-scope.ytd-watch-metadata"]
       }
     },
     Everywhere: {
-      thumbnails: {
-        label: "Video Thumbnails",
+      metadata: {
+        show: true,
+        label: "Video Metadata",
         classes: [
-          ".yt-core-image, .yt-core-image--loaded",
+          "span.inline-metadata-item.style-scope.ytd-video-meta-block",
+          "yt-formatted-string.style-scope.ytd-channel-name",
+          "yt-icon.style-scope.ytd-badge-supported-renderer",
+          "div.badge.badge-style-type-live-now-alternate.style-scope.ytd-badge-supported-renderer",
+          "#metadata-line",
+          "#byline-container"
+        ]
+      },
+      duration: {
+        label: "Video Duration",
+        classes: [
           "span.style-scope.ytd-thumbnail-overlay-time-status-renderer"
         ],
+        show: true
+      },
+      thumbnails: {
+        label: "Video Thumbnails",
+        classes: [".yt-core-image--loaded"],
         show: true
       },
       resume: {
@@ -131,7 +138,11 @@ var defaultSettings = {
       channelThumb: {
         show: true,
         label: "Channel Avatar",
-        classes: ["#avatar .yt-img-shadow"]
+        classes: [
+          "#avatar .yt-img-shadow",
+          "yt-img-shadow.style-scope.ytd-rich-grid-media.no-transition",
+          "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer img.style-scope.yt-img-shadow"
+        ]
       }
     }
   }

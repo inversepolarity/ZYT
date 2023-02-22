@@ -1,6 +1,6 @@
 {
     "description": "Zen mode for YouTube",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "ZenTube",
     "version": "1.1.0",
     "author": "surajsharma",
@@ -10,23 +10,22 @@
     },
 
     "background": {
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
     },
 
     "content_scripts": [
         {
             "matches": ["*://*.youtube.com/*"],
-            "js": ["browser-polyfill.js", "defaultSettings.js", "contentscript.js"],
+            "js": ["browser-polyfill.js","defaultSettings.js", "contentscript.js"],
             "run_at": "document_start"
         }
     ],
 
-    "action": {
+    "browser_action": {
         "default_icon": "icons/favicon4_144.png",
-        "default_title": "Less Addictive Youtube",
+        "default_title": "Zen Mode for Youtube",
         "default_popup": "options/options.html"
     },
 
-    "permissions": ["storage", "tabs", "scripting"],
-    "host_permissions": ["*://*.youtube.com/*"]
+    "permissions": ["storage", "tabs", "scripting"]
 }

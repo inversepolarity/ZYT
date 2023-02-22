@@ -22,12 +22,6 @@ function repopulatePopup(options) {
     popup.removeChild(popup.lastChild);
   }
 
-  //populate dropdown
-  Object.keys(options).forEach((page, index) => {
-    const selector = `<option value=${index + 1} selected>${page}</option>`;
-    dropdown.insertAdjacentHTML("afterbegin", selector);
-  });
-
   //add new fields
   Object.keys(options).forEach((page) => {
     if (page === currentPage) {
@@ -158,7 +152,7 @@ async function injectScript() {
     tabs.forEach(async (t) => {
       const injection = await browser.scripting.executeScript({
         target: { tabId: t.id },
-        files: ["contentscript.js"]
+        files: ["defaultSettings.js", "contentscript.js"]
       });
     });
   } catch (error) {
@@ -181,14 +175,13 @@ async function injectScript() {
     let ver = document.getElementById("version");
     ver.innerText = "Ver: " + browser.runtime.getManifest().version;
 
-    /* inject contentscript */
-    await injectScript();
-
     const gettingStoredSettings = await browser.storage.local.get();
 
     if (gettingStoredSettings) {
       updateUI(gettingStoredSettings);
     }
+    /* inject contentscript */
+    await injectScript();
   } catch (err) {
     onError(err);
   }
