@@ -7,6 +7,7 @@ if (typeof browser === "undefined") {
 }
 
 var APPLICABLE_PROTOCOLS = ["http:", "https:"];
+
 var settings = defaultSettings;
 
 async function injectTransitionClass() {
@@ -21,12 +22,23 @@ async function injectTransitionClass() {
     el.parentNode.removeChild(el);
   }
 
-  let css = `*{transition: all 0.5s ease-out;}`;
+  let css = "";
   let customStyles = document.createElement("style");
-  customStyles.setAttribute("type", "text/css");
-  customStyles.setAttribute("id", "zentubeTransitions");
-  customStyles.appendChild(document.createTextNode(css));
-  document.documentElement.appendChild(customStyles);
+  const { options } = await browser.storage.local.get();
+
+  if (options) {
+    for (const page of Object.keys(options)) {
+      for (const item of Object.keys(options[page])) {
+        for (const c of options[page][item].classes) {
+          css += `${c}{transition: all 0.2s;}`;
+        }
+      }
+    }
+    customStyles.setAttribute("type", "text/css");
+    customStyles.setAttribute("id", "zentubeTransitions");
+    customStyles.appendChild(document.createTextNode(css));
+    document.documentElement.appendChild(customStyles);
+  }
 }
 
 async function toggleCSS() {
