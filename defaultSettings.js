@@ -121,7 +121,7 @@ var defaultSettings = {
       },
       thumbnails: {
         label: "Video Thumbnails",
-        classes: [".yt-core-image--loaded"],
+        classes: [".yt-core-image", ".yt-core-image--loaded"],
         show: true
       },
       resume: {
@@ -140,7 +140,8 @@ var defaultSettings = {
         show: true,
         label: "Channel Avatar",
         classes: [
-          "#avatar .yt-img-shadow",
+          "#avatar",
+          ".yt-img-shadow",
           "yt-img-shadow.style-scope.ytd-rich-grid-media.no-transition",
           "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer img.style-scope.yt-img-shadow"
         ]

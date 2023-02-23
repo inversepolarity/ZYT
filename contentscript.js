@@ -7,10 +7,9 @@ if (typeof browser === "undefined") {
 }
 
 var APPLICABLE_PROTOCOLS = ["http:", "https:"];
-
 var settings = defaultSettings;
 
-async function addTransitionClass() {
+async function injectTransitionClass() {
   /* for every class css, add a transition by
    * looping over the state object and populating a css string
    * for each class this css string is then injected into the
@@ -22,18 +21,8 @@ async function addTransitionClass() {
     el.parentNode.removeChild(el);
   }
 
-  let css = "";
+  let css = `*{transition: all 0.5s ease-out;}`;
   let customStyles = document.createElement("style");
-  const { options } = await browser.storage.local.get();
-
-  Object.keys(options).forEach((page) => {
-    Object.keys(options[page]).forEach((item) => {
-      options[page][item].classes.forEach((c) => {
-        css += `${c}{transition: all 0.2s;}`;
-      });
-    });
-  });
-
   customStyles.setAttribute("type", "text/css");
   customStyles.setAttribute("id", "zentubeTransitions");
   customStyles.appendChild(document.createTextNode(css));
@@ -49,19 +38,18 @@ async function toggleCSS() {
   let css = "";
   const settings = await browser.storage.local.get();
   const { options } = settings;
-  options &&
-    Object.keys(options).forEach((page) => {
-      Object.keys(options[page]).forEach((item) => {
-        options[page][item].classes.forEach((c) => {
-          if (options[page][item]["show"]) {
-            css += `${c}{display:none; opacity:0}`;
-          }
-        });
-      });
-    });
+
+  for (const page of Object.keys(options)) {
+    for (const item of Object.keys(options[page])) {
+      if (options[page][item]["show"]) {
+        for (const c of options[page][item].classes) {
+          css += `${c}{display:none; opacity:0}`;
+        }
+      }
+    }
+  }
 
   let el = document.getElementById("zentube");
-  // el && el.parentNode.removeChild(el);
 
   if (!el) {
     let customStyles = document.createElement("style");
@@ -114,7 +102,7 @@ Initialize the page action
     const gettingStoredSettings = await browser.storage.local.get();
 
     if (gettingStoredSettings) {
-      addTransitionClass();
+      injectTransitionClass();
       toggleCSS(true);
     }
   } catch (err) {

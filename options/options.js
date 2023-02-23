@@ -1,5 +1,4 @@
 /*
-TODO: replace all forEach loops with for loops
 TODO: end-to-end testing 
 TODO: rc 1.1.0
 */
@@ -17,7 +16,8 @@ function repopulatePopup(options, cp) {
   }
 
   //add new fields
-  Object.keys(options).forEach((page) => {
+
+  for (page of Object.keys(options)) {
     if (page === cp) {
       Object.keys(options[page]).forEach((item) => {
         // insert toggle field
@@ -68,7 +68,7 @@ function repopulatePopup(options, cp) {
           });
       });
     }
-  });
+  }
 }
 
 function setDropdownSelect(page) {
@@ -112,14 +112,12 @@ function updateUI(restoredSettings) {
   if (!Object.keys(restoredSettings).length) {
     // there's nothing in the local storage, create default popup
     const { options, currentPage } = defaultSettings;
-    console.log("🚀 NO LS ~ currentPage:", currentPage);
     repopulatePopup(options, currentPage);
     setDropdownSelect(currentPage);
   }
 
   // set UI according to local storage
   const { options, currentPage } = restoredSettings;
-  console.log("🚀 LS ~ currentPage:", currentPage);
   repopulatePopup(options, currentPage);
   setDropdownSelect(currentPage);
 }
@@ -171,13 +169,12 @@ async function injectScript() {
   /* inject content script into all yt tabs*/
   try {
     let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
-
-    tabs.forEach(async (t) => {
+    for await (const t of tabs) {
       const injection = await browser.scripting.executeScript({
         target: { tabId: t.id },
         files: ["defaultSettings.js", "contentscript.js"]
       });
-    });
+    }
   } catch (error) {
     onError(error);
   }
