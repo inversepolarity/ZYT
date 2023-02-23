@@ -1,4 +1,5 @@
 var defaultSettings = {
+  currentPage: "Home",
   options: {
     Home: {
       preview: {

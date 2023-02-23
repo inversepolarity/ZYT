@@ -1,19 +1,15 @@
 /*
-TODO: testing 
+TODO: replace all forEach loops with for loops
+TODO: end-to-end testing 
 TODO: rc 1.1.0
 */
 
-/*Default settings. If there is nothing in storage, use these values.*/
-
-let currentPage = "Everywhere";
-
 /* Popup handlers */
-function repopulatePopup(options) {
+function repopulatePopup(options, cp) {
   if (!options) return;
 
   const popup = document.getElementById("popup");
   const dropdown = document.getElementById("dropdown");
-  const currentPage = dropdown.options[dropdown.selectedIndex].text;
 
   //clear old fields
   while (popup.firstChild) {
@@ -22,7 +18,7 @@ function repopulatePopup(options) {
 
   //add new fields
   Object.keys(options).forEach((page) => {
-    if (page === currentPage) {
+    if (page === cp) {
       Object.keys(options[page]).forEach((item) => {
         // insert toggle field
         const togg = options[page][item];
@@ -75,10 +71,15 @@ function repopulatePopup(options) {
   });
 }
 
+function setDropdownSelect(page) {
+  document.querySelector(".select-selected").innerHTML = page;
+}
+
 async function storeSettings(changed) {
-  /*fires when a button is clicked, syncs local storage */
+  /*fires when a toggle is clicked, syncs local storage */
 
   let newSettings = await browser.storage.local.get();
+  const { currentPage } = newSettings;
 
   function getChangedOptions() {
     let newOptions = newSettings.options;
@@ -110,21 +111,39 @@ function updateUI(restoredSettings) {
 
   if (!Object.keys(restoredSettings).length) {
     // there's nothing in the local storage, create default popup
-    const { options } = defaultSettings;
-    repopulatePopup(options);
+    const { options, currentPage } = defaultSettings;
+    console.log("🚀 NO LS ~ currentPage:", currentPage);
+    repopulatePopup(options, currentPage);
+    setDropdownSelect(currentPage);
   }
 
   // set UI according to local storage
-  repopulatePopup(restoredSettings.options);
+  const { options, currentPage } = restoredSettings;
+  console.log("🚀 LS ~ currentPage:", currentPage);
+  repopulatePopup(options, currentPage);
+  setDropdownSelect(currentPage);
 }
 
 async function selectionChanged(value) {
-  // called in select.js
+  /* called in select.js, fired when select dropdown changes, 
+     syncs selected value to local storage
+  */
 
-  if (value != currentPage) {
-    const gettingStoredSettings = await browser.storage.local.get();
-    updateUI(gettingStoredSettings);
-    currentPage = value;
+  if (value == "Select Page") return;
+  let storedSettings = await browser.storage.local.get();
+
+  if (value != storedSettings.currentPage) {
+    let dropdown = document.getElementById("dropdown");
+
+    if (storedSettings) {
+      for (let i = 0; i < dropdown.length; i++) {
+        if (dropdown[i].innerText == value) {
+          storedSettings.currentPage = value;
+          await browser.storage.local.set(storedSettings);
+        }
+      }
+      updateUI(storedSettings);
+    }
   }
 }
 
@@ -184,6 +203,7 @@ async function injectScript() {
     if (gettingStoredSettings) {
       updateUI(gettingStoredSettings);
     }
+
     /* inject contentscript */
     await injectScript();
   } catch (err) {
