@@ -82,7 +82,7 @@ async function storeSettings(changed) {
   const { currentPage } = newSettings;
 
   function getChangedOptions() {
-    let newOptions = newSettings.options;
+    let changedOptions = newSettings.options;
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
 
     if (!checkboxes) {
@@ -91,11 +91,11 @@ async function storeSettings(changed) {
 
     for (let item of checkboxes) {
       if (item.id === changed) {
-        newOptions[currentPage][changed]["show"] = item.checked;
+        changedOptions[currentPage][changed]["show"] = item.checked;
       }
     }
 
-    return newOptions;
+    return changedOptions;
   }
 
   const newOptions = getChangedOptions();
