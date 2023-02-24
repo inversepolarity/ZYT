@@ -7,101 +7,100 @@ var defaultSettings = {
         classes: [
           "div.style-scope.ytd-video-preview",
           "#mouseover-overlay",
-          "span.style-scope.ytd-thumbnail-overlay-loading-preview-renderer"
+          "span.style-scope.ytd-thumbnail-overlay-loading-preview-renderer",
         ],
-        show: true
+        show: true,
       },
       communityPosts: {
         label: "Latest posts",
         classes: ["ytd-rich-shelf-renderer"],
+        id: "communityPosts",
         show: true,
-        id: "communityPosts"
       },
       adThumbs: {
         label: "Ad Thumbnails",
         classes: [".ytd-display-ad-renderer", ".ytd-ad-slot-renderer"],
-        show: true
+        show: true,
       },
       chipBar: {
-        show: true,
         label: "Feed Filter Chip Bar",
-        classes: [".ytd-feed-filter-chip-bar-renderer"]
+        classes: [".ytd-feed-filter-chip-bar-renderer"],
+        show: true,
       },
       title: {
-        show: true,
         label: "Video title",
-        classes: ["yt-formatted-string.style-scope.ytd-rich-grid-media"]
-      }
+        classes: ["yt-formatted-string.style-scope.ytd-rich-grid-media"],
+        show: true,
+      },
     },
     Video: {
       sidebar: {
-        show: true,
         label: "Video Sidebar",
-        classes: [".ytd-watch-next-secondary-results-renderer"]
+        classes: [".ytd-watch-next-secondary-results-renderer"],
+        show: true,
       },
       nextvideos: {
-        show: true,
         label: "End Recs (Default)",
-        classes: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"]
+        classes: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
+        show: true,
       },
       endvideos: {
-        show: true,
         label: "End Recs (Channel)",
-        classes: [".ytp-endscreen-content"]
+        classes: [".ytp-endscreen-content"],
+        show: true,
       },
       chat: {
-        show: true,
         label: "Chat",
-        classes: ["#chat"]
+        classes: ["#chat"],
+        show: true,
       },
       likes: {
-        show: true,
         label: "Likes",
         classes: [
-          "ytd-menu-renderer.style-scope.ytd-watch-metadata .yt-core-attributed-string"
-        ]
+          "ytd-menu-renderer.style-scope.ytd-watch-metadata .yt-core-attributed-string",
+        ],
+        show: true,
       },
       comments: {
-        show: true,
         label: "Comments",
-        classes: [".ytd-comments"]
+        classes: [".ytd-comments"],
+        show: true,
       },
       playlist: {
-        show: true,
         label: "Playlist",
-        classes: ["div.style-scope.ytd-playlist-panel-renderer"]
+        classes: ["div.style-scope.ytd-playlist-panel-renderer"],
+        show: true,
       },
       chapters: {
-        show: true,
         label: "Chapters",
         classes: [
-          "ytd-engagement-panel-section-list-renderer.style-scope.ytd-watch-flexy"
-        ]
+          "ytd-engagement-panel-section-list-renderer.style-scope.ytd-watch-flexy",
+        ],
+        show: true,
       },
       subscribe: {
-        show: true,
         label: "Subscribe Button",
-        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"]
+        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"],
+        show: true,
       },
       title: {
-        show: true,
         label: "Video Title",
-        classes: ["yt-formatted-string.style-scope.ytd-watch-metadata"]
+        classes: ["yt-formatted-string.style-scope.ytd-watch-metadata"],
+        show: true,
       },
       sub_count: {
-        show: true,
         label: "Subscriber count",
-        classes: ["yt-formatted-string.style-scope.ytd-video-owner-renderer"]
+        classes: ["yt-formatted-string.style-scope.ytd-video-owner-renderer"],
+        show: true,
       },
       description: {
-        show: true,
         label: "Description Box",
-        classes: ["ytd-text-inline-expander.style-scope.ytd-watch-metadata"]
-      }
+        classes: ["ytd-text-inline-expander.style-scope.ytd-watch-metadata"],
+        show: true,
+      },
     },
     Everywhere: {
       metadata: {
-        show: true,
         label: "Video Metadata",
         classes: [
           "span.inline-metadata-item.style-scope.ytd-video-meta-block",
@@ -109,43 +108,42 @@ var defaultSettings = {
           "yt-icon.style-scope.ytd-badge-supported-renderer",
           "div.badge.badge-style-type-live-now-alternate.style-scope.ytd-badge-supported-renderer",
           "#metadata-line",
-          "#byline-container"
-        ]
+          "#byline-container",
+        ],
+        show: true,
       },
       duration: {
         label: "Video Duration",
         classes: [
-          "span.style-scope.ytd-thumbnail-overlay-time-status-renderer"
+          "span.style-scope.ytd-thumbnail-overlay-time-status-renderer",
         ],
-        show: true
+        show: true,
       },
       thumbnails: {
         label: "Video Thumbnails",
-        classes: [".yt-core-image", ".yt-core-image--loaded"],
-        show: true
+        classes: [".ytd-notification-renderer>img", ".yt-core-image--loaded"],
+        show: true,
       },
       resume: {
-        show: true,
         label: "Resume bar",
         classes: [
-          "div.style-scope.ytd-thumbnail-overlay-resume-playback-renderer"
-        ]
+          "div.style-scope.ytd-thumbnail-overlay-resume-playback-renderer",
+        ],
+        show: true,
       },
       logo: {
-        show: true,
         label: "YouTube Logo",
-        classes: ["#logo .ytd-topbar-logo-renderer"]
+        classes: ["#logo .ytd-topbar-logo-renderer"],
+        show: true,
       },
       channelThumb: {
-        show: true,
         label: "Channel Avatar",
         classes: [
           "#avatar",
-          ".yt-img-shadow",
-          "yt-img-shadow.style-scope.ytd-rich-grid-media.no-transition",
-          "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer img.style-scope.yt-img-shadow"
-        ]
-      }
-    }
-  }
+          "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer > yt-img-shadow",
+        ],
+        show: true,
+      },
+    },
+  },
 };
