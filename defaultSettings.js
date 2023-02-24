@@ -140,6 +140,7 @@ var defaultSettings = {
         label: "Channel Avatar",
         classes: [
           "#avatar",
+          "#channel-thumbnail",
           "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer > yt-img-shadow",
         ],
         show: true,
