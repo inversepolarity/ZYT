@@ -15,7 +15,7 @@
 
 ### Rationale
 
-Ensure true privacy by drawing the blinds on parts of YouTube that are unnecessary to you.
-Make your Youtube experience less addictive. 
-Toggle features on/off based on your needs.
-Participate in making YouTube a better product while engaging in a minium amount of electronic civil disobedience.
+- Ensure true privacy by drawing the blinds on parts of YouTube that are unnecessary to you.
+- Make your Youtube experience less addictive. 
+- Toggle features on/off based on your needs and boundaries. 
+- Participate in making YouTube a better product while engaging in a minium amount of electronic civil disobedience.
