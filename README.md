@@ -13,21 +13,9 @@
 
 ---
 
-### Features
+### Rationale
 
-Remove some ([more](https://github.com/AlexisDrain/Less-Addictive-YouTube)) elements from Youtube to make it less addictive. Mix and match between the following options:
-
-
--   Hide or show thumbnails and video preview
--   Hide or show number of likes
--   Hide or show recommended videos sidebar
--   Hide or show comments
--   Hide or show recommended videos end screen (when autoplay is off)
--   Hide or show video preview on mouse over
--   Hide or show end screen recommendations
--   Hide or show community posts
--   Hide or show ad thumbnails
--   Hide or show feed filter chip bar
--   Hide or show channel thumbnails
--   Hide or show live chat
--   More improvements in the works...
+Ensure true privacy by drawing the blinds on parts of YouTube that are unnecessary to you.
+Make your Youtube experience less addictive. 
+Toggle features on/off based on your needs.
+Participate in making YouTube a better product while engaging in a minium amount of electronic civil disobedience.
