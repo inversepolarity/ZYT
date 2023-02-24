@@ -121,7 +121,7 @@ var defaultSettings = {
       },
       thumbnails: {
         label: "Video Thumbnails",
-        classes: [".ytd-notification-renderer>img", ".yt-core-image--loaded"],
+        classes: [".thumbnail-container.style-scope.ytd-notification-renderer",".yt-core-image--loaded"],
         show: true,
       },
       resume: {
