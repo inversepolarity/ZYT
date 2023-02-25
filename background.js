@@ -3,7 +3,12 @@ if (typeof browser === "undefined") {
 }
 
 browser.runtime.onInstalled.addListener(async ({ reason }) => {
-  if (reason === "install") {
+  if (
+    reason === "install" ||
+    reason === "update" ||
+    reason === "browser_update" ||
+    reason === "chrome_update"
+  ) {
     /* are any yt tabs open?*/
     let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
     await browser.storage.local.clear();

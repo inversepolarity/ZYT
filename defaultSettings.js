@@ -98,6 +98,11 @@ var defaultSettings = {
         classes: ["ytd-text-inline-expander.style-scope.ytd-watch-metadata"],
         show: true,
       },
+      merch: {
+        label: "Merchandise Box",
+        classes: ["ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy"],
+        show: true
+      }
     },
     Everywhere: {
       metadata: {
@@ -121,7 +126,7 @@ var defaultSettings = {
       },
       thumbnails: {
         label: "Video Thumbnails",
-        classes: [".thumbnail-container.style-scope.ytd-notification-renderer",".yt-core-image--loaded"],
+        classes: [".ytd-macro-markers-list-item-renderer>img",".thumbnail-container.style-scope.ytd-notification-renderer",".yt-core-image--loaded"],
         show: true,
       },
       resume: {
