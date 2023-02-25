@@ -8,7 +8,7 @@ for (i = 0; i < l; i++) {
   /* For each element, create a new DIV that will act as the selected item: */
   a = document.createElement("DIV");
   a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  a.innerText = selElmnt.options[selElmnt.selectedIndex].innerText;
   x[i].appendChild(a);
   /* For each element, create a new DIV that will contain the option list: */
   b = document.createElement("DIV");
@@ -17,7 +17,7 @@ for (i = 0; i < l; i++) {
     /* For each option in the original select element,
     create a new DIV that will act as an option item: */
     c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.innerText = selElmnt.options[j].innerText;
     c.addEventListener("click", function (e) {
       /* When an item is clicked, update the original select box,
         and the selected item: */
@@ -26,9 +26,9 @@ for (i = 0; i < l; i++) {
       sl = s.length;
       h = this.parentNode.previousSibling;
       for (i = 0; i < sl; i++) {
-        if (s.options[i].innerHTML == this.innerHTML) {
+        if (s.options[i].innerText == this.innerText) {
           s.selectedIndex = i;
-          h.innerHTML = this.innerHTML;
+          h.innerText = this.innerText;
           y = this.parentNode.getElementsByClassName("same-as-selected");
           yl = y.length;
           for (k = 0; k < yl; k++) {
@@ -50,7 +50,7 @@ for (i = 0; i < l; i++) {
     closeAllSelect(this);
     this.nextSibling.classList.toggle("select-hide");
     this.classList.toggle("select-arrow-active");
-    selectionChanged(e.target.innerHTML);
+    selectionChanged(e.target.innerText);
   });
 }
 

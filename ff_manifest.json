@@ -27,5 +27,5 @@
         "default_popup": "options/options.html"
     },
 
-    "permissions": ["storage", "tabs", "scripting", "activeTab"]
+    "permissions": ["storage", "tabs", "scripting"]
 }

@@ -1,5 +1,5 @@
 /*
-TODO: end-to-end testing 
+TODO: testing 
 TODO: rc 1.1.0
 */
 
@@ -39,6 +39,7 @@ function repopulatePopup(options, cp) {
                 </label>
              </div>`;
 
+        //TODO: web-ext wartns of potential security risk, find another way
         popup.insertAdjacentHTML("afterbegin", field);
 
         //add event listener
@@ -72,7 +73,7 @@ function repopulatePopup(options, cp) {
 }
 
 function setDropdownSelect(page) {
-  document.querySelector(".select-selected").innerHTML = page;
+  document.querySelector(".select-selected").innerText = page;
 }
 
 async function storeSettings(changed) {
