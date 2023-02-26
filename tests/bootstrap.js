@@ -5,10 +5,7 @@ async function bootstrap(options = {}) {
   const browser = await puppeteer.launch({
     headless: false,
     devtools,
-    args: [
-      "--disable-extensions-except=./ZenTube",
-      "--load-extension=./ZenTube"
-    ],
+    args: ["--disable-extensions-except=./src", "--load-extension=./src"],
     ...(slowMo && { slowMo })
   });
 
