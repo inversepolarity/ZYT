@@ -1,0 +1,24 @@
+{
+  "name": "zentube",
+  "version": "1.0.0",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+  "main": "background.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inversepolarity/ZenTube.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inversepolarity/ZenTube/issues"
+  },
+  "homepage": "https://github.com/inversepolarity/ZenTube#readme",
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "puppeteer": "^19.7.2"
+  }
+}
