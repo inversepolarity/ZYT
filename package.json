@@ -2,8 +2,9 @@
   "name": "zentube",
   "version": "1.0.0",
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
-  "main": "background.js",
   "scripts": {
+    "build":"web-ext build --source-dir=./src --overwrite-dest -i=promo/ safari/",
+    "build_safari":"xcrun safari-web-extension-converter  --project-location ./src/safari .",
     "test": "jest --detectOpenHandles"
   },
   "repository": {
