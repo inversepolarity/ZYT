@@ -2,6 +2,7 @@ const puppeteer = require("puppeteer");
 
 async function bootstrap(options = {}) {
   const { devtools = false, slowMo = false, appUrl } = options;
+
   const browser = await puppeteer.launch({
     headless: false,
     devtools,

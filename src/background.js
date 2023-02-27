@@ -24,4 +24,4 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
   }
 });
 
-chrome.runtime.setUninstallURL("https://evenzero.in");
+browser.runtime.setUninstallURL("https://evenzero.in");
