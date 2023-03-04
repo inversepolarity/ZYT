@@ -1,10 +1,13 @@
+// TODO: defaultSettings not imported
+// TODO: extPage element selection
+
 const { bootstrap } = require("./bootstrap");
 const { chrome } = require("jest-chrome");
 
 const { getNewBrowserTab, sleep } = require("./putils");
 
 const manifest = require("../src/manifest.json");
-const defaultSettings = require("../src/defaultSettings");
+const defaultSettings = require("../src/defaultSettings.js");
 
 describe("test suite for options popup", () => {
   let extPage, appPage, browser;
@@ -53,6 +56,15 @@ describe("test suite for options popup", () => {
   it("settings stored", async () => {
     const gettingStoredSettings = global.chrome.storage.local.get();
     expect(gettingStoredSettings).toBeTruthy();
+  });
+
+  it("repopulatePopup", async () => {
+    const length = await extPage.evaluate((selector) => {
+      return Array.from(document.querySelectorAll(selector));
+    }, "#popup");
+
+    console.log(length, defaultSettings);
+    expect(length).toBeTruthy();
   });
 
   afterAll(async () => {

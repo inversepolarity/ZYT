@@ -8,7 +8,6 @@ function repopulatePopup(options, cp) {
   if (!options) return;
 
   const popup = document.getElementById("popup");
-  const dropdown = document.getElementById("dropdown");
 
   //clear old fields
   while (popup.firstChild) {
@@ -16,7 +15,6 @@ function repopulatePopup(options, cp) {
   }
 
   //add new fields
-
   for (page of Object.keys(options)) {
     if (page === cp) {
       Object.keys(options[page]).forEach((item) => {
@@ -39,7 +37,7 @@ function repopulatePopup(options, cp) {
                 </label>
              </div>`;
 
-        //TODO: web-ext wartns of potential security risk, find another way
+        //TODO: web-ext warns of potential security risk, find another way
         popup.insertAdjacentHTML("afterbegin", field);
 
         //add event listener

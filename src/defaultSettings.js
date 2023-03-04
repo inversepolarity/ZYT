@@ -1,6 +1,5 @@
 /*
 TODO: css cleanup
-TODO: bug chatbox toggle issue
 */
 var defaultSettings = {
   currentPage: "Home",
