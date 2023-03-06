@@ -70,6 +70,7 @@ describe("test suite for options popup", () => {
   afterAll(async () => {
     await sleep(1000);
     extPage.close();
+    the;
     await sleep(1000);
     appPage.close();
     await sleep(1000);
