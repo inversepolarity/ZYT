@@ -50,7 +50,8 @@ async function injectBeauty() {
   }
 
   let css =
-    'a.yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail{background-color:#111;opacity:.88;box-shadow:0 10px 15px -3px rgba(0,0,0,.5);background-image:url("./backgrounds/topography.svg")}yt-formatted-string.style-scope.ytd-rich-grid-media{border:1px solid #222;background-color:#111;border-radius:5px;padding:5px;font-size:1em;color:gray}';
+    'a.yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail{background-color:#111;opacity:.88;box-shadow:0 10px 15px -3px rgba(0,0,0,.5);background-image:url("https://raw.githubusercontent.com/inversepolarity/ZenTube/main/src/backgrounds/topography.svg")}yt-formatted-string.style-scope.ytd-rich-grid-media{border:1px solid #222;background-color:#111;border-radius:5px;padding:5px;font-size:1em !important;color:gray !important}';
+
   let customStyles = document.createElement("style");
   customStyles.setAttribute("type", "text/css");
   customStyles.setAttribute("id", "zentubebeauty");
