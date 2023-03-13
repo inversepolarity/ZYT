@@ -185,7 +185,7 @@ input:checked + .slider:before {
 	border-radius: 50px;;
 }
 .ip:hover {
-	filter: invert(0%) sepia(0%) saturate(50%) hue-rotate(180deg) brightness(100%) contrast(150%);
+	filter: invert(0%) sepia(0%) saturate(50%) hue-rotate(180deg) brightness(150%) contrast(150%);
 	cursor: pointer;
 	background-color: #000;
 }
