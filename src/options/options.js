@@ -93,6 +93,7 @@ async function storeSettings(changed) {
         // TODO: BUG changedOptions undefined
         // REPLICATE: on reloading without any YT tab open, state is restored if YT is opened
         // BACKWARDS: does not happen on closing the "first" YT tab since install
+        // SOLUTION: disallow popup on extensions page
         changedOptions[currentPage][changed]["show"] = item.checked;
       }
     }

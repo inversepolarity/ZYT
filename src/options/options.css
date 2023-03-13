@@ -178,13 +178,18 @@ input:checked + .slider:before {
 	margin-top:-10px;
 }
 .ip {
+	background-color: #111;
 	filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(315deg) brightness(100%) contrast(90%);
 	margin: 5px;
 	margin-left: -2px;
+	border:1px solid #333;
+	border-radius: 50px;;
 }
 .ip:hover {
-	filter: invert(31%) sepia(75%) saturate(444%) hue-rotate(348deg) brightness(89%) contrast(150%);
+	filter: invert(0%) sepia(0%) saturate(50%) hue-rotate(0deg) brightness(100%) contrast(150%);
 	cursor: pointer;
+	border-radius: 50px;;
+	background-color: #000;
 }
 #brand {
 	color: #555;
