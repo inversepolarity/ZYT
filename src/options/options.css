@@ -53,6 +53,7 @@ label:hover {
 p {
 	color: lightgray;
 }
+
 /* Switch */
 .button-12 {
 	display: flex;
@@ -149,6 +150,7 @@ input:checked + .slider:before {
 	background-color: rgba(30, 30, 30, 0.1);
 	color:gray;
 }
+
 /* to color even children in parent-container with children of type div */
 #popup > div:nth-child(even) {
 	background-color: rgba(0, 0, 0, 0.1);
@@ -159,43 +161,43 @@ input:checked + .slider:before {
 	cursor: pointer;
 	color: red;
 }
+
+/* footer */
 .footer {
-	display: flex;
-	height: 15px;
-	justify-content: left;
-	align-items: left;
-	justify-items: center;
-	font-size: 0.8em;
-	font-style: italic;
+	height : 15px;
 }
-.footer_seal{
-	margin-top: -5px;
-}
+
 .footer_label {
 	display: flex;
 	flex-direction: column;
-	height:33px;
-	margin-top:-10px;
+	justify-content: left;
+	align-items: left;
+	font-size: 0.8em;
+	font-style: italic;
+	line-height: 0	;
 }
-.ip {
-	background-color: #111;
-	filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(315deg) brightness(100%) contrast(90%);
-	margin: 5px;
-	margin-left: -2px;
-	border-radius: 50px;;
-}
-.ip:hover {
-	filter: invert(0%) sepia(0%) saturate(50%) hue-rotate(180deg) brightness(150%) contrast(150%);
-	cursor: pointer;
-	background-color: #000;
-}
+
 #brand {
 	color: #555;
+	margin-top: -1px;
 }
+
 #version {
 	color: #555;
-	margin-top:-10px;
 }
+
+#brand:hover {
+	color: red;
+	margin-top: -1px;
+	cursor: pointer;
+}
+
+#version:hover {
+	color:  #3cff00;;
+	cursor: pointer;
+}
+
+
 /* Custom Select */
 .custom-select {
 	position: relative;
@@ -204,15 +206,19 @@ input:checked + .slider:before {
 	border: 1px solid rgba(124, 11, 9, 1);
 	border-radius:5px;
 }
+
 .custom-select select {
 	display: none;
 	/*hide original SELECT element: */
 }
+
 .select-selected {
 	background-color: rgba(124, 11, 9, 0.2);
 	border-radius:5px;
 }
+
 /* Style the arrow inside the select element: */
+
 .select-selected:after {
 	position: absolute;
 	content: "";
@@ -223,12 +229,16 @@ input:checked + .slider:before {
 	border: 6px solid transparent;
 	border-color: #fff transparent transparent transparent;
 }
+
 /* Point the arrow upwards when the select box is open (active): */
+
 .select-selected.select-arrow-active:after {
 	border-color: transparent transparent #fff transparent;
 	top: 7px;
 }
+
 /* style the items (options), including the selected item: */
+
 .select-items div,.select-selected {
 	color: #ffffff;
 	padding: 8px 16px;
@@ -236,7 +246,9 @@ input:checked + .slider:before {
 	*/
 	cursor: pointer;
 }
+
 /* Style items (options): */
+
 .select-items {
 	position: absolute;
 	background-color: rgba(124, 11, 9, 1);
@@ -247,13 +259,17 @@ input:checked + .slider:before {
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius:5px;
 }
+
 /* Hide the items when the select box is closed: */
+
 .select-hide {
 	display: none;
 }
+
 .select-items div:hover, .same-as-selected {
 	background-color: rgba(0, 0, 0, 0.2);
 }
+
 .unselectable{
 	-moz-user-select: none;
 	-webkit-user-select: none;

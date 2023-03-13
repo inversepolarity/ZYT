@@ -189,7 +189,7 @@ async function injectScript() {
 
   try {
     /* ip link */
-    let icon = document.getElementById("icon");
+    let icon = document.getElementById("brand");
     icon.addEventListener("click", () => {
       browser.tabs.create({ active: true, url: "https://ko-fi.com/evenzero" });
     });
@@ -197,6 +197,14 @@ async function injectScript() {
     /* version display*/
     let ver = document.getElementById("version");
     ver.innerText = "Ver: " + browser.runtime.getManifest().version;
+
+    /* version link*/
+    ver.addEventListener("click", () => {
+      browser.tabs.create({
+        active: true,
+        url: "https://github.com/inversepolarity/ZenTube"
+      });
+    });
 
     const gettingStoredSettings = await browser.storage.local.get();
 
