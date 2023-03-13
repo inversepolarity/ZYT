@@ -90,6 +90,9 @@ async function storeSettings(changed) {
 
     for (let item of checkboxes) {
       if (item.id === changed) {
+        // TODO: BUG changedOptions undefined
+        // REPLICATE: on reloading without any YT tab open, state is restored if YT is opened
+        // BACKWARDS: does not happen on closing the "first" YT tab since install
         changedOptions[currentPage][changed]["show"] = item.checked;
       }
     }
