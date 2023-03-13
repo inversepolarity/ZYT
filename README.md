@@ -13,7 +13,7 @@
 
 ### Rationale
 
-- Privacy runs both ways, draw the blinds on parts of YouTube that intrude upon your senses.
+- Privacy is a two-way street, draw the blinds on parts of YouTube that intrude upon your senses.
 - Make your Youtube experience less addictive. You are NOT the product, especially if the service is free.
 - Toggle features on/off based on your needs and boundaries. 
 - Participate in making YouTube a better product while engaging in a minium amount of electronic civil disobedience.

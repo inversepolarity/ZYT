@@ -2,6 +2,9 @@
    It is injected into all YT tabs at install and on popup open
 */
 
+// TODO: git hosted background
+// TODO: options
+
 if (typeof browser === "undefined") {
   var browser = chrome;
 }
