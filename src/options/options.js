@@ -4,12 +4,14 @@ TODO: rc 1.1.0
 */
 
 /* Popup handlers */
-function updateUI(restoredSettings) {
+async function updateUI(restoredSettings) {
   /* Update the options UI with the settings values retrieved from storage,
   or the default settings if the stored settings are empty. */
 
   if (!Object.keys(restoredSettings).length) {
-    // there's nothing in the local storage, create default popup
+    // there's nothing in the local storage
+    // create default popup and store default settings
+    await browser.storage.local.set(defaultSettings);
     const { options, currentPage } = defaultSettings;
     repopulatePopup(options, currentPage);
     setDropdownSelect(currentPage);
@@ -101,23 +103,13 @@ async function storeSettings(changed) {
 
   function getChangedOptions() {
     let changedOptions = newSettings.options;
+
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
 
-    console.log(
-      "🚀 ~ file: options.js:86 ~ getChangedOptions ~ checkboxes:",
-      checkboxes
-    );
-
-    if (!checkboxes) {
-      return;
-    }
+    if (!checkboxes) return;
 
     for (let item of checkboxes) {
       if (item.id === changed) {
-        // BUG: changedOptions undefined
-        // REPLICATE: on reloading without any YT tab open, state is restored if YT is opened
-        // BACKWARDS: does not happen on closing the "first" YT tab since install
-        // SOLUTION: disallow popup on extensions page
         changedOptions[currentPage][changed]["show"] = item.checked;
       }
     }

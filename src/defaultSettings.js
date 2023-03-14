@@ -1,6 +1,3 @@
-/*
-TODO: css cleanup
-*/
 var defaultSettings = {
   currentPage: "Home",
   options: {
