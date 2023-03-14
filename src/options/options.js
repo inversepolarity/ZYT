@@ -4,6 +4,23 @@ TODO: rc 1.1.0
 */
 
 /* Popup handlers */
+function updateUI(restoredSettings) {
+  /* Update the options UI with the settings values retrieved from storage,
+  or the default settings if the stored settings are empty. */
+
+  if (!Object.keys(restoredSettings).length) {
+    // there's nothing in the local storage, create default popup
+    const { options, currentPage } = defaultSettings;
+    repopulatePopup(options, currentPage);
+    setDropdownSelect(currentPage);
+  }
+
+  // set UI according to local storage
+  const { options, currentPage } = restoredSettings;
+  repopulatePopup(options, currentPage);
+  setDropdownSelect(currentPage);
+}
+
 function repopulatePopup(options, cp) {
   if (!options) return;
 
@@ -71,6 +88,8 @@ function repopulatePopup(options, cp) {
 }
 
 function setDropdownSelect(page) {
+  if (!page) return;
+
   document.querySelector(".select-selected").innerText = page;
 }
 
@@ -84,13 +103,18 @@ async function storeSettings(changed) {
     let changedOptions = newSettings.options;
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
 
+    console.log(
+      "🚀 ~ file: options.js:86 ~ getChangedOptions ~ checkboxes:",
+      checkboxes
+    );
+
     if (!checkboxes) {
       return;
     }
 
     for (let item of checkboxes) {
       if (item.id === changed) {
-        // TODO: BUG changedOptions undefined
+        // BUG: changedOptions undefined
         // REPLICATE: on reloading without any YT tab open, state is restored if YT is opened
         // BACKWARDS: does not happen on closing the "first" YT tab since install
         // SOLUTION: disallow popup on extensions page
@@ -106,23 +130,6 @@ async function storeSettings(changed) {
   newSettings.options = newOptions;
   await browser.storage.local.set(newSettings);
   return newSettings;
-}
-
-function updateUI(restoredSettings) {
-  /* Update the options UI with the settings values retrieved from storage,
-  or the default settings if the stored settings are empty. */
-
-  if (!Object.keys(restoredSettings).length) {
-    // there's nothing in the local storage, create default popup
-    const { options, currentPage } = defaultSettings;
-    repopulatePopup(options, currentPage);
-    setDropdownSelect(currentPage);
-  }
-
-  // set UI according to local storage
-  const { options, currentPage } = restoredSettings;
-  repopulatePopup(options, currentPage);
-  setDropdownSelect(currentPage);
 }
 
 async function selectionChanged(value) {
