@@ -1,13 +1,9 @@
-// TODO: defaultSettings not imported
-// TODO: extPage element selection
-
 const { bootstrap } = require("./bootstrap");
 const { chrome } = require("jest-chrome");
 
-const { getNewBrowserTab, sleep } = require("./putils");
+const { defaultSettings, getNewBrowserTab, sleep } = require("./putils");
 
 const manifest = require("../src/manifest.json");
-const defaultSettings = require("../src/defaultSettings.js");
 
 describe("test suite for options popup", () => {
   let extPage, appPage, browser;
@@ -31,13 +27,12 @@ describe("test suite for options popup", () => {
   it("manifest version", async () => {
     const ver = await extPage.$("#version");
     const verText = await ver.evaluate((e) => e.innerText);
-
     expect(verText).toEqual("Ver: " + chrome.runtime.getManifest().version);
     expect(chrome.runtime.getManifest).toBeCalled();
   });
 
   it("ip link event listener", async () => {
-    await extPage.click("#icon");
+    await extPage.evaluate(() => document.querySelector("#brand").click());
     const donationPage = await getNewBrowserTab(browser);
     expect(donationPage.url()).toBe("https://ko-fi.com/evenzero");
     donationPage.close();
@@ -55,22 +50,28 @@ describe("test suite for options popup", () => {
 
   it("settings stored", async () => {
     const gettingStoredSettings = global.chrome.storage.local.get();
+    expect(Object.keys(defaultSettings).length).toBeTruthy();
+    expect(Object.keys(gettingStoredSettings).length).toBeTruthy();
     expect(gettingStoredSettings).toBeTruthy();
+    expect(gettingStoredSettings).toEqual(defaultSettings);
   });
 
   it("repopulatePopup", async () => {
-    const length = await extPage.evaluate((selector) => {
-      return Array.from(document.querySelectorAll(selector));
-    }, "#popup");
+    // Popup populated
+    let popupChildren = await extPage.evaluate(() => {
+      return document.querySelector("#popup").children.length;
+    });
 
-    console.log(length, defaultSettings);
-    expect(length).toBeTruthy();
+    expect(popupChildren).toEqual(
+      Object.keys(defaultSettings.options[defaultSettings.currentPage]).length
+    );
+
+    // Popup event listeners added
   });
 
   afterAll(async () => {
     await sleep(1000);
     extPage.close();
-    the;
     await sleep(1000);
     appPage.close();
     await sleep(1000);

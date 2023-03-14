@@ -31,3 +31,5 @@ async function bootstrap(options = {}) {
     extPage
   };
 }
+
+module.exports = { bootstrap };
