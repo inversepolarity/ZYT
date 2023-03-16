@@ -13,6 +13,17 @@ describe("test suite for options popup", () => {
     extPage = context.extPage;
     appPage = context.appPage;
     browser = context.browser;
+
+    /* Mock Implementations */
+
+    const injectScript = () => jest.fn(() => {});
+    const sendMessageToTabs = (tabs, msg) => jest.fn(() => {});
+    const messagePageScript = () => jest.fn(() => {});
+
+    const selectionChanged = () => jest.fn(() => {});
+    const storeSettings = () => jest.fn(() => {});
+    const setDropdownSelect = () => jest.fn(() => {});
+
     chrome.runtime.getManifest.mockImplementation(() => manifest);
     global.chrome = {
       storage: {

@@ -124,6 +124,7 @@ p {
 	background-color: #3cff00;
 	border-radius: 30px;
 	transform: translateX(-30px);
+	opacity: 0.85;
 	/*translateX(-(w-h))*/
 	transition: 0.1s;
 }
@@ -134,7 +135,7 @@ input:checked + .slider:before {
 .switch200 .slider:before {
 	/* width: 200%;
 	*/
-	transform: translateX(-42px);
+	transform: translateX(-30px);
 	/*translateX(-(w-h))*/
 }
 .switch200 input:checked + .slider:before {
