@@ -121,7 +121,7 @@ p {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-color: #3cff00;
+	background-color: #777;
 	border-radius: 30px;
 	transform: translateX(-30px);
 	opacity: 0.85;
