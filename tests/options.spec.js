@@ -16,13 +16,13 @@ describe("test suite for options popup", () => {
 
     /* Mock Implementations */
 
-    const injectScript = () => jest.fn(() => {});
-    const sendMessageToTabs = (tabs, msg) => jest.fn(() => {});
-    const messagePageScript = () => jest.fn(() => {});
+    const injectScript = () => jest.fn();
+    const sendMessageToTabs = (tabs, msg) => jest.fn();
+    const messagePageScript = () => jest.fn();
 
-    const selectionChanged = () => jest.fn(() => {});
-    const storeSettings = () => jest.fn(() => {});
-    const setDropdownSelect = () => jest.fn(() => {});
+    const selectionChanged = () => jest.fn();
+    const storeSettings = () => jest.fn();
+    const setDropdownSelect = () => jest.fn();
 
     chrome.runtime.getManifest.mockImplementation(() => manifest);
     global.chrome = {
@@ -76,8 +76,14 @@ describe("test suite for options popup", () => {
     expect(popupChildren).toEqual(
       Object.keys(defaultSettings.options[defaultSettings.currentPage]).length
     );
+  });
 
-    // Popup event listeners added
+  it("setDropdownSelect", async () => {
+    let dropdownLabel = await extPage.evaluate(() => {
+      return document.querySelector(".select-selected").innerText;
+    });
+
+    expect(dropdownLabel).toEqual(defaultSettings.currentPage);
   });
 
   afterAll(async () => {
