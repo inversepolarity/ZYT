@@ -86,6 +86,9 @@ describe("test suite for options popup", () => {
     expect(dropdownLabel).toEqual(defaultSettings.currentPage);
   });
 
+  // TODO selectionChanged
+  // TODO TEST DROPDOWN ENTRIES
+  // TODO TEST EACH BUTTON FOR EACH DROPDOWN SELECTION
   afterAll(async () => {
     await sleep(1000);
     extPage.close();

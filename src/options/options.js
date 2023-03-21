@@ -91,7 +91,6 @@ function repopulatePopup(options, cp) {
 
 function setDropdownSelect(page) {
   if (!page) return;
-
   document.querySelector(".select-selected").innerText = page;
 }
 
