@@ -6,7 +6,7 @@
 
 ### Installation
 
-[![Safari](https://img.shields.io/badge/Safari-f0f0f0?style=for-the-badge&logo=Safari&logoColor=black)](https://github.com/inversepolarity/ZenTube/blob/main/src/safari/build/sa_zentube-latest.zip)
+[![Safari](https://img.shields.io/badge/Safari-f0f0f0?style=for-the-badge&logo=Safari&logoColor=black)](https://github.com/inversepolarity/ZenTube/raw/main/src/safari/build/sa_zentube-latest.zip)
 [![Firefox](https://img.shields.io/badge/Mozilla_Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/zentube/) [![Chrome](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white)](https://bit.ly/3S3dTvT) [![Edge](https://img.shields.io/badge/Microsoft_Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)](https://bit.ly/3S3dTvT) [![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=Brave&logoColor=white)](https://bit.ly/3S3dTvT)
 
 ---
