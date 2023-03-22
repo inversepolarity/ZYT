@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>files</key>
+	<dict>
+		<key>Resources/LICENSE</key>
+		<data>
+		maCMA0pEop89XIHAZxF52/NVQAk=
+		</data>
+		<key>Resources/background.js</key>
+		<data>
+		leKMbb6QcVUme4s9N/2G2L6EQVQ=
+		</data>
+		<key>Resources/backgrounds/backgrounds.css</key>
+		<data>
+		DEUUWI9kpNshF0mCoRssPHVxJgs=
+		</data>
+		<key>Resources/backgrounds/topography.svg</key>
+		<data>
+		oeXZiNPrFTjVsqkrTPuoC00sK9Q=
+		</data>
+		<key>Resources/browser-polyfill.js</key>
+		<data>
+		Dtg6tK/yqHufc/5NJRWw3KZeyZg=
+		</data>
+		<key>Resources/ch_manifest.json</key>
+		<data>
+		L2dF3HdjUAxF7c+FkaMauvbWtco=
+		</data>
+		<key>Resources/contentscript.js</key>
+		<data>
+		iEXz7HI8CFNPkDhPlBdyp2UT6o8=
+		</data>
+		<key>Resources/defaultSettings.js</key>
+		<data>
+		Bu9Yh87+rqhNDYZGkgocixCQXM0=
+		</data>
+		<key>Resources/ff_manifest.json</key>
+		<data>
+		2bLOOCikgXx7RP+sNfaHFi9xSt8=
+		</data>
+		<key>Resources/icons/favicon2_144.png</key>
+		<data>
+		SizKr71mpb9exi0VjFkIiZiYXfc=
+		</data>
+		<key>Resources/icons/favicon3_144.png</key>
+		<data>
+		dIriw7pClzlMPw6iYSfSuCbI6cs=
+		</data>
+		<key>Resources/icons/favicon4_128.png</key>
+		<data>
+		SVfLsz2izjQDxL/M7mtAqGIgsHo=
+		</data>
+		<key>Resources/icons/favicon4_144.png</key>
+		<data>
+		bKHB5b9P6vLvyWjMOp6ePl/5rWg=
+		</data>
+		<key>Resources/icons/favicon4_64.png</key>
+		<data>
+		nppbqQg+e7Ff4Yn4qj2ASWu/f1w=
+		</data>
+		<key>Resources/icons/favicon_144.png</key>
+		<data>
+		Iv7eWzeUuCCRHzHemXEAnHSYvN0=
+		</data>
+		<key>Resources/icons/logo.png</key>
+		<data>
+		09Xv+sJfJv5hByYpkMLm4X66y84=
+		</data>
+		<key>Resources/icons/logo2.png</key>
+		<data>
+		ED2MYZVJKmQm6yTLRZd3Z1l4nc4=
+		</data>
+		<key>Resources/icons/off.svg</key>
+		<data>
+		9qzRW54x+usEruYEVayhIJeG09g=
+		</data>
+		<key>Resources/icons/on.svg</key>
+		<data>
+		WkSuFvwvUeCYf8og2kpknhgHjoI=
+		</data>
+		<key>Resources/manifest.json</key>
+		<data>
+		Bhvfbye9ujyhdujAnjbUQxGq+uE=
+		</data>
+		<key>Resources/options/options.css</key>
+		<data>
+		4oJLO5/hEq0EP2E326bDWOcNIVc=
+		</data>
+		<key>Resources/options/options.html</key>
+		<data>
+		IgwQsAwdfb40KIA1NFMdBc3SG9Q=
+		</data>
+		<key>Resources/options/options.js</key>
+		<data>
+		iiVXRA0JvRT/YBAodXHlYZvr8RY=
+		</data>
+		<key>Resources/options/select.js</key>
+		<data>
+		0SARxWZSyC0G9vKDlzAzLuXvqMU=
+		</data>
+		<key>Resources/promo/chrome.png</key>
+		<data>
+		d2ERKabuZaxnaxO+JU4DLgCTKLw=
+		</data>
+		<key>Resources/promo/firefox.png</key>
+		<data>
+		T1lv4zXMsrh40uCAPGhEqT6PZ6Q=
+		</data>
+		<key>Resources/promo/safari.png</key>
+		<data>
+		78avwhdL+r/DcljNdD9cpdM+Z/Q=
+		</data>
+		<key>Resources/promo/zentube.png</key>
+		<data>
+		wwtMChDY3Z9ZXJzsctRXzs24oPk=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AccentColor.colorset/Contents.json</key>
+		<data>
+		3XbJw7ti0kGBxp26BbHqxkOSqaA=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/Contents.json</key>
+		<data>
+		lutlTuwECXhUYM/WmYiIOmn2+3Y=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@1x.png</key>
+		<data>
+		WvUW5AzKUYDCRVhG8q/CMjtJbW4=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@2x.png</key>
+		<data>
+		4Ezy/O3bvXggj3ZyobSQW+vBgeU=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@1x.png</key>
+		<data>
+		AY5zhKBBf771NTvrZYvEUY3H+fg=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@2x.png</key>
+		<data>
+		z/p/hutaXdAvXzkUk+/E/gyQl3I=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@1x.png</key>
+		<data>
+		4Ezy/O3bvXggj3ZyobSQW+vBgeU=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@2x.png</key>
+		<data>
+		iMcAWFR6vdRdhSrxQRnf7NE3BVI=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@1x.png</key>
+		<data>
+		z/p/hutaXdAvXzkUk+/E/gyQl3I=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@2x.png</key>
+		<data>
+		/mAeGj4evnKNKalj/M98v9lddfc=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@1x.png</key>
+		<data>
+		iMcAWFR6vdRdhSrxQRnf7NE3BVI=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@2x.png</key>
+		<data>
+		GB6PYNEXGIImXoUEAzgAFyhVvPE=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/universal-icon-1024@1x.png</key>
+		<data>
+		IvDZQspZjJ8W+jKAfFSdaN66lrs=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/Contents.json</key>
+		<data>
+		OsxTSdeF0zGUdTl13dMC26vX4YM=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/LargeIcon.imageset/Contents.json</key>
+		<data>
+		PoSGzm08l8Z4GL2LuJp/vcaimhA=
+		</data>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/LargeIcon.imageset/favicon4_144.png</key>
+		<data>
+		bKHB5b9P6vLvyWjMOp6ePl/5rWg=
+		</data>
+		<key>Resources/safari/Shared (App)/Base.lproj/Main.html</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gebwA4GQVHKFsdDPfXomxIZ26v0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/Shared (App)/Resources/Icon.png</key>
+		<data>
+		bKHB5b9P6vLvyWjMOp6ePl/5rWg=
+		</data>
+		<key>Resources/safari/Shared (App)/Resources/Script.js</key>
+		<data>
+		bwjyxLmmIIuatXmcpBZy3jTUKHE=
+		</data>
+		<key>Resources/safari/Shared (App)/Resources/Style.css</key>
+		<data>
+		jmfSY7ip+LLQdF7ltwtWtMOUYWY=
+		</data>
+		<key>Resources/safari/Shared (App)/ViewController.swift</key>
+		<data>
+		rayjT7BY8PNcR+Mrsr7nwiXkrEg=
+		</data>
+		<key>Resources/safari/Shared (Extension)/SafariWebExtensionHandler.swift</key>
+		<data>
+		uYSLP+rUSIOAcMXpi4NUga9YdBs=
+		</data>
+		<key>Resources/safari/ZenTube.xcodeproj/project.pbxproj</key>
+		<data>
+		pXcW5ei1ltD5r41QLdXOgbfmf6Q=
+		</data>
+		<key>Resources/safari/ZenTube.xcodeproj/project.xcworkspace/contents.xcworkspacedata</key>
+		<data>
+		hCQ4SPVLDFmD4e0m3vtB0mLOE1Q=
+		</data>
+		<key>Resources/safari/ZenTube.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist</key>
+		<data>
+		31/nObizq2nPGjKoiBxIoWYuA0A=
+		</data>
+		<key>Resources/safari/ZenTube.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/UserInterfaceState.xcuserstate</key>
+		<data>
+		A/7QgIwM+25JNF7EwxUAWhEvy8M=
+		</data>
+		<key>Resources/safari/ZenTube.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist</key>
+		<data>
+		3g12JuOKq6Xl/7KAvAllvSPfbuM=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AccentColor.colorset/Contents.json</key>
+		<data>
+		3XbJw7ti0kGBxp26BbHqxkOSqaA=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/Contents.json</key>
+		<data>
+		lutlTuwECXhUYM/WmYiIOmn2+3Y=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@1x.png</key>
+		<data>
+		MUaZNqWsAeI+lTMGg7Zt/KFaTiE=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@2x.png</key>
+		<data>
+		JXxEltzwEGI7tXFo/VSSqXAdWPc=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@1x.png</key>
+		<data>
+		AY5zhKBBf771NTvrZYvEUY3H+fg=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@2x.png</key>
+		<data>
+		Hnz1jPytv+kV8lPISp6MOkwCsJQ=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@1x.png</key>
+		<data>
+		JXxEltzwEGI7tXFo/VSSqXAdWPc=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@2x.png</key>
+		<data>
+		JrgvdP4PcDlJiuC+DqlVZgnpCUs=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@1x.png</key>
+		<data>
+		Hnz1jPytv+kV8lPISp6MOkwCsJQ=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@2x.png</key>
+		<data>
+		/mAeGj4evnKNKalj/M98v9lddfc=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@1x.png</key>
+		<data>
+		JrgvdP4PcDlJiuC+DqlVZgnpCUs=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@2x.png</key>
+		<data>
+		QLc8KCwrkA8xDq2OLKIgqMQPQPs=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/universal-icon-1024@1x.png</key>
+		<data>
+		IvDZQspZjJ8W+jKAfFSdaN66lrs=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/Contents.json</key>
+		<data>
+		OsxTSdeF0zGUdTl13dMC26vX4YM=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/LargeIcon.imageset/Contents.json</key>
+		<data>
+		PoSGzm08l8Z4GL2LuJp/vcaimhA=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/LargeIcon.imageset/favicon4_144.png</key>
+		<data>
+		bKHB5b9P6vLvyWjMOp6ePl/5rWg=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Base.lproj/Main.html</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gebwA4GQVHKFsdDPfXomxIZ26v0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Resources/Icon.png</key>
+		<data>
+		bKHB5b9P6vLvyWjMOp6ePl/5rWg=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Resources/Script.js</key>
+		<data>
+		bwjyxLmmIIuatXmcpBZy3jTUKHE=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/Resources/Style.css</key>
+		<data>
+		jmfSY7ip+LLQdF7ltwtWtMOUYWY=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (App)/ViewController.swift</key>
+		<data>
+		EuyoLTYS6/rtWXuWi3Fdf0ISjo4=
+		</data>
+		<key>Resources/safari/ZenTube/Shared (Extension)/SafariWebExtensionHandler.swift</key>
+		<data>
+		u0H7+9bUSmlZGlDDu8XVm55V4lU=
+		</data>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.pbxproj</key>
+		<data>
+		8uFV+AL1Ro+HlqFCTU//wn5W9Zo=
+		</data>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.xcworkspace/contents.xcworkspacedata</key>
+		<data>
+		hCQ4SPVLDFmD4e0m3vtB0mLOE1Q=
+		</data>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist</key>
+		<data>
+		31/nObizq2nPGjKoiBxIoWYuA0A=
+		</data>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/UserInterfaceState.xcuserstate</key>
+		<data>
+		AcLDtvyfCQ+jMK1A3WKzl/xQ2nQ=
+		</data>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist</key>
+		<data>
+		3g12JuOKq6Xl/7KAvAllvSPfbuM=
+		</data>
+		<key>Resources/safari/ZenTube/iOS (App)/AppDelegate.swift</key>
+		<data>
+		yzJWBe1ff9Tkpf/znVUy5+8J6TM=
+		</data>
+		<key>Resources/safari/ZenTube/iOS (App)/Base.lproj/LaunchScreen.storyboard</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			iVxgcvjl3kv/glTEBM1XBiQL4Tc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			G27MuCdyKcJcDd5RhsML7nj8HaU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/Info.plist</key>
+		<data>
+		U7zNA/nSyv5YeTkdFcBWZGTNzC4=
+		</data>
+		<key>Resources/safari/ZenTube/iOS (App)/SceneDelegate.swift</key>
+		<data>
+		SqfZlE3rMff76fsMe4anFfKyrJY=
+		</data>
+		<key>Resources/safari/ZenTube/iOS (Extension)/Info.plist</key>
+		<data>
+		mIWs6Z1nbEKBp4TeDw2PtpkAWZw=
+		</data>
+		<key>Resources/safari/ZenTube/macOS (App)/AppDelegate.swift</key>
+		<data>
+		HEG3qM0OZ4NrNTi2NtvtUYS/OHk=
+		</data>
+		<key>Resources/safari/ZenTube/macOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dbqqJNyQctqvuHnmNfN+TpxzcGQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (App)/Info.plist</key>
+		<data>
+		gvkGjuwwuOglZxw28Y6KN8SDjTk=
+		</data>
+		<key>Resources/safari/ZenTube/macOS (App)/ZenTube.entitlements</key>
+		<data>
+		byrwFoSGILyY2OxR/30znzAnjKI=
+		</data>
+		<key>Resources/safari/ZenTube/macOS (Extension)/Info.plist</key>
+		<data>
+		mIWs6Z1nbEKBp4TeDw2PtpkAWZw=
+		</data>
+		<key>Resources/safari/ZenTube/macOS (Extension)/ZenTube.entitlements</key>
+		<data>
+		SGapO09ZoMRtzKRHqDoV1HqucP0=
+		</data>
+		<key>Resources/safari/build/sa_zentube-latest.zip</key>
+		<data>
+		oRc1B5oB6MIXo6c8SBpgogS6PvY=
+		</data>
+		<key>Resources/safari/iOS (App)/AppDelegate.swift</key>
+		<data>
+		dTvhq6eYxXklBpHbcMOQkNKfJkU=
+		</data>
+		<key>Resources/safari/iOS (App)/Base.lproj/LaunchScreen.storyboard</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			iVxgcvjl3kv/glTEBM1XBiQL4Tc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/iOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			G27MuCdyKcJcDd5RhsML7nj8HaU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/iOS (App)/Info.plist</key>
+		<data>
+		JpZDsuZDc1UpC7ZyLjl11FDSnhA=
+		</data>
+		<key>Resources/safari/iOS (App)/SceneDelegate.swift</key>
+		<data>
+		tGpNrCS8fA0FUybkfe9FCS0MIcM=
+		</data>
+		<key>Resources/safari/iOS (Extension)/Info.plist</key>
+		<data>
+		mIWs6Z1nbEKBp4TeDw2PtpkAWZw=
+		</data>
+		<key>Resources/safari/macOS (App)/AppDelegate.swift</key>
+		<data>
+		1NoXWgHGGpBZ0W0JKrYNkWtLYNU=
+		</data>
+		<key>Resources/safari/macOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dbqqJNyQctqvuHnmNfN+TpxzcGQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/macOS (App)/Info.plist</key>
+		<data>
+		wAOp4vGhar91IDLb+hzdTzFgRuM=
+		</data>
+		<key>Resources/safari/macOS (App)/ZenTube.entitlements</key>
+		<data>
+		byrwFoSGILyY2OxR/30znzAnjKI=
+		</data>
+		<key>Resources/safari/macOS (Extension)/Info.plist</key>
+		<data>
+		mIWs6Z1nbEKBp4TeDw2PtpkAWZw=
+		</data>
+		<key>Resources/safari/macOS (Extension)/ZenTube.entitlements</key>
+		<data>
+		SGapO09ZoMRtzKRHqDoV1HqucP0=
+		</data>
+		<key>Resources/web-ext-artifacts/ch-zentube-1.1.1.zip</key>
+		<data>
+		ge9GEVTwssK2WgPkjJ0kHH5Y2VY=
+		</data>
+		<key>Resources/web-ext-artifacts/ff-zentube-1.1.1.zip</key>
+		<data>
+		PVmeQtOfKfQrT8a54+FIXcF/2AI=
+		</data>
+	</dict>
+	<key>files2</key>
+	<dict>
+		<key>Resources/LICENSE</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/inWeu9Cf1jTfGODONv7pbT41ctqASOGeZs0s1xiaD4=
+			</data>
+		</dict>
+		<key>Resources/background.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			imW4PQyAwFUc6Z+oaokPpR2mlhEshil9EvOexM16sCU=
+			</data>
+		</dict>
+		<key>Resources/backgrounds/backgrounds.css</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eO7bnB8yKi3OQFDH+mLiLQc7H4QRpILMEpxxkZL7TF8=
+			</data>
+		</dict>
+		<key>Resources/backgrounds/topography.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			r2R1pyrYUbhypHFi7cyDj7K+89L8dlGTL31h3KKPN9s=
+			</data>
+		</dict>
+		<key>Resources/browser-polyfill.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9S739IV3f7UJQHFwQenMuJlyiEGYPRNJrToA0GD+bi8=
+			</data>
+		</dict>
+		<key>Resources/ch_manifest.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aCXxQkyHFVc73lBJlPzRQpFacIDNzQXthSa71TuScz8=
+			</data>
+		</dict>
+		<key>Resources/contentscript.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			U6TXzY2MS2jTG4sEgH0UG6IhF5i6A91YZ8aOAxiZcbI=
+			</data>
+		</dict>
+		<key>Resources/defaultSettings.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			o89zkflYvVXtgnWG0Huv44VxP52KW+yd/LZpqiK2+Js=
+			</data>
+		</dict>
+		<key>Resources/ff_manifest.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vXNRkk52wufJnZ59d4GxdSv8zwhouj9QWkktbP68IFY=
+			</data>
+		</dict>
+		<key>Resources/icons/favicon2_144.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bnqq4z2P14fVxhA8ksBnPe22gmNXJeWyM5e6Vu3FoSo=
+			</data>
+		</dict>
+		<key>Resources/icons/favicon3_144.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nyPeWia2Wh/RAHlVfaxU8Q3mPB7OXVL+FWw0L1hj7ug=
+			</data>
+		</dict>
+		<key>Resources/icons/favicon4_128.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0aE6QS+QDUdsJvp5Rjgoaf3jYvLS2tHsP07Y2hJYEVM=
+			</data>
+		</dict>
+		<key>Resources/icons/favicon4_144.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9aMdoXhSZ1t4ZnZ0Jn1Qr7m+StHIPzCVQoVHdLfIwew=
+			</data>
+		</dict>
+		<key>Resources/icons/favicon4_64.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			a3BZVAZV8EUWrBMEcMIy2lZRq6KL02UxhLjmRNSHro8=
+			</data>
+		</dict>
+		<key>Resources/icons/favicon_144.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ru8K/GqhlhJ/nEGt8f0zsXw5Hj/1Vah7HUtMhbPdraU=
+			</data>
+		</dict>
+		<key>Resources/icons/logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oD6bp58McaEan5MRhL9lk9AsPCXj7ER6UNBq2yMllbo=
+			</data>
+		</dict>
+		<key>Resources/icons/logo2.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ruc9it9DFkF/hrwo25jI+u3T+OyPYhtV9IvpihODKgg=
+			</data>
+		</dict>
+		<key>Resources/icons/off.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ypEWUeYSiJi8YRDECiVcn3YyGgBLaSnlno38ouhUs4A=
+			</data>
+		</dict>
+		<key>Resources/icons/on.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/XHQk+L+/Fig6t+GK5YHKMaBP59ImADeaONZMuAaGE4=
+			</data>
+		</dict>
+		<key>Resources/manifest.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tu3xg4rBIai5gALPKMQpFcNwVerdGlOpI80aXm6uGUI=
+			</data>
+		</dict>
+		<key>Resources/options/options.css</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OoZghMupLc5PIWYBRFek7/ub5zVACyniwaItMUtnn3M=
+			</data>
+		</dict>
+		<key>Resources/options/options.html</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vCk604bxW8FD56Ndg/UKlI67UJFC71TW6JH7NfvndpE=
+			</data>
+		</dict>
+		<key>Resources/options/options.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cXFA1pYlvNXCGhn1a0rDhMBVFqbVSngE/4dauBu/Jy4=
+			</data>
+		</dict>
+		<key>Resources/options/select.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sDmHCVFMFsykxUKBEwlGHj81TE1zu9Zz4P6QDzJo1ck=
+			</data>
+		</dict>
+		<key>Resources/promo/chrome.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ELESngRbI3sP2lQfie50wS683BWAh/l4uxP1cbd8Wus=
+			</data>
+		</dict>
+		<key>Resources/promo/firefox.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l9VNQkflK+6zX4Tu+Gw7sKbEUOueIIyS1kwX8Uq5evA=
+			</data>
+		</dict>
+		<key>Resources/promo/safari.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RSfA3gIoGL0uacwjPFBVwFlaSqi6fYgSJRl7HFsEAUg=
+			</data>
+		</dict>
+		<key>Resources/promo/zentube.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8bYrIOhvmC2WM6xvHRaM5xkY1gtLlg0lRC+xjRKa//s=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AccentColor.colorset/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mvZQhvowtJJS+uGhIlcxaR3nlPd3WvdNcb7+tQfRK3w=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iyRUq8A1X0Iku/ia/fw5Nf1rAzBC9YxKDrCiT362Y9A=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VHbBfioPSv6z3Pk0mmAwxw7OkvcqvgMNv5S63x5obqE=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XteN5qCW/Im0CWZhOXA/hTEJqDZ3ahWoJoO7PYjZAfY=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tmaatoIJKWr+rFAf4eiRAUFI+zxhhqxEVvWQNxuIsJk=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dIZtVayGVrqNKb7UgGSlPuO1U7mXCKB7wNYqRC501SY=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XteN5qCW/Im0CWZhOXA/hTEJqDZ3ahWoJoO7PYjZAfY=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FWqvTdrU3/Vb5cfHxXDjKrUx2gdn9Fe2ldXn9LxTkvw=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dIZtVayGVrqNKb7UgGSlPuO1U7mXCKB7wNYqRC501SY=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AlJQY63u3IGuXmSgDhLHeeeq0Ou7p1cib1yYip2Ttj4=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FWqvTdrU3/Vb5cfHxXDjKrUx2gdn9Fe2ldXn9LxTkvw=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8k9yHV8wcqu0RJ+AK4Xk/H57kKzchMpRmUenA8njaFw=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/AppIcon.appiconset/universal-icon-1024@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PDi88l2tAuty2AyVCI+805Bd63HYr1MVZDn07rRJNtU=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			D9Sbo8NYXHCWeOAEaoIcPGBoXscGNyDTDTo0SL46IIs=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/LargeIcon.imageset/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KR2qN6gPkcLNlr68oI/olDJiZiOb8V9A7qhJZAgT9fc=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Assets.xcassets/LargeIcon.imageset/favicon4_144.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9aMdoXhSZ1t4ZnZ0Jn1Qr7m+StHIPzCVQoVHdLfIwew=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Base.lproj/Main.html</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lbYhUO7eUzt7AVjsxfA7SVly/7hqNkQt0HFZgBl39bU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/Shared (App)/Resources/Icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9aMdoXhSZ1t4ZnZ0Jn1Qr7m+StHIPzCVQoVHdLfIwew=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Resources/Script.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hhYq+ZmYmPOp0pxJxhfJygaDsqxI2qie1gpZumLp8bg=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/Resources/Style.css</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Iyn8tL1LhG2ZHCWV/lFJ1fIbDsTt4KIsonLsJKP/rUs=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (App)/ViewController.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			o0TowmeYBzZK0f+xCYS1dfnOm4F633lFma5z2DZ+TeI=
+			</data>
+		</dict>
+		<key>Resources/safari/Shared (Extension)/SafariWebExtensionHandler.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fdfZgvwLQpFRUU+nQ//49Kblvz7HvcEI5JJbnXDbw0Q=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube.xcodeproj/project.pbxproj</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			65tuWI/ytCeLDr+VFGcJJErm7y3Ch57SGwGnvHNHHWM=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube.xcodeproj/project.xcworkspace/contents.xcworkspacedata</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fzsAtcP9tFJC17h+HlxOJdH6gSmhbJQpXsxOjqIjXF8=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			36D5u4W5XMupxoEa2t+MtAf7XVIIjonbg+vDCOxEhUI=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/UserInterfaceState.xcuserstate</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6mTdHUNBkpBeD5Rxoc2mD1GosSA09eT6uEgSL0l3WOI=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4+rp5yoi3EmX611YVoSyRr0vxqYt2Hn4mCucwJwcbmY=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AccentColor.colorset/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mvZQhvowtJJS+uGhIlcxaR3nlPd3WvdNcb7+tQfRK3w=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iyRUq8A1X0Iku/ia/fw5Nf1rAzBC9YxKDrCiT362Y9A=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ahrEMTT4y7R5tDdd2NkiSRgiDsnmqsWeho2E9aJ/Y5s=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-128@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AwD/+LOYDFQaZHmL3bwaIKfGHIfWOdofz5uEMlRhoWM=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tmaatoIJKWr+rFAf4eiRAUFI+zxhhqxEVvWQNxuIsJk=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-16@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fOZE5WwvL2n18u/8sYtgJLDG0wFVwLPVDaSw5kvfras=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AwD/+LOYDFQaZHmL3bwaIKfGHIfWOdofz5uEMlRhoWM=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-256@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NpvrgVxDe2ypkgTnrN4QhVlar8Sajk26aty9xCejsxY=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fOZE5WwvL2n18u/8sYtgJLDG0wFVwLPVDaSw5kvfras=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-32@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AlJQY63u3IGuXmSgDhLHeeeq0Ou7p1cib1yYip2Ttj4=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NpvrgVxDe2ypkgTnrN4QhVlar8Sajk26aty9xCejsxY=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/mac-icon-512@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uDu8FdX04phSgdIsKiQcoOND0xeRe7BHFC7t1M2EmHY=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/AppIcon.appiconset/universal-icon-1024@1x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PDi88l2tAuty2AyVCI+805Bd63HYr1MVZDn07rRJNtU=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			D9Sbo8NYXHCWeOAEaoIcPGBoXscGNyDTDTo0SL46IIs=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/LargeIcon.imageset/Contents.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KR2qN6gPkcLNlr68oI/olDJiZiOb8V9A7qhJZAgT9fc=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Assets.xcassets/LargeIcon.imageset/favicon4_144.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9aMdoXhSZ1t4ZnZ0Jn1Qr7m+StHIPzCVQoVHdLfIwew=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Base.lproj/Main.html</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lbYhUO7eUzt7AVjsxfA7SVly/7hqNkQt0HFZgBl39bU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Resources/Icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9aMdoXhSZ1t4ZnZ0Jn1Qr7m+StHIPzCVQoVHdLfIwew=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Resources/Script.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hhYq+ZmYmPOp0pxJxhfJygaDsqxI2qie1gpZumLp8bg=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/Resources/Style.css</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Iyn8tL1LhG2ZHCWV/lFJ1fIbDsTt4KIsonLsJKP/rUs=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (App)/ViewController.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1LJnxAj0mKHrRUUalzpNiTUBxeeg+wRUAN+dvye85Y8=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/Shared (Extension)/SafariWebExtensionHandler.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G8deF8PlcNoKDkUSW3/Q8dfUz8IqP6WP+WRzOiGZt2s=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.pbxproj</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QLnNsxYKwPvlP9NdAgh2uz0px4DKW3Phs/a/CJychDk=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.xcworkspace/contents.xcworkspacedata</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fzsAtcP9tFJC17h+HlxOJdH6gSmhbJQpXsxOjqIjXF8=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			36D5u4W5XMupxoEa2t+MtAf7XVIIjonbg+vDCOxEhUI=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/UserInterfaceState.xcuserstate</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GhcKxZ0WJky7VLFoNIlnmeS5mEPrGnvEPWP0M++XqNE=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/ZenTube.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4+rp5yoi3EmX611YVoSyRr0vxqYt2Hn4mCucwJwcbmY=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/AppDelegate.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TdfBz/8pvTvoYCe92BbIQvLqPwODhz5I953JauEQV6Q=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/Base.lproj/LaunchScreen.storyboard</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			idtz0PLa9kixeo5oKLnfyo0vN9t+qqKqs/CB2J2rayo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RVtoFyWWMq49ilJgES6v8xiPFtonNFdfeTVdeXGGM/s=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			leXA90zZPrxVJreo5fivfhRePhJTSCz/qeymnFp/izY=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (App)/SceneDelegate.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GNAThmImlMw+DxQsMhgIXTOi6bR1fYMw5UL2e7TqPUU=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/iOS (Extension)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tdn3fRPIqiHnYT3yL3o8xhTZowR3rM7WiKA+lZkX8UQ=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (App)/AppDelegate.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cpuM7lkhsHuFFfiYqJdsj8+SDzJaR57EOGZvs7PPxPI=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hphSd2plfNUeC79ElqMcJVLF1MAHRdX0IQknpjKiiLQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (App)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yhmv53zi4J+IMhAVVrsDmCMG4min4zNmojOyaFqT2PA=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (App)/ZenTube.entitlements</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IvQf2qDvPS4q3KA9tg2u24llr8/iFGogVOGMiZSU+ds=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (Extension)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tdn3fRPIqiHnYT3yL3o8xhTZowR3rM7WiKA+lZkX8UQ=
+			</data>
+		</dict>
+		<key>Resources/safari/ZenTube/macOS (Extension)/ZenTube.entitlements</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			T6wejWwWeNwMo2sHEbuO5QUnm3Lho4y9D2tfTzb7HNM=
+			</data>
+		</dict>
+		<key>Resources/safari/build/sa_zentube-latest.zip</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SOxX3KERSh1Nwv7/H0/16rh1ntvwM2QDMerJ/D5LHSc=
+			</data>
+		</dict>
+		<key>Resources/safari/iOS (App)/AppDelegate.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SdhtbqsY8X9elF5aiB080gIQolFrjMGHSV8t0rTUoXc=
+			</data>
+		</dict>
+		<key>Resources/safari/iOS (App)/Base.lproj/LaunchScreen.storyboard</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			idtz0PLa9kixeo5oKLnfyo0vN9t+qqKqs/CB2J2rayo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/iOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RVtoFyWWMq49ilJgES6v8xiPFtonNFdfeTVdeXGGM/s=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/iOS (App)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			86wfxtyRweDLlawhIBubxwFbiY16p+uPxfAkwiF33FQ=
+			</data>
+		</dict>
+		<key>Resources/safari/iOS (App)/SceneDelegate.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3yrdSFMCNogy23/W3G7EYqZC+K36gnCRqUq8cP06g3c=
+			</data>
+		</dict>
+		<key>Resources/safari/iOS (Extension)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tdn3fRPIqiHnYT3yL3o8xhTZowR3rM7WiKA+lZkX8UQ=
+			</data>
+		</dict>
+		<key>Resources/safari/macOS (App)/AppDelegate.swift</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KpC+Q9SJqD6ZMT2hJylBYlAOapbOg+D2L+xQq8vr3gU=
+			</data>
+		</dict>
+		<key>Resources/safari/macOS (App)/Base.lproj/Main.storyboard</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hphSd2plfNUeC79ElqMcJVLF1MAHRdX0IQknpjKiiLQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/safari/macOS (App)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dlE3C5eRevNHBjGXfsKBK05uep858Yr5i442I1gZq50=
+			</data>
+		</dict>
+		<key>Resources/safari/macOS (App)/ZenTube.entitlements</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IvQf2qDvPS4q3KA9tg2u24llr8/iFGogVOGMiZSU+ds=
+			</data>
+		</dict>
+		<key>Resources/safari/macOS (Extension)/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tdn3fRPIqiHnYT3yL3o8xhTZowR3rM7WiKA+lZkX8UQ=
+			</data>
+		</dict>
+		<key>Resources/safari/macOS (Extension)/ZenTube.entitlements</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			T6wejWwWeNwMo2sHEbuO5QUnm3Lho4y9D2tfTzb7HNM=
+			</data>
+		</dict>
+		<key>Resources/web-ext-artifacts/ch-zentube-1.1.1.zip</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4fWsE2iIVPQykb0+IpC4mb5E4tmACMG1rNag+OxbcNU=
+			</data>
+		</dict>
+		<key>Resources/web-ext-artifacts/ff-zentube-1.1.1.zip</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y/ihSgriVlrYmZgQCf02FoXH+JEXpOgwOJkefJbpuIM=
+			</data>
+		</dict>
+	</dict>
+	<key>rules</key>
+	<dict>
+		<key>^Resources/</key>
+		<true/>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
+		<key>^version.plist$</key>
+		<true/>
+	</dict>
+	<key>rules2</key>
+	<dict>
+		<key>.*\.dSYM($|/)</key>
+		<dict>
+			<key>weight</key>
+			<real>11</real>
+		</dict>
+		<key>^(.*/)?\.DS_Store$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>2000</real>
+		</dict>
+		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
+		<key>^.*</key>
+		<true/>
+		<key>^Info\.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^PkgInfo$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^Resources/</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
+		<key>^[^/]+$</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
+		<key>^embedded\.provisionprofile$</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^version\.plist$</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+	</dict>
+</dict>
+</plist>

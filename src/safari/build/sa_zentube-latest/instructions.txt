@@ -1,0 +1,14 @@
+STEP 1: Unzip the zip file, if you are reading this, you have completed this step
+
+STEP 2: Open Safari prefernces and ensure 'Show Develop menu in menu bar' is checked in the Advanced tab
+
+STEP 3: In the Develop menu, check 'Allow Unsigned Extensions' (do this every time you start safari to enjoy ZenTube)
+
+STEP 4: Open ZenTube.app, click 'Quit and Open Safari Extensions Prefrences...'
+
+STEP 5: Check the select box next to ZenTube
+
+STEP 6: You may need to click the 'Allow On All Websites' button if you can see it
+
+Tested on Safari 16.0
+for help email suraj@evenzero.in
