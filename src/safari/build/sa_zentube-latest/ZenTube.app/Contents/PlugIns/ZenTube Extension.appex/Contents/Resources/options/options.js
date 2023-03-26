@@ -1,8 +1,3 @@
-/*
-TODO: testing 
-TODO: rc 1.1.0
-*/
-
 /* Popup handlers */
 async function updateUI(restoredSettings) {
   /* Update the options UI with the settings values retrieved from storage,

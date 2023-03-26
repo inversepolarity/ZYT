@@ -155,5 +155,9 @@ var defaultSettings = {
         show: true
       }
     }
+  },
+
+  extra: {
+    emoji: true
   }
 };
