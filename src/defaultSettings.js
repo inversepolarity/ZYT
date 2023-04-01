@@ -78,11 +78,6 @@ var defaultSettings = {
         ],
         show: true
       },
-      subscribe: {
-        label: "Subscribe Button",
-        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"],
-        show: true
-      },
       title: {
         label: "Video Title",
         classes: ["yt-formatted-string.style-scope.ytd-watch-metadata"],
@@ -105,6 +100,13 @@ var defaultSettings = {
       }
     },
     Everywhere: {
+      emoji: {
+        label: "Emoji",
+        classes: null,
+        show: true,
+        pattern:
+          /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu
+      },
       metadata: {
         label: "Video Metadata",
         classes: [
@@ -153,11 +155,12 @@ var defaultSettings = {
           "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer > yt-img-shadow"
         ],
         show: true
+      },
+      subscribe: {
+        label: "Subscribe Button",
+        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"],
+        show: true
       }
     }
-  },
-
-  extra: {
-    emoji: true
   }
 };

@@ -2,6 +2,12 @@
    It is injected into all YT tabs at install and on popup open
 */
 
+// TODO: emoji rollback
+// TODO: emoji on page mutation
+// TODO: emoji on url change
+
+let ignoreMutations = false;
+
 if (typeof browser === "undefined") {
   var browser = chrome;
 }
@@ -25,8 +31,10 @@ async function injectTransitionClass() {
   if (options) {
     for (const page of Object.keys(options)) {
       for (const item of Object.keys(options[page])) {
-        for (const c of options[page][item].classes) {
-          css += `${c}{transition: all 0.2s;}`;
+        if (options[page][item].classes) {
+          for (const c of options[page][item].classes) {
+            css += `${c}{transition: all 0.2s;}`;
+          }
         }
       }
     }
@@ -64,7 +72,6 @@ async function toggleCSS() {
    * looping over the state object and populating a css string
    * for each class; this css string is then injected into the
    * page */
-
   let css = "";
   const savedSettings = await browser.storage.local.get();
   const { options } = savedSettings;
@@ -72,8 +79,10 @@ async function toggleCSS() {
   for (const page of Object.keys(options)) {
     for (const item of Object.keys(options[page])) {
       if (options[page][item]["show"]) {
-        for (const c of options[page][item].classes) {
-          css += `${c}{display:none; opacity:0}`;
+        if (options[page][item].classes) {
+          for (const c of options[page][item].classes) {
+            css += `${c}{display:none; opacity:0}`;
+          }
         }
       }
     }
@@ -93,6 +102,69 @@ async function toggleCSS() {
   }
 }
 
+async function toggleEmoji(node) {
+  const pattern =
+    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
+
+  function getElementVolume(e) {
+    return e.scrollWidth * e.scrollHeight;
+  }
+
+  function getParentNode(node, baseNodeVolume) {
+    const parentNode = node.parentNode;
+
+    const parentVolume = getElementVolume(parentNode);
+
+    if (parentVolume > baseNodeVolume * 1.25) {
+      return node;
+    }
+
+    if (parentNode.childElementCount === 1) return parentNode;
+    else return getParentNode(parentNode, baseNodeVolume);
+  }
+
+  const savedSettings = await browser.storage.local.get();
+  const { options } = savedSettings;
+  const { show } = options.Everywhere.emoji;
+
+  const treeWalker = document.createTreeWalker(
+    node,
+    NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
+  );
+
+  // let node;
+
+  const toRemoveNodes = [];
+
+  while ((node = treeWalker.nextNode())) {
+    if (!show && node.localName === "img") {
+      const attributes = [...node.attributes]
+        .map((a) => (a.value || "").toString())
+        .filter(Boolean)
+        .join("")
+        .toLowerCase();
+
+      if (attributes.includes("emoji") || attributes.match(pattern)) {
+        const parentNode = getParentNode(node, getElementVolume(node));
+        toRemoveNodes.push(parentNode);
+      }
+    } else {
+      const matches = node.nodeValue && node.nodeValue.match(pattern);
+
+      if (!show && matches) {
+        console.log("node", node.nodeValue);
+        node.nodeValue = node.nodeValue.replace(pattern, "");
+      }
+    }
+  }
+
+  if (toRemoveNodes.length) {
+    ignoreMutations = true;
+    toRemoveNodes.forEach((n) => n.remove());
+    ignoreMutations = false;
+  }
+}
+
 function checkStoredSettings(storedSettings) {
   /* On startup, check whether we have stored settings.
    If not, then store the default settings.*/
@@ -104,18 +176,46 @@ function checkStoredSettings(storedSettings) {
 async function msgListener(request, sender) {
   /* Listen for messages from the page itself
    If the message was from the page script, show an alert.*/
-  toggleCSS();
+
+  console.clear();
+  const { element } = await JSON.parse(request);
+
+  switch (element) {
+    case "emoji":
+      toggleEmoji(document.body);
+      return;
+    default:
+      toggleCSS();
+  }
 }
 
 async function initializePageAction() {
   /*
 Initialize the page action, install message listener, get settings
 */
+
+  function onMutation(mutations) {
+    if (ignoreMutations) return;
+    for (const mutation of mutations) {
+      for (const node of mutation.addedNodes) {
+        toggleEmoji(node);
+      }
+    }
+    // scheduleDebouncedFullClear(1000, 3000);
+  }
   try {
     await browser.runtime.onMessage.addListener(msgListener);
     injectTransitionClass();
     injectBeauty();
     toggleCSS(true);
+    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+    let observer = new MutationObserver(onMutation);
+
+    observer.observe(document, {
+      attributes: true,
+      childList: true,
+      subtree: true
+    });
   } catch (err) {
     onError(err);
   }
@@ -125,6 +225,7 @@ Initialize the page action, install message listener, get settings
   try {
     const gettingStoredSettings = await browser.storage.local.get();
     await checkStoredSettings(gettingStoredSettings);
+
     initializePageAction();
   } catch (err) {
     onError(err);
