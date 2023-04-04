@@ -1,3 +1,5 @@
+//TODO: explore > live
+
 var defaultSettings = {
   currentPage: "Home",
   options: {
