@@ -6,7 +6,11 @@
 // TODO: emoji on page mutation
 // TODO: emoji on url change
 
-let ignoreMutations = false;
+var ignoreMutations = false;
+var totalTime = 0;
+var fullClearFirstScheduledTime = 0;
+var fullClearTimeout = null;
+var currentLocation = document.location.href;
 
 if (typeof browser === "undefined") {
   var browser = chrome;
@@ -102,69 +106,6 @@ async function toggleCSS() {
   }
 }
 
-async function toggleEmoji(node) {
-  const pattern =
-    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
-
-  function getElementVolume(e) {
-    return e.scrollWidth * e.scrollHeight;
-  }
-
-  function getParentNode(node, baseNodeVolume) {
-    const parentNode = node.parentNode;
-
-    const parentVolume = getElementVolume(parentNode);
-
-    if (parentVolume > baseNodeVolume * 1.25) {
-      return node;
-    }
-
-    if (parentNode.childElementCount === 1) return parentNode;
-    else return getParentNode(parentNode, baseNodeVolume);
-  }
-
-  const savedSettings = await browser.storage.local.get();
-  const { options } = savedSettings;
-  const { show } = options.Everywhere.emoji;
-
-  const treeWalker = document.createTreeWalker(
-    node,
-    NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
-  );
-
-  // let node;
-
-  const toRemoveNodes = [];
-
-  while ((node = treeWalker.nextNode())) {
-    if (!show && node.localName === "img") {
-      const attributes = [...node.attributes]
-        .map((a) => (a.value || "").toString())
-        .filter(Boolean)
-        .join("")
-        .toLowerCase();
-
-      if (attributes.includes("emoji") || attributes.match(pattern)) {
-        const parentNode = getParentNode(node, getElementVolume(node));
-        toRemoveNodes.push(parentNode);
-      }
-    } else {
-      const matches = node.nodeValue && node.nodeValue.match(pattern);
-
-      if (!show && matches) {
-        console.log("node", node.nodeValue);
-        node.nodeValue = node.nodeValue.replace(pattern, "");
-      }
-    }
-  }
-
-  if (toRemoveNodes.length) {
-    ignoreMutations = true;
-    toRemoveNodes.forEach((n) => n.remove());
-    ignoreMutations = false;
-  }
-}
-
 function checkStoredSettings(storedSettings) {
   /* On startup, check whether we have stored settings.
    If not, then store the default settings.*/
@@ -189,33 +130,127 @@ async function msgListener(request, sender) {
   }
 }
 
-async function initializePageAction() {
-  /*
-Initialize the page action, install message listener, get settings
-*/
+function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
+  console.clear();
+  const scheduled = fullClearTimeout !== null;
 
-  function onMutation(mutations) {
-    if (ignoreMutations) return;
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        toggleEmoji(node);
+  if (scheduled) {
+    const timeDiff = Date.now() - fullClearFirstScheduledTime;
+    const shouldBlock = timeDiff + debounceTimeMs > maxDebounceTimeMs;
+    if (maxDebounceTimeMs && shouldBlock) return;
+    clearTimeout(fullClearTimeout);
+  } else {
+    fullClearFirstScheduledTime = Date.now();
+  }
+
+  fullClearTimeout = setTimeout(() => {
+    const start = Date.now();
+    toggleEmoji(document.body);
+    totalTime += Date.now() - start;
+    fullClearTimeout = null;
+  }, debounceTimeMs);
+}
+
+function onMutation(mutations) {
+  if (ignoreMutations) return;
+  const start = Date.now();
+
+  for (const mutation of mutations) {
+    if (currentLocation !== document.location.href) {
+      currentLocation = document.location.href;
+      fullClear();
+    }
+
+    for (const node of mutation.addedNodes) {
+      toggleEmoji(node);
+      ignoreMutations = true;
+    }
+  }
+  totalTime += Date.now() - start;
+  scheduleDebouncedFullClear(1000, 3000);
+}
+
+function getElementVolume(e) {
+  return e.scrollWidth * e.scrollHeight;
+}
+
+function getParentNode(node, baseNodeVolume) {
+  const parentNode = node.parentNode;
+
+  const parentVolume = getElementVolume(parentNode);
+
+  if (parentVolume > baseNodeVolume * 1.25) {
+    return node;
+  }
+
+  if (parentNode.childElementCount === 1) return parentNode;
+  else return getParentNode(parentNode, baseNodeVolume);
+}
+
+async function toggleEmoji(element) {
+  const pattern =
+    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
+
+  const savedSettings = await browser.storage.local.get();
+  const { options } = savedSettings;
+  const { show } = options.Everywhere.emoji;
+
+  const treeWalker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
+  );
+
+  let node;
+
+  const toRemoveNodes = [];
+
+  while ((node = treeWalker.nextNode())) {
+    if (!show && node.localName === "img") {
+      const attributes = [...node.attributes]
+        .map((a) => (a.value || "").toString())
+        .filter(Boolean)
+        .join("")
+        .toLowerCase();
+
+      if (attributes.includes("emoji") || attributes.match(pattern)) {
+        const parentNode = getParentNode(node, getElementVolume(node));
+        toRemoveNodes.push(parentNode);
+      }
+    } else {
+      const matches = node.nodeValue && node.nodeValue.match(pattern);
+
+      if (!show && matches) {
+        node.nodeValue = node.nodeValue.replace(pattern, "");
       }
     }
-    // scheduleDebouncedFullClear(1000, 3000);
   }
+
+  if (toRemoveNodes.length) {
+    ignoreMutations = true;
+    toRemoveNodes.forEach((n) => n.remove());
+    ignoreMutations = false;
+  }
+}
+
+async function initializePageAction() {
+  /* Initialize the page action, install message listener, get settings */
+  // Mutation Observer fires each time page mutates
+
   try {
     await browser.runtime.onMessage.addListener(msgListener);
-    injectTransitionClass();
-    injectBeauty();
-    toggleCSS(true);
+
+    //TODO:  clear once on start if enabled in popup
+
     MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let observer = new MutationObserver(onMutation);
-
     observer.observe(document, {
       attributes: true,
       childList: true,
       subtree: true
     });
+    injectTransitionClass();
+    injectBeauty();
+    toggleCSS(true);
   } catch (err) {
     onError(err);
   }
@@ -225,7 +260,6 @@ Initialize the page action, install message listener, get settings
   try {
     const gettingStoredSettings = await browser.storage.local.get();
     await checkStoredSettings(gettingStoredSettings);
-
     initializePageAction();
   } catch (err) {
     onError(err);
