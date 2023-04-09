@@ -16,7 +16,7 @@
     "content_scripts": [
         {
             "matches": ["*://*.youtube.com/*"],
-            "js": ["browser-polyfill.js", "defaultSettings.js", "contentscript.js"],
+            "js": ["browser-polyfill.js", "defaultSettings.js", "contentscript.js", "emoji.js"],
             "run_at": "document_start"
         }
     ],
@@ -27,6 +27,6 @@
         "default_popup": "options/options.html"
     },
 
-    "permissions": ["storage", "tabs", "scripting"],
+    "permissions": ["storage", "tabs", "scripting", "activeTab"],
     "host_permissions": ["*://*.youtube.com/*"]
 }

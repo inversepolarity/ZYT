@@ -1,3 +1,5 @@
+//TODO: explore > live
+
 var defaultSettings = {
   currentPage: "Home",
   options: {
@@ -102,7 +104,7 @@ var defaultSettings = {
     Everywhere: {
       emoji: {
         label: "Emoji",
-        classes: null,
+        classes: [".zt-emoji"],
         show: true,
         pattern:
           /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu
@@ -121,9 +123,7 @@ var defaultSettings = {
       },
       duration: {
         label: "Video Duration",
-        classes: [
-          "span.style-scope.ytd-thumbnail-overlay-time-status-renderer"
-        ],
+        classes: [".ytd-thumbnail-overlay-time-status-renderer"],
         show: true
       },
       thumbnails: {
