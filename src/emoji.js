@@ -2,10 +2,15 @@ addEventListener("DOMContentLoaded", async (event) => {
   const pattern =
     /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
+  let emojishow = true;
   let ignoreMutations = false;
   let fullClearFirstScheduledTime = 0;
   let fullClearTimeout = null;
   let totalTime = 0;
+
+  let node,
+    hashmap = {},
+    hmi = 0;
 
   function start() {
     fullClear();
@@ -30,20 +35,25 @@ addEventListener("DOMContentLoaded", async (event) => {
     } else {
       fullClearFirstScheduledTime = Date.now();
     }
-    fullClearTimeout = setTimeout(fullClear, debounceTimeMs);
+    fullClearTimeout = emojishow
+      ? setTimeout(fullClear, debounceTimeMs)
+      : setTimeout(fullRestore, debounceTimeMs);
   }
 
   async function fullClear() {
     const start = Date.now();
-
-    await removeCancer(document.body);
+    await removeCancer(document.body, true);
 
     totalTime += Date.now() - start;
     fullClearTimeout = null;
   }
 
   async function fullRestore() {
-    removeCancer(document.body, false);
+    const start = Date.now();
+    await removeCancer(document.body, false);
+
+    totalTime += Date.now() - start;
+    fullClearTimeout = null;
   }
 
   function getElementVolume(e) {
@@ -62,16 +72,13 @@ addEventListener("DOMContentLoaded", async (event) => {
     else return getParentNode(parentNode, baseNodeVolume);
   }
 
-  async function removeCancer(element, remove = true) {
+  async function removeCancer(element, remove) {
     const treeWalker = document.createTreeWalker(
       element,
       NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
     );
 
-    let node;
     const toRemoveNodes = [];
-
-    const template = (text) => `<span>${text}</span>`;
 
     while ((node = treeWalker.nextNode())) {
       if (node.localName === "img") {
@@ -86,45 +93,26 @@ addEventListener("DOMContentLoaded", async (event) => {
           toRemoveNodes.push(parentNode);
         }
       } else {
-        // TODO: PROBLEM STATEMENT
-        // -------------------------------------------------------------------------
-        // To isolate the emoji in a span of its own to control via css
-        // blockers:
-        // 1) emoji length indeterminate / tough to calculate
-        // strategies:
-        // 2) wrapping fragment with range API seems to break the event loop/DOM
-        // 3) injecting as an array of nodes also times out the page
-        // 4) injecting the span with DOMParser times out
-        // 5) treeparser and mutation observer hide but how to toggle?
-
         const matches = node.nodeValue && node.nodeValue.match(pattern);
         if (matches) {
           if (node.parentElement.tagName !== "SCRIPT") {
-            var nodesFragment = document.createDocumentFragment();
-            let n = "";
+            // nodevalue
+            hashmap[hmi] = {
+              orig: node.nodeValue,
+              strip: node.nodeValue.replace(pattern, ""),
+              node: node
+            };
 
-            matches.forEach((m, mi) => {
-              Array.from(node.nodeValue).forEach((ch, chi) => {
-                if (ch == m) {
-                  n += `<span class="zt-emoji">${m}</span>`;
-                } else {
-                  n += ch;
-                }
-              });
-            });
+            node.nodeValue = remove ? hashmap[hmi].strip : hashmap[hmi].orig;
+            hmi++;
+          }
+        }
 
-            const parser = new DOMParser();
-            const newNode = parser.parseFromString(template(n), "text/html");
-
-            console.log(
-              newNode.body.children[0],
-              node.parentNode.childNodes[0].data,
-              "xxx"
-            );
-
-            node.nodeValue = newNode.body.children[0];
-            node.normalize();
-            // node.parentElement.replaceChild(emojiNode.body, node);
+        if (hmi != 0 && !emojishow) {
+          for (let index = 0; index < hmi; index++) {
+            if (node.isSameNode(hashmap[index].node)) {
+              node.nodeValue = hashmap[index].orig;
+            }
           }
         }
       }
@@ -133,11 +121,6 @@ addEventListener("DOMContentLoaded", async (event) => {
     if (toRemoveNodes.length) {
       ignoreMutations = true;
       toRemoveNodes.forEach((n) => n.remove());
-      // toRemoveNodes.forEach((n) =>
-      //   remove
-      //     ? n.parentElement.classList.add("zt-emoji")
-      //     : n.parentElement.classList.remove("zt-emoji")
-      // );
       ignoreMutations = false;
     }
   }
@@ -148,7 +131,7 @@ addEventListener("DOMContentLoaded", async (event) => {
     const start = Date.now();
     for (const mutation of mutations) {
       for (const node of mutation.addedNodes) {
-        await removeCancer(node);
+        await removeCancer(node, emojishow);
       }
     }
     totalTime += Date.now() - start;
@@ -161,17 +144,15 @@ addEventListener("DOMContentLoaded", async (event) => {
   async function msgListener(request, sender) {
     const { element } = await JSON.parse(request);
     const { options } = await browser.storage.local.get();
-    let emojishow = options["Everywhere"]["emoji"].show;
+    emojishow = options["Everywhere"].emoji.show;
 
     switch (element) {
       case "emoji":
         if (!emojishow) {
           console.clear();
           fullRestore();
-          ignoreMutations = true;
         } else {
           fullClear();
-          ignoreMutations = false;
         }
       default:
         break;
@@ -180,10 +161,6 @@ addEventListener("DOMContentLoaded", async (event) => {
 
   (async () => {
     await browser.runtime.onMessage.addListener(msgListener);
-
-    const { options } = await browser.storage.local.get();
-    let emojishow = options["Everywhere"]["emoji"].show;
-
     if (emojishow) start();
   })();
 });
