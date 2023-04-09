@@ -94,24 +94,24 @@ addEventListener("DOMContentLoaded", async (event) => {
         }
       } else {
         const matches = node.nodeValue && node.nodeValue.match(pattern);
+
         if (matches) {
           if (node.parentElement.tagName !== "SCRIPT") {
-            // nodevalue
-            hashmap[hmi] = {
+            hashmap[node.nodeValue] = {
               orig: node.nodeValue,
               strip: node.nodeValue.replace(pattern, ""),
               node: node
             };
-
-            node.nodeValue = remove ? hashmap[hmi].strip : hashmap[hmi].orig;
-            hmi++;
+            if (remove) {
+              node.nodeValue = hashmap[node.nodeValue].strip;
+            }
           }
         }
 
-        if (hmi != 0 && !emojishow) {
-          for (let index = 0; index < hmi; index++) {
-            if (node.isSameNode(hashmap[index].node)) {
-              node.nodeValue = hashmap[index].orig;
+        if (!emojishow) {
+          for (o in hashmap) {
+            if (node.isSameNode(hashmap[o].node)) {
+              node.nodeValue = hashmap[o].orig;
             }
           }
         }
@@ -150,8 +150,12 @@ addEventListener("DOMContentLoaded", async (event) => {
       case "emoji":
         if (!emojishow) {
           console.clear();
+          console.log(hashmap);
           fullRestore();
         } else {
+          console.clear();
+          console.log(hashmap);
+
           fullClear();
         }
       default:
