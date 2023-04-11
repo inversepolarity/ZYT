@@ -2,15 +2,13 @@ addEventListener("DOMContentLoaded", async (event) => {
   const pattern =
     /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
-  let emojishow = true;
-  let ignoreMutations = false;
-  let fullClearFirstScheduledTime = 0;
-  let fullClearTimeout = null;
-  let totalTime = 0;
-
-  let node,
-    hashmap = {},
-    hmi = 0;
+  let emojishow = true,
+    ignoreMutations = false,
+    fullClearFirstScheduledTime = 0,
+    fullClearTimeout = null,
+    totalTime = 0,
+    node,
+    hashmap = {};
 
   function start() {
     fullClear();
@@ -42,7 +40,7 @@ addEventListener("DOMContentLoaded", async (event) => {
 
   async function fullClear() {
     const start = Date.now();
-    await removeCancer(document.body, true);
+    await toggleEmoji(document.body, true);
 
     totalTime += Date.now() - start;
     fullClearTimeout = null;
@@ -50,78 +48,41 @@ addEventListener("DOMContentLoaded", async (event) => {
 
   async function fullRestore() {
     const start = Date.now();
-    await removeCancer(document.body, false);
+    await toggleEmoji(document.body, false);
 
     totalTime += Date.now() - start;
     fullClearTimeout = null;
   }
 
-  function getElementVolume(e) {
-    return e.scrollWidth * e.scrollHeight;
-  }
-
-  function getParentNode(node, baseNodeVolume) {
-    const parentNode = node.parentNode;
-    const parentVolume = getElementVolume(parentNode);
-
-    if (parentVolume > baseNodeVolume * 1.25) {
-      return node;
-    }
-
-    if (parentNode.childElementCount === 1) return parentNode;
-    else return getParentNode(parentNode, baseNodeVolume);
-  }
-
-  async function removeCancer(element, remove) {
+  async function toggleEmoji(element, remove) {
     const treeWalker = document.createTreeWalker(
       element,
       NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
     );
 
-    const toRemoveNodes = [];
-
     while ((node = treeWalker.nextNode())) {
-      if (node.localName === "img") {
-        const attributes = [...node.attributes]
-          .map((a) => (a.value || "").toString())
-          .filter(Boolean)
-          .join("")
-          .toLowerCase();
+      const matches = node.nodeValue && node.nodeValue.match(pattern);
 
-        if (attributes.includes("emoji") || attributes.match(pattern)) {
-          const parentNode = getParentNode(node, getElementVolume(node));
-          toRemoveNodes.push(parentNode);
-        }
-      } else {
-        const matches = node.nodeValue && node.nodeValue.match(pattern);
-
-        if (matches) {
-          if (node.parentElement.tagName !== "SCRIPT") {
-            hashmap[node.nodeValue] = {
-              orig: node.nodeValue,
-              strip: node.nodeValue.replace(pattern, ""),
-              node: node
-            };
-            if (remove) {
-              node.nodeValue = hashmap[node.nodeValue].strip;
-            }
-          }
-        }
-
-        if (!emojishow) {
-          for (o in hashmap) {
-            if (node.isSameNode(hashmap[o].node)) {
-              node.nodeValue = hashmap[o].orig;
-            }
+      if (matches) {
+        if (node.parentElement.tagName !== "SCRIPT") {
+          hashmap[node.nodeValue] = {
+            orig: node.nodeValue,
+            strip: node.nodeValue.replace(pattern, ""),
+            node: node
+          };
+          if (remove) {
+            node.nodeValue = hashmap[node.nodeValue].strip;
           }
         }
       }
-    }
 
-    if (toRemoveNodes.length) {
-      ignoreMutations = true;
-      toRemoveNodes.forEach((n) => n.remove());
-      ignoreMutations = false;
+      if (!emojishow) {
+        for (o in hashmap) {
+          if (node.isSameNode(hashmap[o].node)) {
+            node.nodeValue = hashmap[o].orig;
+          }
+        }
+      }
     }
   }
 
@@ -131,11 +92,11 @@ addEventListener("DOMContentLoaded", async (event) => {
     const start = Date.now();
     for (const mutation of mutations) {
       for (const node of mutation.addedNodes) {
-        await removeCancer(node, emojishow);
+        await toggleEmoji(node, emojishow);
       }
     }
     totalTime += Date.now() - start;
-    scheduleDebouncedFullClear(1000, 3000);
+    scheduleDebouncedFullClear(500, 1000);
   }
 
   /* Listen for messages from the page itself
@@ -148,16 +109,8 @@ addEventListener("DOMContentLoaded", async (event) => {
 
     switch (element) {
       case "emoji":
-        if (!emojishow) {
-          console.clear();
-          console.log(hashmap);
-          fullRestore();
-        } else {
-          console.clear();
-          console.log(hashmap);
+        emojishow ? fullClear() : fullRestore();
 
-          fullClear();
-        }
       default:
         break;
     }

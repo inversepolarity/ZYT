@@ -1,4 +1,6 @@
 //TODO: explore > live
+//TODO: css classes cleanup/reorg
+//TODO: english
 
 var defaultSettings = {
   currentPage: "Home",
@@ -104,10 +106,8 @@ var defaultSettings = {
     Everywhere: {
       emoji: {
         label: "Emoji",
-        classes: [".zt-emoji"],
-        show: true,
-        pattern:
-          /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu
+        classes: null,
+        show: true
       },
       metadata: {
         label: "Video Metadata",
