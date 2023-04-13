@@ -1,6 +1,6 @@
 addEventListener("DOMContentLoaded", async (event) => {
   const pattern =
-    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
+    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{Emoji}\uFE0F/gu;
 
   let emojishow = true,
     ignoreMutations = false,
