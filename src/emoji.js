@@ -1,123 +1,144 @@
-addEventListener("DOMContentLoaded", async (event) => {
-  const pattern =
-    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{Emoji}\uFE0F/gu;
+//TODO: probably separate the execution from the event listeners
+//TODO: try adding separate event listeners for
+const pattern =
+  /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
-  let emojishow = true,
-    ignoreMutations = false,
-    fullClearFirstScheduledTime = 0,
-    fullClearTimeout = null,
-    totalTime = 0,
-    node,
-    hashmap = {};
+let emojishow,
+  ignoreMutations = false,
+  fullClearFirstScheduledTime = 0,
+  fullClearTimeout = null,
+  totalTime = 0,
+  node,
+  hashmap = {};
 
-  function start() {
-    fullClear();
+function start() {
+  fullClear();
 
-    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    let observer = new MutationObserver(onMutation);
-    observer.observe(document, {
-      attributes: true,
-      childList: true,
-      subtree: true
-    });
+  MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+  let observer = new MutationObserver(onMutation);
+  observer.observe(document, {
+    attributes: true,
+    childList: true,
+    subtree: true
+  });
+}
+
+function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
+  const scheduled = fullClearTimeout !== null;
+
+  if (scheduled) {
+    const timeDiff = Date.now() - fullClearFirstScheduledTime;
+    const shouldBlock = timeDiff + debounceTimeMs > maxDebounceTimeMs;
+    if (maxDebounceTimeMs && shouldBlock) return;
+    clearTimeout(fullClearTimeout);
+  } else {
+    fullClearFirstScheduledTime = Date.now();
   }
+  fullClearTimeout = emojishow
+    ? setTimeout(fullClear, debounceTimeMs)
+    : setTimeout(fullRestore, debounceTimeMs);
+}
 
-  function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
-    const scheduled = fullClearTimeout !== null;
+async function fullClear() {
+  const start = Date.now();
+  await toggleEmoji(document.body, true);
 
-    if (scheduled) {
-      const timeDiff = Date.now() - fullClearFirstScheduledTime;
-      const shouldBlock = timeDiff + debounceTimeMs > maxDebounceTimeMs;
-      if (maxDebounceTimeMs && shouldBlock) return;
-      clearTimeout(fullClearTimeout);
-    } else {
-      fullClearFirstScheduledTime = Date.now();
-    }
-    fullClearTimeout = emojishow
-      ? setTimeout(fullClear, debounceTimeMs)
-      : setTimeout(fullRestore, debounceTimeMs);
-  }
+  totalTime += Date.now() - start;
+  fullClearTimeout = null;
+}
 
-  async function fullClear() {
-    const start = Date.now();
-    await toggleEmoji(document.body, true);
+async function fullRestore() {
+  const start = Date.now();
+  await toggleEmoji(document.body, false);
 
-    totalTime += Date.now() - start;
-    fullClearTimeout = null;
-  }
+  totalTime += Date.now() - start;
+  fullClearTimeout = null;
+}
 
-  async function fullRestore() {
-    const start = Date.now();
-    await toggleEmoji(document.body, false);
+async function toggleEmoji(element, remove) {
+  const treeWalker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
+  );
 
-    totalTime += Date.now() - start;
-    fullClearTimeout = null;
-  }
-
-  async function toggleEmoji(element, remove) {
-    const treeWalker = document.createTreeWalker(
-      element,
-      NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
-    );
-
-    while ((node = treeWalker.nextNode())) {
+  while ((node = treeWalker.nextNode())) {
+    if (node.parentElement.tagName !== "SCRIPT" && node.nodeValue) {
       const matches = node.nodeValue && node.nodeValue.match(pattern);
 
       if (matches) {
-        if (node.parentElement.tagName !== "SCRIPT") {
+        let strip = node.nodeValue.replace(pattern, "");
+
+        if (!strip.length) {
+          strip = " ";
+        }
+
+        if (!hashmap[node.nodeValue]) {
           hashmap[node.nodeValue] = {
             orig: node.nodeValue,
-            strip: node.nodeValue.replace(pattern, ""),
-            node: node
+            strip,
+            nodes: [node.parentElement]
           };
-          if (remove) {
-            node.nodeValue = hashmap[node.nodeValue].strip;
-          }
+          return;
+        }
+
+        hashmap[node.nodeValue] = {
+          orig: node.nodeValue,
+          strip,
+          nodes: new Set([...hashmap[node.nodeValue].nodes, node.parentElement])
+        };
+
+        if (remove) {
+          node.nodeValue = hashmap[node.nodeValue].strip;
         }
       }
 
       if (!emojishow) {
         for (o in hashmap) {
-          if (node.isSameNode(hashmap[o].node)) {
-            node.nodeValue = hashmap[o].orig;
+          let nodes = Array.from(hashmap[o].nodes);
+          for (rn in nodes) {
+            if (node.parentElement.isSameNode(nodes[rn])) {
+              node.nodeValue = hashmap[o].orig;
+              node.parentElement.firstChild.nodeValue = hashmap[o].orig;
+            }
           }
         }
       }
     }
   }
+}
 
-  async function onMutation(mutations) {
-    if (ignoreMutations) return;
+async function onMutation(mutations) {
+  if (ignoreMutations) return;
 
-    const start = Date.now();
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        await toggleEmoji(node, emojishow);
-      }
+  const start = Date.now();
+  for (const mutation of mutations) {
+    for (const node of mutation.addedNodes) {
+      await toggleEmoji(node, emojishow);
     }
-    totalTime += Date.now() - start;
-    scheduleDebouncedFullClear(500, 1000);
   }
+  totalTime += Date.now() - start;
+  scheduleDebouncedFullClear(100, 500);
+}
 
+document.addEventListener("DOMContentLoaded", async () => {
   /* Listen for messages from the page itself
    If the message was from the page script, show an alert.*/
 
-  async function msgListener(request, sender) {
+  const { options } = await browser.storage.local.get();
+  emojishow = options["Everywhere"].emoji.show;
+
+  await browser.runtime.onMessage.addListener(async (request, sender) => {
     const { element } = await JSON.parse(request);
     const { options } = await browser.storage.local.get();
     emojishow = options["Everywhere"].emoji.show;
-
     switch (element) {
       case "emoji":
         emojishow ? fullClear() : fullRestore();
-
+        break;
       default:
         break;
     }
-  }
+  });
 
-  (async () => {
-    await browser.runtime.onMessage.addListener(msgListener);
-    if (emojishow) start();
-  })();
+  emojishow ? start() : fullRestore();
 });
