@@ -1,5 +1,3 @@
-//TODO: probably separate the execution from the event listeners
-//TODO: try adding separate event listeners for
 const pattern =
   /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
@@ -10,18 +8,6 @@ let emojishow,
   totalTime = 0,
   node,
   hashmap = {};
-
-function start() {
-  fullClear();
-
-  MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-  let observer = new MutationObserver(onMutation);
-  observer.observe(document, {
-    attributes: true,
-    childList: true,
-    subtree: true
-  });
-}
 
 function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
   const scheduled = fullClearTimeout !== null;
@@ -66,6 +52,11 @@ async function toggleEmoji(element, remove) {
       const matches = node.nodeValue && node.nodeValue.match(pattern);
 
       if (matches) {
+        console.log(
+          "🚀 ~ file: emoji.js:68 ~ toggleEmoji ~ matches:",
+          matches,
+          hashmap
+        );
         let strip = node.nodeValue.replace(pattern, "");
 
         if (!strip.length) {
@@ -98,7 +89,6 @@ async function toggleEmoji(element, remove) {
           for (rn in nodes) {
             if (node.parentElement.isSameNode(nodes[rn])) {
               node.nodeValue = hashmap[o].orig;
-              node.parentElement.firstChild.nodeValue = hashmap[o].orig;
             }
           }
         }
@@ -124,6 +114,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* Listen for messages from the page itself
    If the message was from the page script, show an alert.*/
 
+  MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+  let observer = new MutationObserver(onMutation);
+  observer.observe(document, {
+    attributes: true,
+    childList: true,
+    subtree: true
+  });
   const { options } = await browser.storage.local.get();
   emojishow = options["Everywhere"].emoji.show;
 
@@ -140,5 +137,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  emojishow ? start() : fullRestore();
+  emojishow ? fullClear() : fullRestore();
 });
