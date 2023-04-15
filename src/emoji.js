@@ -1,26 +1,14 @@
-addEventListener("DOMContentLoaded", async (event) => {
+document.addEventListener("DOMContentLoaded", async () => {
   const pattern =
-    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{Emoji}\uFE0F/gu;
+    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
-  let emojishow = true,
+  let emojishow,
     ignoreMutations = false,
     fullClearFirstScheduledTime = 0,
     fullClearTimeout = null,
     totalTime = 0,
     node,
     hashmap = {};
-
-  function start() {
-    fullClear();
-
-    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    let observer = new MutationObserver(onMutation);
-    observer.observe(document, {
-      attributes: true,
-      childList: true,
-      subtree: true
-    });
-  }
 
   function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
     const scheduled = fullClearTimeout !== null;
@@ -55,31 +43,58 @@ addEventListener("DOMContentLoaded", async (event) => {
   }
 
   async function toggleEmoji(element, remove) {
+    if (remove === undefined) return;
+
     const treeWalker = document.createTreeWalker(
       element,
       NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
     );
 
     while ((node = treeWalker.nextNode())) {
-      const matches = node.nodeValue && node.nodeValue.match(pattern);
+      if (node.parentElement.tagName !== "SCRIPT" && node.nodeValue) {
+        const matches = node.nodeValue && node.nodeValue.match(pattern);
 
-      if (matches) {
-        if (node.parentElement.tagName !== "SCRIPT") {
+        if (matches) {
+          let strip = node.nodeValue.replace(pattern, "");
+
+          if (!strip.length) {
+            strip = " ";
+          }
+
+          if (!hashmap[node.nodeValue]) {
+            hashmap[node.nodeValue] = {
+              orig: node.nodeValue,
+              strip,
+              nodes: [node.parentElement]
+            };
+            return;
+          }
+
           hashmap[node.nodeValue] = {
             orig: node.nodeValue,
-            strip: node.nodeValue.replace(pattern, ""),
-            node: node
+            strip,
+            nodes: new Set([
+              ...hashmap[node.nodeValue].nodes,
+              node.parentElement
+            ])
           };
+
           if (remove) {
-            node.nodeValue = hashmap[node.nodeValue].strip;
+            node.nodeValue = strip;
           }
         }
-      }
 
-      if (!emojishow) {
-        for (o in hashmap) {
-          if (node.isSameNode(hashmap[o].node)) {
-            node.nodeValue = hashmap[o].orig;
+        if (!emojishow) {
+          // BUG: flicker on certain node(s) on nav
+          for (o in hashmap) {
+            let nodes = Array.from(hashmap[o].nodes);
+            for (rn in nodes) {
+              if (node.nodeValue == hashmap[o].strip) {
+                if (node.parentElement.isSameNode(nodes[rn])) {
+                  node.nodeValue = hashmap[o].orig;
+                }
+              }
+            }
           }
         }
       }
@@ -96,28 +111,30 @@ addEventListener("DOMContentLoaded", async (event) => {
       }
     }
     totalTime += Date.now() - start;
-    scheduleDebouncedFullClear(500, 1000);
+    scheduleDebouncedFullClear(100, 500);
   }
 
-  /* Listen for messages from the page itself
-   If the message was from the page script, show an alert.*/
+  MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+  let observer = new MutationObserver(onMutation);
+  observer.observe(document, {
+    attributes: true,
+    childList: true,
+    subtree: true
+  });
 
-  async function msgListener(request, sender) {
+  const { options } = await browser.storage.local.get();
+  emojishow = options["Everywhere"].emoji.show;
+
+  await browser.runtime.onMessage.addListener(async (request, sender) => {
     const { element } = await JSON.parse(request);
     const { options } = await browser.storage.local.get();
     emojishow = options["Everywhere"].emoji.show;
-
     switch (element) {
       case "emoji":
         emojishow ? fullClear() : fullRestore();
-
+        break;
       default:
         break;
     }
-  }
-
-  (async () => {
-    await browser.runtime.onMessage.addListener(msgListener);
-    if (emojishow) start();
-  })();
+  });
 });
