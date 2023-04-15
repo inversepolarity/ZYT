@@ -18,8 +18,8 @@
       "js": [
         "browser-polyfill.js",
         "defaultSettings.js",
-        "emoji.js",
-        "contentscript.js"
+        "contentscript.js",
+        "emoji.js"
       ],
       "run_at":"document_start"
     }

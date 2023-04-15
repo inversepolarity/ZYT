@@ -1,13 +1,12 @@
 //TODO: explore > live
-//TODO: css classes cleanup/reorg
-//TODO: english
+//TODO: gamification, a "monk mode" timer that starts with all settings ON and ends at the first toggle, time-to-beat, localstorage
 
 var defaultSettings = {
   currentPage: "Home",
   options: {
     Home: {
       preview: {
-        label: "Preview on hover",
+        label: "Preview-On-Hover",
         classes: [
           ".ytd-video-preview",
           "#mouseover-overlay",
@@ -16,7 +15,7 @@ var defaultSettings = {
         show: true
       },
       communityPosts: {
-        label: "Latest posts",
+        label: "Latest Posts",
         classes: ["ytd-rich-shelf-renderer"],
         id: "communityPosts",
         show: true
@@ -32,7 +31,7 @@ var defaultSettings = {
         show: true
       },
       title: {
-        label: "Video title",
+        label: "Video Title",
         classes: ["yt-formatted-string.style-scope.ytd-rich-grid-media"],
         show: true
       }
@@ -43,14 +42,12 @@ var defaultSettings = {
         classes: [".ytd-watch-next-secondary-results-renderer"],
         show: true
       },
-      nextvideos: {
-        label: "End Recs (Default)",
-        classes: [".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"],
-        show: true
-      },
       endvideos: {
-        label: "End Recs (Channel)",
-        classes: [".ytp-endscreen-content"],
+        label: "Recommendations",
+        classes: [
+          ".ytp-endscreen-content",
+          ".ytp-ce-video .ytp-ce-channel .ytp-ce-covering-overlay"
+        ],
         show: true
       },
       chat: {
@@ -72,7 +69,7 @@ var defaultSettings = {
       },
       playlist: {
         label: "Playlist",
-        classes: ["div.style-scope.ytd-playlist-panel-renderer"],
+        classes: [".ytd-playlist-panel-renderer"],
         show: true
       },
       chapters: {
@@ -88,7 +85,7 @@ var defaultSettings = {
         show: true
       },
       sub_count: {
-        label: "Subscriber count",
+        label: "Subscriber Count",
         classes: ["yt-formatted-string.style-scope.ytd-video-owner-renderer"],
         show: true
       },
@@ -123,7 +120,10 @@ var defaultSettings = {
       },
       duration: {
         label: "Video Duration",
-        classes: [".ytd-thumbnail-overlay-time-status-renderer"],
+        classes: [
+          ".ytd-thumbnail-overlay-time-status-renderer",
+          "ytd-thumbnail-overlay-time-status-renderer.style-scope.ytd-thumbnail"
+        ],
         show: true
       },
       thumbnails: {
@@ -136,9 +136,10 @@ var defaultSettings = {
         show: true
       },
       resume: {
-        label: "Resume bar",
+        label: "Resume Bar",
         classes: [
-          "div.style-scope.ytd-thumbnail-overlay-resume-playback-renderer"
+          ".ytd-thumbnail-overlay-resume-playback-renderer",
+          "ytd-thumbnail-overlay-resume-playback-renderer.style-scope.ytd-thumbnail "
         ],
         show: true
       },
