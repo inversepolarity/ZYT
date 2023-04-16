@@ -1,6 +1,4 @@
 //TODO: explore > live
-//TODO: gamification, a "monk mode" timer that starts with all settings ON and ends at the first toggle, time-to-beat, localstorage
-
 var defaultSettings = {
   currentPage: "Home",
   options: {
@@ -98,6 +96,11 @@ var defaultSettings = {
         label: "Merchandise Box",
         classes: ["ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy"],
         show: true
+      },
+      subscribe: {
+        label: "Subscribe Button",
+        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"],
+        show: true
       }
     },
     Everywhere: {
@@ -155,11 +158,6 @@ var defaultSettings = {
           "#channel-thumbnail",
           "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer > yt-img-shadow"
         ],
-        show: true
-      },
-      subscribe: {
-        label: "Subscribe Button",
-        classes: ["yt-button-shape.style-scope.ytd-subscribe-button-renderer"],
         show: true
       }
     }
