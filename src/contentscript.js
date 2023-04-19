@@ -1,6 +1,7 @@
 /* This script interacts with the YT DOM
    It is injected into all YT tabs at install and on popup open
 */
+// BUG: flicker on thumbnails on initial page load after install
 
 if (typeof browser === "undefined") {
   var browser = chrome;
