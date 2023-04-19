@@ -7,94 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8478DA7329F00AA700C2EA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA7229F00AA700C2EA83 /* AppDelegate.swift */; };
-		8478DA7529F00AA700C2EA83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA7429F00AA700C2EA83 /* SceneDelegate.swift */; };
-		8478DA7829F00AA700C2EA83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA7629F00AA700C2EA83 /* LaunchScreen.storyboard */; };
-		8478DA7B29F00AA700C2EA83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA7929F00AA700C2EA83 /* Main.storyboard */; };
-		8478DA8429F00AA700C2EA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA8329F00AA700C2EA83 /* AppDelegate.swift */; };
-		8478DA8729F00AA700C2EA83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA8529F00AA700C2EA83 /* Main.storyboard */; };
-		8478DA8F29F00AA700C2EA83 /* ZenTube Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8478DA8E29F00AA700C2EA83 /* ZenTube Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8478DA9929F00AA700C2EA83 /* ZenTube Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8478DA9829F00AA700C2EA83 /* ZenTube Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8478DA9F29F00AA700C2EA83 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6229F00AA400C2EA83 /* Main.html */; };
-		8478DAA029F00AA700C2EA83 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6229F00AA400C2EA83 /* Main.html */; };
-		8478DAA129F00AA700C2EA83 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6429F00AA400C2EA83 /* Icon.png */; };
-		8478DAA229F00AA700C2EA83 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6429F00AA400C2EA83 /* Icon.png */; };
-		8478DAA329F00AA700C2EA83 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6529F00AA400C2EA83 /* Style.css */; };
-		8478DAA429F00AA700C2EA83 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6529F00AA400C2EA83 /* Style.css */; };
-		8478DAA529F00AA700C2EA83 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6629F00AA400C2EA83 /* Script.js */; };
-		8478DAA629F00AA700C2EA83 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6629F00AA400C2EA83 /* Script.js */; };
-		8478DAA729F00AA700C2EA83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA6729F00AA400C2EA83 /* ViewController.swift */; };
-		8478DAA829F00AA700C2EA83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA6729F00AA400C2EA83 /* ViewController.swift */; };
-		8478DAA929F00AA700C2EA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6829F00AA700C2EA83 /* Assets.xcassets */; };
-		8478DAAA29F00AA700C2EA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8478DA6829F00AA700C2EA83 /* Assets.xcassets */; };
-		8478DAAB29F00AA700C2EA83 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA6A29F00AA700C2EA83 /* SafariWebExtensionHandler.swift */; };
-		8478DAAC29F00AA700C2EA83 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478DA6A29F00AA700C2EA83 /* SafariWebExtensionHandler.swift */; };
-		8478DACD29F00AA700C2EA83 /* options in Resources */ = {isa = PBXBuildFile; fileRef = 8478DABE29F00AA700C2EA83 /* options */; };
-		8478DACE29F00AA700C2EA83 /* emoji.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DABF29F00AA700C2EA83 /* emoji.js */; };
-		8478DACF29F00AA700C2EA83 /* browser-polyfill.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC129F00AA700C2EA83 /* browser-polyfill.js */; };
-		8478DAD029F00AA700C2EA83 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC229F00AA700C2EA83 /* background.js */; };
-		8478DAD129F00AA700C2EA83 /* defaultSettings.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC329F00AA700C2EA83 /* defaultSettings.js */; };
-		8478DAD229F00AA700C2EA83 /* web-ext-artifacts in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC429F00AA700C2EA83 /* web-ext-artifacts */; };
-		8478DAD329F00AA700C2EA83 /* backgrounds in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC529F00AA700C2EA83 /* backgrounds */; };
-		8478DAD429F00AA700C2EA83 /* safari in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC629F00AA700C2EA83 /* safari */; };
-		8478DAD529F00AA700C2EA83 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC729F00AA700C2EA83 /* icons */; };
-		8478DAD629F00AA700C2EA83 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC829F00AA700C2EA83 /* manifest.json */; };
-		8478DAD729F00AA700C2EA83 /* ch_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC929F00AA700C2EA83 /* ch_manifest.json */; };
-		8478DAD829F00AA700C2EA83 /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DACA29F00AA700C2EA83 /* contentscript.js */; };
-		8478DAD929F00AA700C2EA83 /* promo in Resources */ = {isa = PBXBuildFile; fileRef = 8478DACB29F00AA700C2EA83 /* promo */; };
-		8478DADA29F00AA700C2EA83 /* ff_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478DACC29F00AA700C2EA83 /* ff_manifest.json */; };
-		8478DADB29F00AA700C2EA83 /* options in Resources */ = {isa = PBXBuildFile; fileRef = 8478DABE29F00AA700C2EA83 /* options */; };
-		8478DADC29F00AA700C2EA83 /* emoji.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DABF29F00AA700C2EA83 /* emoji.js */; };
-		8478DADD29F00AA700C2EA83 /* browser-polyfill.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC129F00AA700C2EA83 /* browser-polyfill.js */; };
-		8478DADE29F00AA700C2EA83 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC229F00AA700C2EA83 /* background.js */; };
-		8478DADF29F00AA700C2EA83 /* defaultSettings.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC329F00AA700C2EA83 /* defaultSettings.js */; };
-		8478DAE029F00AA700C2EA83 /* web-ext-artifacts in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC429F00AA700C2EA83 /* web-ext-artifacts */; };
-		8478DAE129F00AA700C2EA83 /* backgrounds in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC529F00AA700C2EA83 /* backgrounds */; };
-		8478DAE229F00AA700C2EA83 /* safari in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC629F00AA700C2EA83 /* safari */; };
-		8478DAE329F00AA700C2EA83 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC729F00AA700C2EA83 /* icons */; };
-		8478DAE429F00AA700C2EA83 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC829F00AA700C2EA83 /* manifest.json */; };
-		8478DAE529F00AA700C2EA83 /* ch_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478DAC929F00AA700C2EA83 /* ch_manifest.json */; };
-		8478DAE629F00AA700C2EA83 /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 8478DACA29F00AA700C2EA83 /* contentscript.js */; };
-		8478DAE729F00AA700C2EA83 /* promo in Resources */ = {isa = PBXBuildFile; fileRef = 8478DACB29F00AA700C2EA83 /* promo */; };
-		8478DAE829F00AA700C2EA83 /* ff_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478DACC29F00AA700C2EA83 /* ff_manifest.json */; };
+		84563ECF29F015BD000413A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563ECE29F015BD000413A4 /* AppDelegate.swift */; };
+		84563ED129F015BD000413A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563ED029F015BD000413A4 /* SceneDelegate.swift */; };
+		84563ED429F015BD000413A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84563ED229F015BD000413A4 /* LaunchScreen.storyboard */; };
+		84563ED729F015BD000413A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84563ED529F015BD000413A4 /* Main.storyboard */; };
+		84563EE029F015BD000413A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563EDF29F015BD000413A4 /* AppDelegate.swift */; };
+		84563EE329F015BD000413A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84563EE129F015BD000413A4 /* Main.storyboard */; };
+		84563EEB29F015BD000413A4 /* ZenTube Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 84563EEA29F015BD000413A4 /* ZenTube Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84563EF529F015BD000413A4 /* ZenTube Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 84563EF429F015BD000413A4 /* ZenTube Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84563EFB29F015BD000413A4 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 84563EBE29F015BB000413A4 /* Main.html */; };
+		84563EFC29F015BD000413A4 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 84563EBE29F015BB000413A4 /* Main.html */; };
+		84563EFD29F015BD000413A4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC029F015BB000413A4 /* Icon.png */; };
+		84563EFE29F015BD000413A4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC029F015BB000413A4 /* Icon.png */; };
+		84563EFF29F015BD000413A4 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC129F015BB000413A4 /* Style.css */; };
+		84563F0029F015BD000413A4 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC129F015BB000413A4 /* Style.css */; };
+		84563F0129F015BD000413A4 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC229F015BB000413A4 /* Script.js */; };
+		84563F0229F015BD000413A4 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC229F015BB000413A4 /* Script.js */; };
+		84563F0329F015BD000413A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563EC329F015BB000413A4 /* ViewController.swift */; };
+		84563F0429F015BD000413A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563EC329F015BB000413A4 /* ViewController.swift */; };
+		84563F0529F015BD000413A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC429F015BD000413A4 /* Assets.xcassets */; };
+		84563F0629F015BD000413A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84563EC429F015BD000413A4 /* Assets.xcassets */; };
+		84563F0729F015BD000413A4 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563EC629F015BD000413A4 /* SafariWebExtensionHandler.swift */; };
+		84563F0829F015BD000413A4 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84563EC629F015BD000413A4 /* SafariWebExtensionHandler.swift */; };
+		84563F2929F015BE000413A4 /* options in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1A29F015BE000413A4 /* options */; };
+		84563F2A29F015BE000413A4 /* emoji.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1B29F015BE000413A4 /* emoji.js */; };
+		84563F2B29F015BE000413A4 /* browser-polyfill.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1D29F015BE000413A4 /* browser-polyfill.js */; };
+		84563F2C29F015BE000413A4 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1E29F015BE000413A4 /* background.js */; };
+		84563F2D29F015BE000413A4 /* defaultSettings.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1F29F015BE000413A4 /* defaultSettings.js */; };
+		84563F2E29F015BE000413A4 /* web-ext-artifacts in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2029F015BE000413A4 /* web-ext-artifacts */; };
+		84563F2F29F015BE000413A4 /* backgrounds in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2129F015BE000413A4 /* backgrounds */; };
+		84563F3029F015BE000413A4 /* safari in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2229F015BE000413A4 /* safari */; };
+		84563F3129F015BE000413A4 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2329F015BE000413A4 /* icons */; };
+		84563F3229F015BE000413A4 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2429F015BE000413A4 /* manifest.json */; };
+		84563F3329F015BE000413A4 /* ch_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2529F015BE000413A4 /* ch_manifest.json */; };
+		84563F3429F015BE000413A4 /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2629F015BE000413A4 /* contentscript.js */; };
+		84563F3529F015BE000413A4 /* promo in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2729F015BE000413A4 /* promo */; };
+		84563F3629F015BE000413A4 /* ff_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2829F015BE000413A4 /* ff_manifest.json */; };
+		84563F3729F015BE000413A4 /* options in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1A29F015BE000413A4 /* options */; };
+		84563F3829F015BE000413A4 /* emoji.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1B29F015BE000413A4 /* emoji.js */; };
+		84563F3929F015BE000413A4 /* browser-polyfill.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1D29F015BE000413A4 /* browser-polyfill.js */; };
+		84563F3A29F015BE000413A4 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1E29F015BE000413A4 /* background.js */; };
+		84563F3B29F015BE000413A4 /* defaultSettings.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F1F29F015BE000413A4 /* defaultSettings.js */; };
+		84563F3C29F015BE000413A4 /* web-ext-artifacts in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2029F015BE000413A4 /* web-ext-artifacts */; };
+		84563F3D29F015BE000413A4 /* backgrounds in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2129F015BE000413A4 /* backgrounds */; };
+		84563F3E29F015BE000413A4 /* safari in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2229F015BE000413A4 /* safari */; };
+		84563F3F29F015BE000413A4 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2329F015BE000413A4 /* icons */; };
+		84563F4029F015BE000413A4 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2429F015BE000413A4 /* manifest.json */; };
+		84563F4129F015BE000413A4 /* ch_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2529F015BE000413A4 /* ch_manifest.json */; };
+		84563F4229F015BE000413A4 /* contentscript.js in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2629F015BE000413A4 /* contentscript.js */; };
+		84563F4329F015BE000413A4 /* promo in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2729F015BE000413A4 /* promo */; };
+		84563F4429F015BE000413A4 /* ff_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84563F2829F015BE000413A4 /* ff_manifest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8478DA9029F00AA700C2EA83 /* PBXContainerItemProxy */ = {
+		84563EEC29F015BD000413A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8478DA5C29F00AA400C2EA83 /* Project object */;
+			containerPortal = 84563EB829F015BB000413A4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8478DA8D29F00AA700C2EA83;
+			remoteGlobalIDString = 84563EE929F015BD000413A4;
 			remoteInfo = "ZenTube Extension (iOS)";
 		};
-		8478DA9A29F00AA700C2EA83 /* PBXContainerItemProxy */ = {
+		84563EF629F015BD000413A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8478DA5C29F00AA400C2EA83 /* Project object */;
+			containerPortal = 84563EB829F015BB000413A4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8478DA9729F00AA700C2EA83;
+			remoteGlobalIDString = 84563EF329F015BD000413A4;
 			remoteInfo = "ZenTube Extension (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8478DAB229F00AA700C2EA83 /* Embed Foundation Extensions */ = {
+		84563F0E29F015BD000413A4 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8478DA8F29F00AA700C2EA83 /* ZenTube Extension.appex in Embed Foundation Extensions */,
+				84563EEB29F015BD000413A4 /* ZenTube Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DAB929F00AA700C2EA83 /* Embed Foundation Extensions */ = {
+		84563F1529F015BD000413A4 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8478DA9929F00AA700C2EA83 /* ZenTube Extension.appex in Embed Foundation Extensions */,
+				84563EF529F015BD000413A4 /* ZenTube Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,69 +102,69 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8478DA6329F00AA400C2EA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
-		8478DA6429F00AA400C2EA83 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		8478DA6529F00AA400C2EA83 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		8478DA6629F00AA400C2EA83 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		8478DA6729F00AA400C2EA83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8478DA6829F00AA700C2EA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8478DA6A29F00AA700C2EA83 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		8478DA6F29F00AA700C2EA83 /* ZenTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8478DA7229F00AA700C2EA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8478DA7429F00AA700C2EA83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8478DA7729F00AA700C2EA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8478DA7A29F00AA700C2EA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8478DA7C29F00AA700C2EA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8478DA8129F00AA700C2EA83 /* ZenTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8478DA8329F00AA700C2EA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8478DA8629F00AA700C2EA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8478DA8829F00AA700C2EA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8478DA8929F00AA700C2EA83 /* ZenTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZenTube.entitlements; sourceTree = "<group>"; };
-		8478DA8E29F00AA700C2EA83 /* ZenTube Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ZenTube Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8478DA9329F00AA700C2EA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8478DA9829F00AA700C2EA83 /* ZenTube Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ZenTube Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8478DA9D29F00AA700C2EA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8478DA9E29F00AA700C2EA83 /* ZenTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZenTube.entitlements; sourceTree = "<group>"; };
-		8478DABE29F00AA700C2EA83 /* options */ = {isa = PBXFileReference; lastKnownFileType = folder; name = options; path = ../../../options; sourceTree = "<group>"; };
-		8478DABF29F00AA700C2EA83 /* emoji.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = emoji.js; path = ../../../emoji.js; sourceTree = "<group>"; };
-		8478DAC029F00AA700C2EA83 /* browser-polyfill.js.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = "browser-polyfill.js.map"; path = "../../../browser-polyfill.js.map"; sourceTree = "<group>"; };
-		8478DAC129F00AA700C2EA83 /* browser-polyfill.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "browser-polyfill.js"; path = "../../../browser-polyfill.js"; sourceTree = "<group>"; };
-		8478DAC229F00AA700C2EA83 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../background.js; sourceTree = "<group>"; };
-		8478DAC329F00AA700C2EA83 /* defaultSettings.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = defaultSettings.js; path = ../../../defaultSettings.js; sourceTree = "<group>"; };
-		8478DAC429F00AA700C2EA83 /* web-ext-artifacts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "web-ext-artifacts"; path = "../../../web-ext-artifacts"; sourceTree = "<group>"; };
-		8478DAC529F00AA700C2EA83 /* backgrounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = backgrounds; path = ../../../backgrounds; sourceTree = "<group>"; };
-		8478DAC629F00AA700C2EA83 /* safari */ = {isa = PBXFileReference; lastKnownFileType = folder; name = safari; path = ../..; sourceTree = "<group>"; };
-		8478DAC729F00AA700C2EA83 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../icons; sourceTree = "<group>"; };
-		8478DAC829F00AA700C2EA83 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../manifest.json; sourceTree = "<group>"; };
-		8478DAC929F00AA700C2EA83 /* ch_manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ch_manifest.json; path = ../../../ch_manifest.json; sourceTree = "<group>"; };
-		8478DACA29F00AA700C2EA83 /* contentscript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = contentscript.js; path = ../../../contentscript.js; sourceTree = "<group>"; };
-		8478DACB29F00AA700C2EA83 /* promo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = promo; path = ../../../promo; sourceTree = "<group>"; };
-		8478DACC29F00AA700C2EA83 /* ff_manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ff_manifest.json; path = ../../../ff_manifest.json; sourceTree = "<group>"; };
+		84563EBF29F015BB000413A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		84563EC029F015BB000413A4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		84563EC129F015BB000413A4 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		84563EC229F015BB000413A4 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		84563EC329F015BB000413A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84563EC429F015BD000413A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84563EC629F015BD000413A4 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		84563ECB29F015BD000413A4 /* ZenTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84563ECE29F015BD000413A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84563ED029F015BD000413A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84563ED329F015BD000413A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84563ED629F015BD000413A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84563ED829F015BD000413A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84563EDD29F015BD000413A4 /* ZenTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84563EDF29F015BD000413A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84563EE229F015BD000413A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84563EE429F015BD000413A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84563EE529F015BD000413A4 /* ZenTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZenTube.entitlements; sourceTree = "<group>"; };
+		84563EEA29F015BD000413A4 /* ZenTube Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ZenTube Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84563EEF29F015BD000413A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84563EF429F015BD000413A4 /* ZenTube Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ZenTube Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84563EF929F015BD000413A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84563EFA29F015BD000413A4 /* ZenTube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZenTube.entitlements; sourceTree = "<group>"; };
+		84563F1A29F015BE000413A4 /* options */ = {isa = PBXFileReference; lastKnownFileType = folder; name = options; path = ../../../options; sourceTree = "<group>"; };
+		84563F1B29F015BE000413A4 /* emoji.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = emoji.js; path = ../../../emoji.js; sourceTree = "<group>"; };
+		84563F1C29F015BE000413A4 /* browser-polyfill.js.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = "browser-polyfill.js.map"; path = "../../../browser-polyfill.js.map"; sourceTree = "<group>"; };
+		84563F1D29F015BE000413A4 /* browser-polyfill.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "browser-polyfill.js"; path = "../../../browser-polyfill.js"; sourceTree = "<group>"; };
+		84563F1E29F015BE000413A4 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../background.js; sourceTree = "<group>"; };
+		84563F1F29F015BE000413A4 /* defaultSettings.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = defaultSettings.js; path = ../../../defaultSettings.js; sourceTree = "<group>"; };
+		84563F2029F015BE000413A4 /* web-ext-artifacts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "web-ext-artifacts"; path = "../../../web-ext-artifacts"; sourceTree = "<group>"; };
+		84563F2129F015BE000413A4 /* backgrounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = backgrounds; path = ../../../backgrounds; sourceTree = "<group>"; };
+		84563F2229F015BE000413A4 /* safari */ = {isa = PBXFileReference; lastKnownFileType = folder; name = safari; path = ../..; sourceTree = "<group>"; };
+		84563F2329F015BE000413A4 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../icons; sourceTree = "<group>"; };
+		84563F2429F015BE000413A4 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../manifest.json; sourceTree = "<group>"; };
+		84563F2529F015BE000413A4 /* ch_manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ch_manifest.json; path = ../../../ch_manifest.json; sourceTree = "<group>"; };
+		84563F2629F015BE000413A4 /* contentscript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = contentscript.js; path = ../../../contentscript.js; sourceTree = "<group>"; };
+		84563F2729F015BE000413A4 /* promo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = promo; path = ../../../promo; sourceTree = "<group>"; };
+		84563F2829F015BE000413A4 /* ff_manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ff_manifest.json; path = ../../../ff_manifest.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8478DA6C29F00AA700C2EA83 /* Frameworks */ = {
+		84563EC829F015BD000413A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA7E29F00AA700C2EA83 /* Frameworks */ = {
+		84563EDA29F015BD000413A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA8B29F00AA700C2EA83 /* Frameworks */ = {
+		84563EE729F015BD000413A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA9529F00AA700C2EA83 /* Frameworks */ = {
+		84563EF129F015BD000413A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -174,118 +174,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8478DA5B29F00AA400C2EA83 = {
+		84563EB729F015BB000413A4 = {
 			isa = PBXGroup;
 			children = (
-				8478DA6029F00AA400C2EA83 /* Shared (App) */,
-				8478DA6929F00AA700C2EA83 /* Shared (Extension) */,
-				8478DA7129F00AA700C2EA83 /* iOS (App) */,
-				8478DA8229F00AA700C2EA83 /* macOS (App) */,
-				8478DA9229F00AA700C2EA83 /* iOS (Extension) */,
-				8478DA9C29F00AA700C2EA83 /* macOS (Extension) */,
-				8478DA7029F00AA700C2EA83 /* Products */,
+				84563EBC29F015BB000413A4 /* Shared (App) */,
+				84563EC529F015BD000413A4 /* Shared (Extension) */,
+				84563ECD29F015BD000413A4 /* iOS (App) */,
+				84563EDE29F015BD000413A4 /* macOS (App) */,
+				84563EEE29F015BD000413A4 /* iOS (Extension) */,
+				84563EF829F015BD000413A4 /* macOS (Extension) */,
+				84563ECC29F015BD000413A4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8478DA6029F00AA400C2EA83 /* Shared (App) */ = {
+		84563EBC29F015BB000413A4 /* Shared (App) */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA6729F00AA400C2EA83 /* ViewController.swift */,
-				8478DA6829F00AA700C2EA83 /* Assets.xcassets */,
-				8478DA6129F00AA400C2EA83 /* Resources */,
+				84563EC329F015BB000413A4 /* ViewController.swift */,
+				84563EC429F015BD000413A4 /* Assets.xcassets */,
+				84563EBD29F015BB000413A4 /* Resources */,
 			);
 			path = "Shared (App)";
 			sourceTree = "<group>";
 		};
-		8478DA6129F00AA400C2EA83 /* Resources */ = {
+		84563EBD29F015BB000413A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA6229F00AA400C2EA83 /* Main.html */,
-				8478DA6429F00AA400C2EA83 /* Icon.png */,
-				8478DA6529F00AA400C2EA83 /* Style.css */,
-				8478DA6629F00AA400C2EA83 /* Script.js */,
+				84563EBE29F015BB000413A4 /* Main.html */,
+				84563EC029F015BB000413A4 /* Icon.png */,
+				84563EC129F015BB000413A4 /* Style.css */,
+				84563EC229F015BB000413A4 /* Script.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8478DA6929F00AA700C2EA83 /* Shared (Extension) */ = {
+		84563EC529F015BD000413A4 /* Shared (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				8478DABD29F00AA700C2EA83 /* Resources */,
-				8478DA6A29F00AA700C2EA83 /* SafariWebExtensionHandler.swift */,
+				84563F1929F015BE000413A4 /* Resources */,
+				84563EC629F015BD000413A4 /* SafariWebExtensionHandler.swift */,
 			);
 			path = "Shared (Extension)";
 			sourceTree = "<group>";
 		};
-		8478DA7029F00AA700C2EA83 /* Products */ = {
+		84563ECC29F015BD000413A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA6F29F00AA700C2EA83 /* ZenTube.app */,
-				8478DA8129F00AA700C2EA83 /* ZenTube.app */,
-				8478DA8E29F00AA700C2EA83 /* ZenTube Extension.appex */,
-				8478DA9829F00AA700C2EA83 /* ZenTube Extension.appex */,
+				84563ECB29F015BD000413A4 /* ZenTube.app */,
+				84563EDD29F015BD000413A4 /* ZenTube.app */,
+				84563EEA29F015BD000413A4 /* ZenTube Extension.appex */,
+				84563EF429F015BD000413A4 /* ZenTube Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8478DA7129F00AA700C2EA83 /* iOS (App) */ = {
+		84563ECD29F015BD000413A4 /* iOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA7229F00AA700C2EA83 /* AppDelegate.swift */,
-				8478DA7429F00AA700C2EA83 /* SceneDelegate.swift */,
-				8478DA7629F00AA700C2EA83 /* LaunchScreen.storyboard */,
-				8478DA7929F00AA700C2EA83 /* Main.storyboard */,
-				8478DA7C29F00AA700C2EA83 /* Info.plist */,
+				84563ECE29F015BD000413A4 /* AppDelegate.swift */,
+				84563ED029F015BD000413A4 /* SceneDelegate.swift */,
+				84563ED229F015BD000413A4 /* LaunchScreen.storyboard */,
+				84563ED529F015BD000413A4 /* Main.storyboard */,
+				84563ED829F015BD000413A4 /* Info.plist */,
 			);
 			path = "iOS (App)";
 			sourceTree = "<group>";
 		};
-		8478DA8229F00AA700C2EA83 /* macOS (App) */ = {
+		84563EDE29F015BD000413A4 /* macOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA8329F00AA700C2EA83 /* AppDelegate.swift */,
-				8478DA8529F00AA700C2EA83 /* Main.storyboard */,
-				8478DA8829F00AA700C2EA83 /* Info.plist */,
-				8478DA8929F00AA700C2EA83 /* ZenTube.entitlements */,
+				84563EDF29F015BD000413A4 /* AppDelegate.swift */,
+				84563EE129F015BD000413A4 /* Main.storyboard */,
+				84563EE429F015BD000413A4 /* Info.plist */,
+				84563EE529F015BD000413A4 /* ZenTube.entitlements */,
 			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
 		};
-		8478DA9229F00AA700C2EA83 /* iOS (Extension) */ = {
+		84563EEE29F015BD000413A4 /* iOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA9329F00AA700C2EA83 /* Info.plist */,
+				84563EEF29F015BD000413A4 /* Info.plist */,
 			);
 			path = "iOS (Extension)";
 			sourceTree = "<group>";
 		};
-		8478DA9C29F00AA700C2EA83 /* macOS (Extension) */ = {
+		84563EF829F015BD000413A4 /* macOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				8478DA9D29F00AA700C2EA83 /* Info.plist */,
-				8478DA9E29F00AA700C2EA83 /* ZenTube.entitlements */,
+				84563EF929F015BD000413A4 /* Info.plist */,
+				84563EFA29F015BD000413A4 /* ZenTube.entitlements */,
 			);
 			path = "macOS (Extension)";
 			sourceTree = "<group>";
 		};
-		8478DABD29F00AA700C2EA83 /* Resources */ = {
+		84563F1929F015BE000413A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8478DABE29F00AA700C2EA83 /* options */,
-				8478DABF29F00AA700C2EA83 /* emoji.js */,
-				8478DAC029F00AA700C2EA83 /* browser-polyfill.js.map */,
-				8478DAC129F00AA700C2EA83 /* browser-polyfill.js */,
-				8478DAC229F00AA700C2EA83 /* background.js */,
-				8478DAC329F00AA700C2EA83 /* defaultSettings.js */,
-				8478DAC429F00AA700C2EA83 /* web-ext-artifacts */,
-				8478DAC529F00AA700C2EA83 /* backgrounds */,
-				8478DAC629F00AA700C2EA83 /* safari */,
-				8478DAC729F00AA700C2EA83 /* icons */,
-				8478DAC829F00AA700C2EA83 /* manifest.json */,
-				8478DAC929F00AA700C2EA83 /* ch_manifest.json */,
-				8478DACA29F00AA700C2EA83 /* contentscript.js */,
-				8478DACB29F00AA700C2EA83 /* promo */,
-				8478DACC29F00AA700C2EA83 /* ff_manifest.json */,
+				84563F1A29F015BE000413A4 /* options */,
+				84563F1B29F015BE000413A4 /* emoji.js */,
+				84563F1C29F015BE000413A4 /* browser-polyfill.js.map */,
+				84563F1D29F015BE000413A4 /* browser-polyfill.js */,
+				84563F1E29F015BE000413A4 /* background.js */,
+				84563F1F29F015BE000413A4 /* defaultSettings.js */,
+				84563F2029F015BE000413A4 /* web-ext-artifacts */,
+				84563F2129F015BE000413A4 /* backgrounds */,
+				84563F2229F015BE000413A4 /* safari */,
+				84563F2329F015BE000413A4 /* icons */,
+				84563F2429F015BE000413A4 /* manifest.json */,
+				84563F2529F015BE000413A4 /* ch_manifest.json */,
+				84563F2629F015BE000413A4 /* contentscript.js */,
+				84563F2729F015BE000413A4 /* promo */,
+				84563F2829F015BE000413A4 /* ff_manifest.json */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -294,51 +294,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8478DA6E29F00AA700C2EA83 /* ZenTube (iOS) */ = {
+		84563ECA29F015BD000413A4 /* ZenTube (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8478DAB329F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube (iOS)" */;
+			buildConfigurationList = 84563F0F29F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube (iOS)" */;
 			buildPhases = (
-				8478DA6B29F00AA700C2EA83 /* Sources */,
-				8478DA6C29F00AA700C2EA83 /* Frameworks */,
-				8478DA6D29F00AA700C2EA83 /* Resources */,
-				8478DAB229F00AA700C2EA83 /* Embed Foundation Extensions */,
+				84563EC729F015BD000413A4 /* Sources */,
+				84563EC829F015BD000413A4 /* Frameworks */,
+				84563EC929F015BD000413A4 /* Resources */,
+				84563F0E29F015BD000413A4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8478DA9129F00AA700C2EA83 /* PBXTargetDependency */,
+				84563EED29F015BD000413A4 /* PBXTargetDependency */,
 			);
 			name = "ZenTube (iOS)";
 			productName = "ZenTube (iOS)";
-			productReference = 8478DA6F29F00AA700C2EA83 /* ZenTube.app */;
+			productReference = 84563ECB29F015BD000413A4 /* ZenTube.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8478DA8029F00AA700C2EA83 /* ZenTube (macOS) */ = {
+		84563EDC29F015BD000413A4 /* ZenTube (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8478DABA29F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube (macOS)" */;
+			buildConfigurationList = 84563F1629F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube (macOS)" */;
 			buildPhases = (
-				8478DA7D29F00AA700C2EA83 /* Sources */,
-				8478DA7E29F00AA700C2EA83 /* Frameworks */,
-				8478DA7F29F00AA700C2EA83 /* Resources */,
-				8478DAB929F00AA700C2EA83 /* Embed Foundation Extensions */,
+				84563ED929F015BD000413A4 /* Sources */,
+				84563EDA29F015BD000413A4 /* Frameworks */,
+				84563EDB29F015BD000413A4 /* Resources */,
+				84563F1529F015BD000413A4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8478DA9B29F00AA700C2EA83 /* PBXTargetDependency */,
+				84563EF729F015BD000413A4 /* PBXTargetDependency */,
 			);
 			name = "ZenTube (macOS)";
 			productName = "ZenTube (macOS)";
-			productReference = 8478DA8129F00AA700C2EA83 /* ZenTube.app */;
+			productReference = 84563EDD29F015BD000413A4 /* ZenTube.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8478DA8D29F00AA700C2EA83 /* ZenTube Extension (iOS) */ = {
+		84563EE929F015BD000413A4 /* ZenTube Extension (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8478DAAF29F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube Extension (iOS)" */;
+			buildConfigurationList = 84563F0B29F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube Extension (iOS)" */;
 			buildPhases = (
-				8478DA8A29F00AA700C2EA83 /* Sources */,
-				8478DA8B29F00AA700C2EA83 /* Frameworks */,
-				8478DA8C29F00AA700C2EA83 /* Resources */,
+				84563EE629F015BD000413A4 /* Sources */,
+				84563EE729F015BD000413A4 /* Frameworks */,
+				84563EE829F015BD000413A4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -346,16 +346,16 @@
 			);
 			name = "ZenTube Extension (iOS)";
 			productName = "ZenTube Extension (iOS)";
-			productReference = 8478DA8E29F00AA700C2EA83 /* ZenTube Extension.appex */;
+			productReference = 84563EEA29F015BD000413A4 /* ZenTube Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		8478DA9729F00AA700C2EA83 /* ZenTube Extension (macOS) */ = {
+		84563EF329F015BD000413A4 /* ZenTube Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8478DAB629F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube Extension (macOS)" */;
+			buildConfigurationList = 84563F1229F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube Extension (macOS)" */;
 			buildPhases = (
-				8478DA9429F00AA700C2EA83 /* Sources */,
-				8478DA9529F00AA700C2EA83 /* Frameworks */,
-				8478DA9629F00AA700C2EA83 /* Resources */,
+				84563EF029F015BD000413A4 /* Sources */,
+				84563EF129F015BD000413A4 /* Frameworks */,
+				84563EF229F015BD000413A4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -363,34 +363,34 @@
 			);
 			name = "ZenTube Extension (macOS)";
 			productName = "ZenTube Extension (macOS)";
-			productReference = 8478DA9829F00AA700C2EA83 /* ZenTube Extension.appex */;
+			productReference = 84563EF429F015BD000413A4 /* ZenTube Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8478DA5C29F00AA400C2EA83 /* Project object */ = {
+		84563EB829F015BB000413A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					8478DA6E29F00AA700C2EA83 = {
+					84563ECA29F015BD000413A4 = {
 						CreatedOnToolsVersion = 14.3;
 					};
-					8478DA8029F00AA700C2EA83 = {
+					84563EDC29F015BD000413A4 = {
 						CreatedOnToolsVersion = 14.3;
 					};
-					8478DA8D29F00AA700C2EA83 = {
+					84563EE929F015BD000413A4 = {
 						CreatedOnToolsVersion = 14.3;
 					};
-					8478DA9729F00AA700C2EA83 = {
+					84563EF329F015BD000413A4 = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
-			buildConfigurationList = 8478DA5F29F00AA400C2EA83 /* Build configuration list for PBXProject "ZenTube" */;
+			buildConfigurationList = 84563EBB29F015BB000413A4 /* Build configuration list for PBXProject "ZenTube" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -398,171 +398,171 @@
 				en,
 				Base,
 			);
-			mainGroup = 8478DA5B29F00AA400C2EA83;
-			productRefGroup = 8478DA7029F00AA700C2EA83 /* Products */;
+			mainGroup = 84563EB729F015BB000413A4;
+			productRefGroup = 84563ECC29F015BD000413A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8478DA6E29F00AA700C2EA83 /* ZenTube (iOS) */,
-				8478DA8029F00AA700C2EA83 /* ZenTube (macOS) */,
-				8478DA8D29F00AA700C2EA83 /* ZenTube Extension (iOS) */,
-				8478DA9729F00AA700C2EA83 /* ZenTube Extension (macOS) */,
+				84563ECA29F015BD000413A4 /* ZenTube (iOS) */,
+				84563EDC29F015BD000413A4 /* ZenTube (macOS) */,
+				84563EE929F015BD000413A4 /* ZenTube Extension (iOS) */,
+				84563EF329F015BD000413A4 /* ZenTube Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8478DA6D29F00AA700C2EA83 /* Resources */ = {
+		84563EC929F015BD000413A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAA129F00AA700C2EA83 /* Icon.png in Resources */,
-				8478DA7829F00AA700C2EA83 /* LaunchScreen.storyboard in Resources */,
-				8478DA9F29F00AA700C2EA83 /* Main.html in Resources */,
-				8478DAA529F00AA700C2EA83 /* Script.js in Resources */,
-				8478DAA929F00AA700C2EA83 /* Assets.xcassets in Resources */,
-				8478DA7B29F00AA700C2EA83 /* Main.storyboard in Resources */,
-				8478DAA329F00AA700C2EA83 /* Style.css in Resources */,
+				84563EFD29F015BD000413A4 /* Icon.png in Resources */,
+				84563ED429F015BD000413A4 /* LaunchScreen.storyboard in Resources */,
+				84563EFB29F015BD000413A4 /* Main.html in Resources */,
+				84563F0129F015BD000413A4 /* Script.js in Resources */,
+				84563F0529F015BD000413A4 /* Assets.xcassets in Resources */,
+				84563ED729F015BD000413A4 /* Main.storyboard in Resources */,
+				84563EFF29F015BD000413A4 /* Style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA7F29F00AA700C2EA83 /* Resources */ = {
+		84563EDB29F015BD000413A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAA229F00AA700C2EA83 /* Icon.png in Resources */,
-				8478DAA429F00AA700C2EA83 /* Style.css in Resources */,
-				8478DA8729F00AA700C2EA83 /* Main.storyboard in Resources */,
-				8478DAA629F00AA700C2EA83 /* Script.js in Resources */,
-				8478DAAA29F00AA700C2EA83 /* Assets.xcassets in Resources */,
-				8478DAA029F00AA700C2EA83 /* Main.html in Resources */,
+				84563EFE29F015BD000413A4 /* Icon.png in Resources */,
+				84563F0029F015BD000413A4 /* Style.css in Resources */,
+				84563EE329F015BD000413A4 /* Main.storyboard in Resources */,
+				84563F0229F015BD000413A4 /* Script.js in Resources */,
+				84563F0629F015BD000413A4 /* Assets.xcassets in Resources */,
+				84563EFC29F015BD000413A4 /* Main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA8C29F00AA700C2EA83 /* Resources */ = {
+		84563EE829F015BD000413A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DADE29F00AA700C2EA83 /* background.js in Resources */,
-				8478DADB29F00AA700C2EA83 /* options in Resources */,
-				8478DAE429F00AA700C2EA83 /* manifest.json in Resources */,
-				8478DADF29F00AA700C2EA83 /* defaultSettings.js in Resources */,
-				8478DAE829F00AA700C2EA83 /* ff_manifest.json in Resources */,
-				8478DAE329F00AA700C2EA83 /* icons in Resources */,
-				8478DADD29F00AA700C2EA83 /* browser-polyfill.js in Resources */,
-				8478DAE229F00AA700C2EA83 /* safari in Resources */,
-				8478DAE629F00AA700C2EA83 /* contentscript.js in Resources */,
-				8478DAE729F00AA700C2EA83 /* promo in Resources */,
-				8478DADC29F00AA700C2EA83 /* emoji.js in Resources */,
-				8478DAE129F00AA700C2EA83 /* backgrounds in Resources */,
-				8478DAE029F00AA700C2EA83 /* web-ext-artifacts in Resources */,
-				8478DAE529F00AA700C2EA83 /* ch_manifest.json in Resources */,
+				84563F3A29F015BE000413A4 /* background.js in Resources */,
+				84563F3729F015BE000413A4 /* options in Resources */,
+				84563F4029F015BE000413A4 /* manifest.json in Resources */,
+				84563F3B29F015BE000413A4 /* defaultSettings.js in Resources */,
+				84563F4429F015BE000413A4 /* ff_manifest.json in Resources */,
+				84563F3F29F015BE000413A4 /* icons in Resources */,
+				84563F3929F015BE000413A4 /* browser-polyfill.js in Resources */,
+				84563F3E29F015BE000413A4 /* safari in Resources */,
+				84563F4229F015BE000413A4 /* contentscript.js in Resources */,
+				84563F4329F015BE000413A4 /* promo in Resources */,
+				84563F3829F015BE000413A4 /* emoji.js in Resources */,
+				84563F3D29F015BE000413A4 /* backgrounds in Resources */,
+				84563F3C29F015BE000413A4 /* web-ext-artifacts in Resources */,
+				84563F4129F015BE000413A4 /* ch_manifest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA9629F00AA700C2EA83 /* Resources */ = {
+		84563EF229F015BD000413A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAD029F00AA700C2EA83 /* background.js in Resources */,
-				8478DACD29F00AA700C2EA83 /* options in Resources */,
-				8478DAD629F00AA700C2EA83 /* manifest.json in Resources */,
-				8478DAD129F00AA700C2EA83 /* defaultSettings.js in Resources */,
-				8478DADA29F00AA700C2EA83 /* ff_manifest.json in Resources */,
-				8478DAD529F00AA700C2EA83 /* icons in Resources */,
-				8478DACF29F00AA700C2EA83 /* browser-polyfill.js in Resources */,
-				8478DAD429F00AA700C2EA83 /* safari in Resources */,
-				8478DAD829F00AA700C2EA83 /* contentscript.js in Resources */,
-				8478DAD929F00AA700C2EA83 /* promo in Resources */,
-				8478DACE29F00AA700C2EA83 /* emoji.js in Resources */,
-				8478DAD329F00AA700C2EA83 /* backgrounds in Resources */,
-				8478DAD229F00AA700C2EA83 /* web-ext-artifacts in Resources */,
-				8478DAD729F00AA700C2EA83 /* ch_manifest.json in Resources */,
+				84563F2C29F015BE000413A4 /* background.js in Resources */,
+				84563F2929F015BE000413A4 /* options in Resources */,
+				84563F3229F015BE000413A4 /* manifest.json in Resources */,
+				84563F2D29F015BE000413A4 /* defaultSettings.js in Resources */,
+				84563F3629F015BE000413A4 /* ff_manifest.json in Resources */,
+				84563F3129F015BE000413A4 /* icons in Resources */,
+				84563F2B29F015BE000413A4 /* browser-polyfill.js in Resources */,
+				84563F3029F015BE000413A4 /* safari in Resources */,
+				84563F3429F015BE000413A4 /* contentscript.js in Resources */,
+				84563F3529F015BE000413A4 /* promo in Resources */,
+				84563F2A29F015BE000413A4 /* emoji.js in Resources */,
+				84563F2F29F015BE000413A4 /* backgrounds in Resources */,
+				84563F2E29F015BE000413A4 /* web-ext-artifacts in Resources */,
+				84563F3329F015BE000413A4 /* ch_manifest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8478DA6B29F00AA700C2EA83 /* Sources */ = {
+		84563EC729F015BD000413A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAA729F00AA700C2EA83 /* ViewController.swift in Sources */,
-				8478DA7329F00AA700C2EA83 /* AppDelegate.swift in Sources */,
-				8478DA7529F00AA700C2EA83 /* SceneDelegate.swift in Sources */,
+				84563F0329F015BD000413A4 /* ViewController.swift in Sources */,
+				84563ECF29F015BD000413A4 /* AppDelegate.swift in Sources */,
+				84563ED129F015BD000413A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA7D29F00AA700C2EA83 /* Sources */ = {
+		84563ED929F015BD000413A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAA829F00AA700C2EA83 /* ViewController.swift in Sources */,
-				8478DA8429F00AA700C2EA83 /* AppDelegate.swift in Sources */,
+				84563F0429F015BD000413A4 /* ViewController.swift in Sources */,
+				84563EE029F015BD000413A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA8A29F00AA700C2EA83 /* Sources */ = {
+		84563EE629F015BD000413A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAAB29F00AA700C2EA83 /* SafariWebExtensionHandler.swift in Sources */,
+				84563F0729F015BD000413A4 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8478DA9429F00AA700C2EA83 /* Sources */ = {
+		84563EF029F015BD000413A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8478DAAC29F00AA700C2EA83 /* SafariWebExtensionHandler.swift in Sources */,
+				84563F0829F015BD000413A4 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8478DA9129F00AA700C2EA83 /* PBXTargetDependency */ = {
+		84563EED29F015BD000413A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8478DA8D29F00AA700C2EA83 /* ZenTube Extension (iOS) */;
-			targetProxy = 8478DA9029F00AA700C2EA83 /* PBXContainerItemProxy */;
+			target = 84563EE929F015BD000413A4 /* ZenTube Extension (iOS) */;
+			targetProxy = 84563EEC29F015BD000413A4 /* PBXContainerItemProxy */;
 		};
-		8478DA9B29F00AA700C2EA83 /* PBXTargetDependency */ = {
+		84563EF729F015BD000413A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8478DA9729F00AA700C2EA83 /* ZenTube Extension (macOS) */;
-			targetProxy = 8478DA9A29F00AA700C2EA83 /* PBXContainerItemProxy */;
+			target = 84563EF329F015BD000413A4 /* ZenTube Extension (macOS) */;
+			targetProxy = 84563EF629F015BD000413A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8478DA6229F00AA400C2EA83 /* Main.html */ = {
+		84563EBE29F015BB000413A4 /* Main.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8478DA6329F00AA400C2EA83 /* Base */,
+				84563EBF29F015BB000413A4 /* Base */,
 			);
 			name = Main.html;
 			sourceTree = "<group>";
 		};
-		8478DA7629F00AA700C2EA83 /* LaunchScreen.storyboard */ = {
+		84563ED229F015BD000413A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8478DA7729F00AA700C2EA83 /* Base */,
+				84563ED329F015BD000413A4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		8478DA7929F00AA700C2EA83 /* Main.storyboard */ = {
+		84563ED529F015BD000413A4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8478DA7A29F00AA700C2EA83 /* Base */,
+				84563ED629F015BD000413A4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8478DA8529F00AA700C2EA83 /* Main.storyboard */ = {
+		84563EE129F015BD000413A4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8478DA8629F00AA700C2EA83 /* Base */,
+				84563EE229F015BD000413A4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8478DAAD29F00AA700C2EA83 /* Debug */ = {
+		84563F0929F015BD000413A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -628,7 +628,7 @@
 			};
 			name = Debug;
 		};
-		8478DAAE29F00AA700C2EA83 /* Release */ = {
+		84563F0A29F015BD000413A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -679,7 +679,7 @@
 			};
 			name = Release;
 		};
-		8478DAB029F00AA700C2EA83 /* Debug */ = {
+		84563F0C29F015BD000413A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -709,7 +709,7 @@
 			};
 			name = Debug;
 		};
-		8478DAB129F00AA700C2EA83 /* Release */ = {
+		84563F0D29F015BD000413A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -740,7 +740,7 @@
 			};
 			name = Release;
 		};
-		8478DAB429F00AA700C2EA83 /* Debug */ = {
+		84563F1029F015BD000413A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -777,7 +777,7 @@
 			};
 			name = Debug;
 		};
-		8478DAB529F00AA700C2EA83 /* Release */ = {
+		84563F1129F015BD000413A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -815,7 +815,7 @@
 			};
 			name = Release;
 		};
-		8478DAB729F00AA700C2EA83 /* Debug */ = {
+		84563F1329F015BD000413A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/ZenTube.entitlements";
@@ -846,7 +846,7 @@
 			};
 			name = Debug;
 		};
-		8478DAB829F00AA700C2EA83 /* Release */ = {
+		84563F1429F015BD000413A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/ZenTube.entitlements";
@@ -877,7 +877,7 @@
 			};
 			name = Release;
 		};
-		8478DABB29F00AA700C2EA83 /* Debug */ = {
+		84563F1729F015BD000413A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -912,7 +912,7 @@
 			};
 			name = Debug;
 		};
-		8478DABC29F00AA700C2EA83 /* Release */ = {
+		84563F1829F015BD000413A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -950,52 +950,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8478DA5F29F00AA400C2EA83 /* Build configuration list for PBXProject "ZenTube" */ = {
+		84563EBB29F015BB000413A4 /* Build configuration list for PBXProject "ZenTube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8478DAAD29F00AA700C2EA83 /* Debug */,
-				8478DAAE29F00AA700C2EA83 /* Release */,
+				84563F0929F015BD000413A4 /* Debug */,
+				84563F0A29F015BD000413A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8478DAAF29F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube Extension (iOS)" */ = {
+		84563F0B29F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube Extension (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8478DAB029F00AA700C2EA83 /* Debug */,
-				8478DAB129F00AA700C2EA83 /* Release */,
+				84563F0C29F015BD000413A4 /* Debug */,
+				84563F0D29F015BD000413A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8478DAB329F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube (iOS)" */ = {
+		84563F0F29F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8478DAB429F00AA700C2EA83 /* Debug */,
-				8478DAB529F00AA700C2EA83 /* Release */,
+				84563F1029F015BD000413A4 /* Debug */,
+				84563F1129F015BD000413A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8478DAB629F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube Extension (macOS)" */ = {
+		84563F1229F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8478DAB729F00AA700C2EA83 /* Debug */,
-				8478DAB829F00AA700C2EA83 /* Release */,
+				84563F1329F015BD000413A4 /* Debug */,
+				84563F1429F015BD000413A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8478DABA29F00AA700C2EA83 /* Build configuration list for PBXNativeTarget "ZenTube (macOS)" */ = {
+		84563F1629F015BD000413A4 /* Build configuration list for PBXNativeTarget "ZenTube (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8478DABB29F00AA700C2EA83 /* Debug */,
-				8478DABC29F00AA700C2EA83 /* Release */,
+				84563F1729F015BD000413A4 /* Debug */,
+				84563F1829F015BD000413A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8478DA5C29F00AA400C2EA83 /* Project object */;
+	rootObject = 84563EB829F015BB000413A4 /* Project object */;
 }
