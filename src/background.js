@@ -14,17 +14,20 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
     await browser.storage.local.clear();
 
     for await (const t of tabs) {
-      const injection = await browser.scripting.executeScript({
-        target: { tabId: t.id },
-        files: [
-          "browser-polyfill.js",
-          "defaultSettings.js",
-          "contentscript.js",
-          "emoji.js"
-        ]
-      });
-
-      browser.tabs.reload(t.id);
+      try {
+        const injection = await browser.scripting.executeScript({
+          target: { tabId: t.id },
+          files: [
+            "browser-polyfill.js",
+            "defaultSettings.js",
+            "contentscript.js",
+            "emoji.js"
+          ]
+        });
+      } catch (err) {
+        console.error(`failed to execute script: ${err}`);
+      }
+      await browser.tabs.reload(t.id, { bypassCache: true });
     }
   }
 });

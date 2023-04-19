@@ -3,7 +3,7 @@
 const pattern =
   /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
-let emojishow,
+let emojishow = true,
   ignoreMutations = false,
   fullClearFirstScheduledTime = 0,
   fullClearTimeout = null,
