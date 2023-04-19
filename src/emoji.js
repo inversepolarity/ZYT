@@ -1,98 +1,96 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const pattern =
-    /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
+// TODO: tighten-up debounced scheduling
 
-  let emojishow,
-    ignoreMutations = false,
-    fullClearFirstScheduledTime = 0,
-    fullClearTimeout = null,
-    totalTime = 0,
-    node,
-    hashmap = {};
+const pattern =
+  /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
-  function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
-    const scheduled = fullClearTimeout !== null;
+let emojishow,
+  ignoreMutations = false,
+  fullClearFirstScheduledTime = 0,
+  fullClearTimeout = null,
+  totalTime = 0,
+  node,
+  hashmap = {};
 
-    if (scheduled) {
-      const timeDiff = Date.now() - fullClearFirstScheduledTime;
-      const shouldBlock = timeDiff + debounceTimeMs > maxDebounceTimeMs;
-      if (maxDebounceTimeMs && shouldBlock) return;
-      clearTimeout(fullClearTimeout);
-    } else {
-      fullClearFirstScheduledTime = Date.now();
-    }
-    fullClearTimeout = emojishow
-      ? setTimeout(fullClear, debounceTimeMs)
-      : setTimeout(fullRestore, debounceTimeMs);
+function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
+  const scheduled = fullClearTimeout !== null;
+
+  if (scheduled) {
+    const timeDiff = Date.now() - fullClearFirstScheduledTime;
+    const shouldBlock = timeDiff + debounceTimeMs > maxDebounceTimeMs;
+    if (maxDebounceTimeMs && shouldBlock) return;
+    clearTimeout(fullClearTimeout);
+  } else {
+    fullClearFirstScheduledTime = Date.now();
   }
+  fullClearTimeout = emojishow
+    ? setTimeout(fullClear, debounceTimeMs)
+    : setTimeout(fullRestore, debounceTimeMs);
+}
 
-  async function fullClear() {
-    const start = Date.now();
-    await toggleEmoji(document.body, true);
+async function fullClear() {
+  const start = Date.now();
+  await toggleEmoji(document.body, true);
 
-    totalTime += Date.now() - start;
-    fullClearTimeout = null;
-  }
+  totalTime += Date.now() - start;
+  fullClearTimeout = null;
+}
 
-  async function fullRestore() {
-    const start = Date.now();
-    await toggleEmoji(document.body, false);
+async function fullRestore() {
+  const start = Date.now();
+  await toggleEmoji(document.body, false);
 
-    totalTime += Date.now() - start;
-    fullClearTimeout = null;
-  }
+  totalTime += Date.now() - start;
+  fullClearTimeout = null;
+}
 
-  async function toggleEmoji(element, remove) {
-    if (remove === undefined) return;
+async function toggleEmoji(element, remove) {
+  if (!element) return;
+  if (remove === undefined) return;
 
-    const treeWalker = document.createTreeWalker(
-      element,
-      NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
-    );
+  const treeWalker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
+  );
 
-    while ((node = treeWalker.nextNode())) {
-      if (node.parentElement.tagName !== "SCRIPT" && node.nodeValue) {
-        const matches = node.nodeValue && node.nodeValue.match(pattern);
+  while ((node = treeWalker.nextNode())) {
+    if (node.parentElement.tagName !== "SCRIPT" && node.nodeValue) {
+      const matches = node.nodeValue && node.nodeValue.match(pattern);
 
-        if (matches) {
-          let strip = node.nodeValue.replace(pattern, "");
+      if (matches) {
+        let strip = node.nodeValue.replace(pattern, "");
 
-          if (!strip.length) {
-            strip = " ";
-          }
+        if (!strip.length) {
+          strip = " ";
+        }
 
-          if (!hashmap[node.nodeValue]) {
-            hashmap[node.nodeValue] = {
-              orig: node.nodeValue,
-              strip,
-              nodes: [node.parentElement]
-            };
-            return;
-          }
-
+        if (!hashmap[node.nodeValue]) {
           hashmap[node.nodeValue] = {
             orig: node.nodeValue,
             strip,
-            nodes: new Set([
-              ...hashmap[node.nodeValue].nodes,
-              node.parentElement
-            ])
+            nodes: [node.parentElement]
           };
-
-          if (remove) {
-            node.nodeValue = strip;
-          }
+          return;
         }
 
-        if (!emojishow) {
-          // BUG: flicker on certain node(s) on nav
-          for (o in hashmap) {
-            let nodes = Array.from(hashmap[o].nodes);
-            for (rn in nodes) {
-              if (node.nodeValue == hashmap[o].strip) {
-                if (node.parentElement.isSameNode(nodes[rn])) {
-                  node.nodeValue = hashmap[o].orig;
-                }
+        hashmap[node.nodeValue] = {
+          orig: node.nodeValue,
+          strip,
+          nodes: new Set([...hashmap[node.nodeValue].nodes, node.parentElement])
+        };
+
+        if (remove) {
+          node.nodeValue = strip;
+        }
+      }
+
+      if (!emojishow) {
+        // BUG: flicker on certain node(s) on nav
+        for (o in hashmap) {
+          let nodes = Array.from(hashmap[o].nodes);
+          for (rn in nodes) {
+            if (node.nodeValue == hashmap[o].strip) {
+              if (node.parentElement.isSameNode(nodes[rn])) {
+                node.nodeValue = hashmap[o].orig;
               }
             }
           }
@@ -100,35 +98,36 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
   }
+}
 
-  async function onMutation(mutations) {
-    if (ignoreMutations) return;
+async function onMutation(mutations) {
+  if (ignoreMutations) return;
 
-    const start = Date.now();
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        await toggleEmoji(node, emojishow);
-      }
+  const start = Date.now();
+  for (const mutation of mutations) {
+    for (const node of mutation.addedNodes) {
+      await toggleEmoji(node, emojishow);
     }
-    totalTime += Date.now() - start;
-    scheduleDebouncedFullClear(100, 500);
   }
+  totalTime += Date.now() - start;
+  scheduleDebouncedFullClear(100, 500);
+}
 
+document.addEventListener("DOMContentLoaded", async () => {
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
   let observer = new MutationObserver(onMutation);
+
   observer.observe(document, {
     attributes: true,
     childList: true,
     subtree: true
   });
 
-  const { options } = await browser.storage.local.get();
-  emojishow = options["Everywhere"].emoji.show;
-
   await browser.runtime.onMessage.addListener(async (request, sender) => {
     const { element } = await JSON.parse(request);
     const { options } = await browser.storage.local.get();
     emojishow = options["Everywhere"].emoji.show;
+
     switch (element) {
       case "emoji":
         emojishow ? fullClear() : fullRestore();
@@ -137,4 +136,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         break;
     }
   });
+
+  const { options } = await browser.storage.local.get();
+  emojishow = options["Everywhere"].emoji.show;
 });

@@ -16,7 +16,12 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
     for await (const t of tabs) {
       const injection = await browser.scripting.executeScript({
         target: { tabId: t.id },
-        files: ["defaultSettings.js", "emoji.js", "contentscript.js"]
+        files: [
+          "browser-polyfill.js",
+          "defaultSettings.js",
+          "contentscript.js",
+          "emoji.js"
+        ]
       });
 
       browser.tabs.reload(t.id);
