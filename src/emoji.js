@@ -116,6 +116,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     totalTime += Date.now() - start;
     scheduleDebouncedFullClear(100, 500);
   }
+
+  async function buildEmojiMap() {}
+  async function getEmojiMap() {}
+
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
   let observer = new MutationObserver(onMutation);
 
