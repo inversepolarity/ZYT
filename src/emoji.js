@@ -1,6 +1,10 @@
 // TODO: tighten-up debounced scheduling
 
 document.addEventListener("DOMContentLoaded", async () => {
+  if (typeof browser === "undefined") {
+    var browser = chrome;
+  }
+
   const pattern =
     /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
@@ -117,7 +121,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     scheduleDebouncedFullClear(100, 500);
   }
 
-  async function buildEmojiMap() {}
+  async function buildEmojiMap() {
+    const settings = await browser.storage.local.get();
+    // const { options } = settings;
+
+    console.log(
+      "🚀 ~ file: emoji.js:126 ~ buildEmojiMap ~ settings:",
+      settings
+    );
+  }
+
   async function getEmojiMap() {}
 
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
@@ -131,7 +144,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await browser.runtime.onMessage.addListener(async (request, sender) => {
     const { element } = await JSON.parse(request);
-    const { options } = await browser.storage.local.get();
+    const { settings } = await browser.storage.local.get();
+    const { options } = settings;
     emojishow = options["Everywhere"].emoji.show;
 
     switch (element) {
@@ -143,6 +157,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  const { options } = await browser.storage.local.get();
-  emojishow = options["Everywhere"].emoji.show;
+  await buildEmojiMap();
 });
