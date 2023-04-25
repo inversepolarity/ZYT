@@ -20,8 +20,8 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
           files: [
             "browser-polyfill.js",
             "defaultSettings.js",
-            "contentscript.js",
-            "emoji.js"
+            "emoji.js",
+            "contentscript.js"
           ]
         });
       } catch (err) {
@@ -32,4 +32,4 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
   }
 });
 
-browser.runtime.setUninstallURL("https://evenzero.in");
+// browser.runtime.setUninstallURL("https://evenzero.in");

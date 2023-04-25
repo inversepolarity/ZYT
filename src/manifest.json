@@ -1,36 +1,32 @@
 {
   "description": "Zen mode for YouTube",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "ZenTube",
   "version": "1.1.5",
   "author": "surajsharma",
   "homepage_url": "https://evenzero.in",
   "icons": {
-    "144": "icons/favicon4_144.png"
+      "144": "icons/favicon4_144.png"
   },
 
   "background": {
-    "scripts": ["background.js"]
+      "service_worker": "background.js"
   },
 
   "content_scripts": [
-    {
-      "matches": ["*://*.youtube.com/*"],
-      "js": [
-        "browser-polyfill.js",
-        "defaultSettings.js",
-        "contentscript.js",
-        "emoji.js"
-      ],
-      "run_at": "document_start"
-    }
+      {
+          "matches": ["*://*.youtube.com/*"],
+          "js": ["browser-polyfill.js", "defaultSettings.js", "emoji.js", "contentscript.js"],
+          "run_at": "document_start"
+      }
   ],
 
-  "browser_action": {
-    "default_icon": "icons/favicon4_144.png",
-    "default_title": "Zen Mode for Youtube",
-    "default_popup": "options/options.html"
+  "action": {
+      "default_icon": "icons/favicon4_144.png",
+      "default_title": "Zen Mode for Youtube",
+      "default_popup": "options/options.html"
   },
 
-  "permissions": ["storage", "tabs", "scripting", "activeTab"]
+  "permissions": ["storage", "tabs", "scripting", "activeTab"],
+  "host_permissions": ["*://*.youtube.com/*"]
 }

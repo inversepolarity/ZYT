@@ -1,130 +1,121 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  /* This script interacts with the YT DOM
+/* This script interacts with the YT DOM
    It is injected into all YT tabs at install and on popup open
 */
 
-  if (typeof browser === "undefined") {
-    var browser = chrome;
+if (typeof browser === "undefined") {
+  var browser = chrome;
+}
+
+async function injectTransitionClass(options) {
+  /* for every class css, add a transition by
+   * looping over the state object and populating a css string
+   * for each class this css string is then injected into the
+   * page */
+
+  let el = document.getElementById("zentubeTransitions");
+
+  if (el) {
+    el.parentNode.removeChild(el);
   }
 
-  async function injectTransitionClass() {
-    /* for every class css, add a transition by
-     * looping over the state object and populating a css string
-     * for each class this css string is then injected into the
-     * page */
+  let css = "";
+  let customStyles = document.createElement("style");
 
-    let el = document.getElementById("zentubeTransitions");
-
-    if (el) {
-      el.parentNode.removeChild(el);
-    }
-
-    let css = "";
-    let customStyles = document.createElement("style");
-    const { options } = await browser.storage.local.get();
-
-    if (options) {
-      for (const page of Object.keys(options)) {
-        for (const item of Object.keys(options[page])) {
-          if (options[page][item].classes) {
-            for (const c of options[page][item].classes) {
-              css += `${c}{transition: all 0.2s;}`;
-            }
-          }
-        }
-      }
-      customStyles.setAttribute("type", "text/css");
-      customStyles.setAttribute("id", "zentubeTransitions");
-      customStyles.appendChild(document.createTextNode(css));
-      document.documentElement.appendChild(customStyles);
-    }
-  }
-
-  async function toggleCSS() {
-    /* for every css class, add appropriate opacity by
-     * looping over the state object and populating a css string
-     * for each class; this css string is then injected into the
-     * page */
-    let css = "";
-    const savedSettings = await browser.storage.local.get();
-    const { options } = savedSettings;
-
+  if (options) {
     for (const page of Object.keys(options)) {
       for (const item of Object.keys(options[page])) {
-        if (options[page][item]["show"]) {
-          if (options[page][item].classes) {
-            for (const c of options[page][item].classes) {
-              css += `${c}{display:none; opacity:0}`;
-            }
+        if (options[page][item].classes) {
+          for (const c of options[page][item].classes) {
+            css += `${c}{transition: all 0.2s;}`;
           }
         }
       }
     }
+    customStyles.setAttribute("type", "text/css");
+    customStyles.setAttribute("id", "zentubeTransitions");
+    customStyles.appendChild(document.createTextNode(css));
+    document.documentElement.appendChild(customStyles);
+  }
+}
 
-    let el = document.getElementById("zentube");
-
-    if (!el) {
-      let customStyles = document.createElement("style");
-      customStyles.setAttribute("type", "text/css");
-      customStyles.setAttribute("id", "zentube");
-      customStyles.appendChild(document.createTextNode(css));
-      document.documentElement.appendChild(customStyles);
-    }
-    if (el) {
-      el.textContent = css;
+async function toggleCSS(options) {
+  /* for every css class, add appropriate opacity by
+   * looping over the state object and populating a css string
+   * for each class; this css string is then injected into the
+   * page */
+  if (!options) return;
+  let css = "";
+  for (const page of Object.keys(options)) {
+    for (const item of Object.keys(options[page])) {
+      if (options[page][item]["show"]) {
+        if (options[page][item].classes) {
+          for (const c of options[page][item].classes) {
+            css += `${c}{display:none; opacity:0}`;
+          }
+        }
+      }
     }
   }
 
-  function checkStoredSettings(storedSettings) {
-    /* On startup, check whether we have stored settings.
+  let el = document.getElementById("zentube");
+
+  if (!el) {
+    let customStyles = document.createElement("style");
+    customStyles.setAttribute("type", "text/css");
+    customStyles.setAttribute("id", "zentube");
+    customStyles.appendChild(document.createTextNode(css));
+    document.documentElement.appendChild(customStyles);
+  }
+  if (el) {
+    el.textContent = css;
+  }
+}
+
+async function checkStoredSettings() {
+  /* On startup, check whether we have stored settings.
    If not, then store the default settings.*/
-    if (Object.keys(storedSettings).length == 0) {
-      return browser.storage.local.set(defaultSettings);
-    }
+  const { settings } = await browser.storage.local.get();
+  if (!settings || Object.keys(settings).length == 0)
+    return await browser.storage.local.set({ settings: defaultSettings });
+}
+
+async function msgListener(request, sender) {
+  /* popup clicks */
+  const { settings } = JSON.parse(request);
+  const { options } = settings;
+  toggleCSS(options);
+}
+
+/**
+ * init
+ **/
+
+async function initializePageAction() {
+  /* install message listener, inject transition css, toggle css */
+  try {
+    await browser.runtime.onMessage.addListener(msgListener);
+    const { settings } = await browser.storage.local.get();
+    const { options } = settings;
+    injectTransitionClass(options);
+    toggleCSS(options);
+  } catch (err) {
+    onError(err);
   }
+}
 
-  async function msgListener(request, sender) {
-    /* Listen for messages from the page itself
-   If the message was from the page script, show an alert.*/
-
-    toggleCSS();
+(async () => {
+  try {
+    await checkStoredSettings();
+    await initializePageAction();
+  } catch (err) {
+    onError(err);
   }
+})();
 
-  /**
-   * init
-   **/
+/**
+ * utils
+ **/
 
-  async function initializePageAction() {
-    /* Initialize the page action, install message listener, get settings */
-    // Mutation Observer fires each time page mutates
-
-    try {
-      await browser.runtime.onMessage.addListener(msgListener);
-
-      injectTransitionClass();
-      toggleCSS(true);
-    } catch (err) {
-      onError(err);
-    }
-  }
-
-  (async () => {
-    try {
-      const gettingStoredSettings = await browser.storage.local.get();
-
-      await checkStoredSettings(gettingStoredSettings);
-
-      initializePageAction();
-    } catch (err) {
-      onError(err);
-    }
-  })();
-
-  /**
-   * utils
-   **/
-
-  function onError(e) {
-    console.error(e);
-  }
-});
+function onError(e) {
+  console.error(e);
+}

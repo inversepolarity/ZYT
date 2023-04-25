@@ -60,11 +60,12 @@ describe("test suite for options popup", () => {
   });
 
   it("settings stored", async () => {
-    const gettingStoredSettings = global.chrome.storage.local.get();
+    const { settings } = global.chrome.storage.local.get();
+
     expect(Object.keys(defaultSettings).length).toBeTruthy();
-    expect(Object.keys(gettingStoredSettings).length).toBeTruthy();
-    expect(gettingStoredSettings).toBeTruthy();
-    expect(gettingStoredSettings).toEqual(defaultSettings);
+    expect(Object.keys(settings).length).toBeTruthy();
+    expect(settings).toBeTruthy();
+    expect(settings).toEqual(defaultSettings);
   });
 
   it("repopulatePopup", async () => {

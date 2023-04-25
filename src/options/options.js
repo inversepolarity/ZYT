@@ -6,7 +6,7 @@ async function updateUI(restoredSettings) {
   if (!Object.keys(restoredSettings).length) {
     // there's nothing in the local storage
     // create default popup and store default settings
-    await browser.storage.local.set(defaultSettings);
+    await browser.storage.local.set({ settings: defaultSettings });
     const { options, currentPage } = defaultSettings;
     repopulatePopup(options, currentPage);
     setDropdownSelect(currentPage);
@@ -62,7 +62,7 @@ function repopulatePopup(options, cp) {
             messagePageScript({
               element: item,
               event: evt,
-              settings: await storeSettings(item)
+              settings: await storeChangedSettings(item)
             });
           });
 
@@ -76,7 +76,7 @@ function repopulatePopup(options, cp) {
             messagePageScript({
               element: item,
               event: evt,
-              settings: await storeSettings(item)
+              settings: await storeChangedSettings(item)
             });
           });
       });
@@ -89,14 +89,15 @@ function setDropdownSelect(page) {
   document.querySelector(".select-selected").innerText = page;
 }
 
-async function storeSettings(changed) {
+async function storeChangedSettings(changed) {
   /*fires when a toggle is clicked, syncs local storage */
 
-  let newSettings = await browser.storage.local.get();
-  const { currentPage } = newSettings;
+  let { settings } = await browser.storage.local.get();
+
+  const { currentPage } = settings;
 
   function getChangedOptions() {
-    let changedOptions = newSettings.options;
+    let changedOptions = settings.options;
 
     const checkboxes = document.querySelectorAll(".data-types [type=checkbox]");
 
@@ -113,9 +114,9 @@ async function storeSettings(changed) {
 
   const newOptions = getChangedOptions();
 
-  newSettings.options = newOptions;
-  await browser.storage.local.set(newSettings);
-  return newSettings;
+  settings.options = newOptions;
+  await browser.storage.local.set({ settings });
+  return settings;
 }
 
 async function selectionChanged(value) {
@@ -124,32 +125,31 @@ async function selectionChanged(value) {
   */
 
   if (value == "Select Page") return;
-  let storedSettings = await browser.storage.local.get();
+  let { settings } = await browser.storage.local.get();
 
-  if (value != storedSettings.currentPage) {
+  if (value != settings.currentPage) {
     let dropdown = document.getElementById("dropdown");
 
-    if (storedSettings) {
+    if (settings) {
       for (let i = 0; i < dropdown.length; i++) {
         if (dropdown[i].innerText == value) {
-          storedSettings.currentPage = value;
-          await browser.storage.local.set(storedSettings);
+          settings.currentPage = value;
+          await browser.storage.local.set({ settings });
         }
       }
-      updateUI(storedSettings);
+      updateUI(settings);
     }
   }
 }
 
 /* Content Script handlers */
-
 async function sendMessageToTabs(tabs, msg) {
   for (const tab of tabs) {
     try {
       await browser.tabs.sendMessage(tab.id, JSON.stringify(msg));
       console.log(`🪛 ${msg.element} sent to ${tab.id}`);
-    } catch (e) {
-      console.error(`Error: ${e}`);
+    } catch (err) {
+      onError(err);
     }
   }
   return true;
@@ -157,8 +157,12 @@ async function sendMessageToTabs(tabs, msg) {
 
 async function messagePageScript(msg) {
   /*Find all tabs, send a message to the page script.*/
-  let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
-  let res = await sendMessageToTabs(tabs, msg);
+  try {
+    let tabs = await browser.tabs.query({ url: "*://*.youtube.com/*" });
+    let res = await sendMessageToTabs(tabs, msg);
+  } catch (err) {
+    onError(err);
+  }
 }
 
 async function injectScript() {
@@ -168,7 +172,7 @@ async function injectScript() {
     for await (const t of tabs) {
       const injection = await browser.scripting.executeScript({
         target: { tabId: t.id },
-        files: ["defaultSettings.js", "contentscript.js", "emoji.js"]
+        files: ["defaultSettings.js", "emoji.js", "contentscript.js"]
       });
     }
   } catch (error) {
@@ -199,10 +203,10 @@ async function injectScript() {
       });
     });
 
-    const gettingStoredSettings = await browser.storage.local.get();
+    const { settings } = await browser.storage.local.get();
 
-    if (gettingStoredSettings) {
-      updateUI(gettingStoredSettings);
+    if (settings) {
+      updateUI(settings);
     }
 
     /* inject contentscript */
