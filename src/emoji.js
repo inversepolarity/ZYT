@@ -1,6 +1,5 @@
-// TODO: tighten-up debounced scheduling
-
-document.addEventListener("DOMContentLoaded", async () => {
+(async () => {
+  // TODO: tighten-up debounced scheduling
   if (typeof browser === "undefined") {
     var browser = chrome;
   }
@@ -50,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function toggleEmoji(element, remove) {
     if (!element) return;
+
     if (remove === undefined) return;
 
     const treeWalker = document.createTreeWalker(
@@ -68,24 +68,27 @@ document.addEventListener("DOMContentLoaded", async () => {
             strip = " ";
           }
 
-          if (!hashmap[node.nodeValue]) {
+          if (hashmap[node.nodeValue] === undefined) {
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
               strip,
-              nodes: [node.parentElement]
+              nodes: [node.parentElement],
+              off: remove
             };
             return;
           }
 
-          hashmap[node.nodeValue] = {
-            orig: node.nodeValue,
-            strip,
-            nodes: new Set([
-              ...hashmap[node.nodeValue].nodes,
-              node.parentElement
-            ])
-          };
-
+          if (hashmap[node.nodeValue] != undefined) {
+            hashmap[node.nodeValue] = {
+              orig: node.nodeValue,
+              strip,
+              off: remove,
+              nodes: new Set([
+                ...hashmap[node.nodeValue].nodes,
+                node.parentElement
+              ])
+            };
+          }
           if (remove) {
             node.nodeValue = strip;
           }
@@ -97,7 +100,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             let nodes = Array.from(hashmap[o].nodes);
             for (rn in nodes) {
               if (node.nodeValue == hashmap[o].strip) {
-                if (node.parentElement.isSameNode(nodes[rn])) {
+                if (
+                  node.parentElement.isSameNode(nodes[rn]) &&
+                  hashmap[o].off
+                ) {
                   node.nodeValue = hashmap[o].orig;
                 }
               }
@@ -106,6 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       }
     }
+    return;
   }
 
   async function onMutation(mutations) {
@@ -114,24 +121,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     const start = Date.now();
     for (const mutation of mutations) {
       for (const node of mutation.addedNodes) {
+        console.log(
+          "🚀 ~ file: emoji.js:124 ~ onMutation ~ node:",
+          node,
+          mutation
+        );
+
+        ignoreMutations = true;
+        debugger;
         await toggleEmoji(node, emojishow);
+        ignoreMutations = false;
       }
     }
     totalTime += Date.now() - start;
     scheduleDebouncedFullClear(100, 500);
   }
-
-  async function buildEmojiMap() {
-    const settings = await browser.storage.local.get();
-    // const { options } = settings;
-
-    console.log(
-      "🚀 ~ file: emoji.js:126 ~ buildEmojiMap ~ settings:",
-      settings
-    );
-  }
-
-  async function getEmojiMap() {}
 
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
   let observer = new MutationObserver(onMutation);
@@ -156,6 +160,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         break;
     }
   });
-
-  await buildEmojiMap();
-});
+})();

@@ -161,6 +161,5 @@ var defaultSettings = {
         show: true
       }
     }
-  },
-  emojimap: {}
+  }
 };

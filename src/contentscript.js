@@ -43,6 +43,7 @@ async function toggleCSS(options) {
    * looping over the state object and populating a css string
    * for each class; this css string is then injected into the
    * page */
+  if (!options) return;
   let css = "";
   for (const page of Object.keys(options)) {
     for (const item of Object.keys(options[page])) {
@@ -79,10 +80,10 @@ async function checkStoredSettings() {
 }
 
 async function msgListener(request, sender) {
-  /* Listen for messages from the page itself
-   If the message was from the page script, show an alert.*/
-
-  toggleCSS();
+  /* popup clicks */
+  const { settings } = JSON.parse(request);
+  const { options } = settings;
+  toggleCSS(options);
 }
 
 /**
