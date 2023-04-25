@@ -13,7 +13,8 @@
     fullClearTimeout = null,
     totalTime = 0,
     node,
-    hashmap = {};
+    hashmap = {},
+    previousUrl = "";
 
   function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
     const scheduled = fullClearTimeout !== null;
@@ -89,7 +90,7 @@
           }
 
           if (remove && strip != undefined) {
-            node.nodeValue = strip;
+            if (emojishow) node.nodeValue = strip;
           }
         }
 
@@ -109,6 +110,7 @@
         }
       }
     }
+
     return;
   }
 
@@ -120,12 +122,31 @@
     for (let i = 0; i < mutations.length; i++) {
       const mutation = mutations[i];
       for (let j = 0; j < mutation.addedNodes.length; j++) {
-        const node = mutation.addedNodes[j];
-        ignoreMutations = true;
-        await toggleEmoji(node, emojishow);
-        ignoreMutations = false;
+        // mutated node
+        const mnode = mutation.addedNodes[j];
+        let el = hashmap[mnode.nodeValue];
+        let mkey = mnode.nodeValue;
+
+        if (!el) {
+          ignoreMutations = true;
+          await toggleEmoji(mnode, emojishow);
+          ignoreMutations = false;
+        }
+
+        const matches = mnode.nodeValue && mnode.nodeValue.match(pattern);
+        if (matches && el && emojishow) {
+          let nodes = Array.from(el.nodes);
+
+          hashmap[mkey] = {
+            ...hashmap[mkey],
+            nodes: [...hashmap[mkey].nodes, mnode.parentElement]
+          };
+
+          mnode.nodeValue = mnode.nodeValue.replace(pattern, "");
+        }
       }
     }
+
     totalTime += Date.now() - start;
     scheduleDebouncedFullClear(100, 500);
   }
