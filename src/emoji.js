@@ -142,7 +142,7 @@
             nodes: [...hashmap[mkey].nodes, mnode.parentElement]
           };
 
-          mnode.nodeValue = mnode.nodeValue.replace(pattern, "");
+          mnode.nodeValue = el.strip;
         }
       }
     }
