@@ -172,7 +172,7 @@ async function injectScript() {
     for await (const t of tabs) {
       const injection = await browser.scripting.executeScript({
         target: { tabId: t.id },
-        files: ["defaultSettings.js", "contentscript.js", "emoji.js"]
+        files: ["defaultSettings.js", "emoji.js", "contentscript.js"]
       });
     }
   } catch (error) {

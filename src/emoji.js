@@ -72,8 +72,7 @@
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
               strip,
-              nodes: [node.parentElement],
-              off: remove
+              nodes: [node.parentElement]
             };
             return;
           }
@@ -82,29 +81,27 @@
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
               strip,
-              off: remove,
               nodes: new Set([
                 ...hashmap[node.nodeValue].nodes,
                 node.parentElement
               ])
             };
           }
-          if (remove) {
+
+          if (remove && strip != undefined) {
             node.nodeValue = strip;
           }
         }
 
         if (!emojishow) {
-          // BUG: flicker on certain node(s) on nav
-          for (o in hashmap) {
-            let nodes = Array.from(hashmap[o].nodes);
-            for (rn in nodes) {
-              if (node.nodeValue == hashmap[o].strip) {
-                if (
-                  node.parentElement.isSameNode(nodes[rn]) &&
-                  hashmap[o].off
-                ) {
-                  node.nodeValue = hashmap[o].orig;
+          for (let o = 0; o < Object.keys(hashmap).length; o++) {
+            const el = hashmap[Object.keys(hashmap)[o]];
+            let nodes = Array.from(el.nodes);
+            for (let rn = 0; rn < nodes.length; rn++) {
+              const refnode = nodes[rn];
+              if (node.nodeValue == el.strip) {
+                if (node.parentElement.isSameNode(refnode)) {
+                  node.nodeValue = el.orig;
                 }
               }
             }
@@ -119,16 +116,12 @@
     if (ignoreMutations) return;
 
     const start = Date.now();
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        console.log(
-          "🚀 ~ file: emoji.js:124 ~ onMutation ~ node:",
-          node,
-          mutation
-        );
 
+    for (let i = 0; i < mutations.length; i++) {
+      const mutation = mutations[i];
+      for (let j = 0; j < mutation.addedNodes.length; j++) {
+        const node = mutation.addedNodes[j];
         ignoreMutations = true;
-        debugger;
         await toggleEmoji(node, emojishow);
         ignoreMutations = false;
       }
