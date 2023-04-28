@@ -104,11 +104,6 @@ var defaultSettings = {
       }
     },
     Everywhere: {
-      emoji: {
-        label: "Emoji",
-        classes: null,
-        show: true
-      },
       metadata: {
         label: "Video Metadata",
         classes: [
@@ -158,6 +153,18 @@ var defaultSettings = {
           "#channel-thumbnail",
           "tp-yt-paper-item.style-scope.ytd-guide-entry-renderer > yt-img-shadow"
         ],
+        show: true
+      }
+    },
+    Special: {
+      emoji: {
+        label: "Emoji",
+        classes: ["small-emoji"],
+        show: true
+      },
+      greyscale: {
+        label: "Greyscale",
+        classes: null,
         show: true
       }
     }

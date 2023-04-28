@@ -1,5 +1,8 @@
 (async () => {
   // TODO: tighten-up debounced scheduling
+  // TODO: node.attributes.title match and strip
+  // TODO: emoji in chat (img with small-emoji class)
+
   if (typeof browser === "undefined") {
     var browser = chrome;
   }
@@ -7,14 +10,14 @@
   const pattern =
     /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
+  const nodesToScan = ["SPAN", "YT-FORMATTED-STRING", "TITLE", "A"];
   let emojishow = true,
     ignoreMutations = false,
     fullClearFirstScheduledTime = 0,
     fullClearTimeout = null,
     totalTime = 0,
     node,
-    hashmap = {},
-    previousUrl = "";
+    hashmap = new Map();
 
   function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
     const scheduled = fullClearTimeout !== null;
@@ -27,6 +30,7 @@
     } else {
       fullClearFirstScheduledTime = Date.now();
     }
+
     fullClearTimeout = emojishow
       ? setTimeout(fullClear, debounceTimeMs)
       : setTimeout(fullRestore, debounceTimeMs);
@@ -50,7 +54,6 @@
 
   async function toggleEmoji(element, remove) {
     if (!element) return;
-
     if (remove === undefined) return;
 
     const treeWalker = document.createTreeWalker(
@@ -59,10 +62,11 @@
     );
 
     while ((node = treeWalker.nextNode())) {
-      if (node.parentElement.tagName !== "SCRIPT" && node.nodeValue) {
+      // TODO: move loop to wasm
+      if (nodesToScan.indexOf(node.parentElement.tagName) >= 0) {
         const matches = node.nodeValue && node.nodeValue.match(pattern);
 
-        if (matches) {
+        if (matches && remove) {
           let strip = node.nodeValue.replace(pattern, "");
 
           if (!strip.length) {
@@ -72,8 +76,7 @@
           if (hashmap[node.nodeValue] === undefined) {
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
-              strip,
-              nodes: [node.parentElement]
+              strip
             };
             return;
           }
@@ -81,30 +84,18 @@
           if (hashmap[node.nodeValue] != undefined) {
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
-              strip,
-              nodes: new Set([
-                ...hashmap[node.nodeValue].nodes,
-                node.parentElement
-              ])
+              strip
             };
           }
 
-          if (remove && strip != undefined) {
-            if (emojishow) node.nodeValue = strip;
-          }
+          node.nodeValue = strip;
         }
 
         if (!emojishow) {
           for (let o = 0; o < Object.keys(hashmap).length; o++) {
             const el = hashmap[Object.keys(hashmap)[o]];
-            let nodes = Array.from(el.nodes);
-            for (let rn = 0; rn < nodes.length; rn++) {
-              const refnode = nodes[rn];
-              if (node.nodeValue == el.strip) {
-                if (node.parentElement.isSameNode(refnode)) {
-                  node.nodeValue = el.orig;
-                }
-              }
+            if (node.nodeValue == el.strip) {
+              node.nodeValue = el.orig;
             }
           }
         }
@@ -124,31 +115,23 @@
       for (let j = 0; j < mutation.addedNodes.length; j++) {
         // mutated node
         const mnode = mutation.addedNodes[j];
-        let el = hashmap[mnode.nodeValue];
-        let mkey = mnode.nodeValue;
+        const el = hashmap[mnode.nodeValue];
 
         if (!el) {
           ignoreMutations = true;
           await toggleEmoji(mnode, emojishow);
           ignoreMutations = false;
-        }
-
-        const matches = mnode.nodeValue && mnode.nodeValue.match(pattern);
-        if (matches && el && emojishow) {
-          let nodes = Array.from(el.nodes);
-
-          hashmap[mkey] = {
-            ...hashmap[mkey],
-            nodes: [...hashmap[mkey].nodes, mnode.parentElement]
-          };
-
-          mnode.nodeValue = el.strip;
+        } else {
+          const matches = mnode.nodeValue && mnode.nodeValue.match(pattern);
+          if (matches && el) {
+            mnode.nodeValue = emojishow ? el.strip : el.orig;
+          }
         }
       }
     }
 
     totalTime += Date.now() - start;
-    scheduleDebouncedFullClear(100, 500);
+    scheduleDebouncedFullClear(500, 1000);
   }
 
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
@@ -164,7 +147,7 @@
     const { element } = await JSON.parse(request);
     const { settings } = await browser.storage.local.get();
     const { options } = settings;
-    emojishow = options["Everywhere"].emoji.show;
+    emojishow = options["Special"].emoji.show;
 
     switch (element) {
       case "emoji":
