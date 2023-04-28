@@ -1,6 +1,7 @@
 (async () => {
   // TODO: tighten-up debounced scheduling
   // TODO: node.attributes.title match and strip
+  // TODO: emoji in chat (img with small-emoji class)
 
   if (typeof browser === "undefined") {
     var browser = chrome;
@@ -9,6 +10,7 @@
   const pattern =
     /\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
 
+  const nodesToScan = ["SPAN", "YT-FORMATTED-STRING", "TITLE", "A"];
   let emojishow = true,
     ignoreMutations = false,
     fullClearFirstScheduledTime = 0,
@@ -52,7 +54,6 @@
 
   async function toggleEmoji(element, remove) {
     if (!element) return;
-
     if (remove === undefined) return;
 
     const treeWalker = document.createTreeWalker(
@@ -61,10 +62,11 @@
     );
 
     while ((node = treeWalker.nextNode())) {
-      if (node.parentElement.tagName !== "SCRIPT" && node.nodeValue) {
+      // TODO: move loop to wasm
+      if (nodesToScan.indexOf(node.parentElement.tagName) >= 0) {
         const matches = node.nodeValue && node.nodeValue.match(pattern);
 
-        if (matches) {
+        if (matches && remove) {
           let strip = node.nodeValue.replace(pattern, "");
 
           if (!strip.length) {
@@ -86,15 +88,12 @@
             };
           }
 
-          if (remove && strip != undefined) {
-            node.nodeValue = strip;
-          }
+          node.nodeValue = strip;
         }
 
         if (!emojishow) {
           for (let o = 0; o < Object.keys(hashmap).length; o++) {
             const el = hashmap[Object.keys(hashmap)[o]];
-            let nodes = el.nodes;
             if (node.nodeValue == el.strip) {
               node.nodeValue = el.orig;
             }
@@ -116,8 +115,7 @@
       for (let j = 0; j < mutation.addedNodes.length; j++) {
         // mutated node
         const mnode = mutation.addedNodes[j];
-        let el = hashmap[mnode.nodeValue];
-        let mkey = mnode.nodeValue;
+        const el = hashmap[mnode.nodeValue];
 
         if (!el) {
           ignoreMutations = true;
@@ -133,7 +131,7 @@
     }
 
     totalTime += Date.now() - start;
-    scheduleDebouncedFullClear(1000, 5000);
+    scheduleDebouncedFullClear(500, 1000);
   }
 
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
@@ -149,7 +147,7 @@
     const { element } = await JSON.parse(request);
     const { settings } = await browser.storage.local.get();
     const { options } = settings;
-    emojishow = options["Everywhere"].emoji.show;
+    emojishow = options["Special"].emoji.show;
 
     switch (element) {
       case "emoji":
