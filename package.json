@@ -1,5 +1,5 @@
 {
-  "name": "zentube",
+  "name": "zyt",
   "version": "1.0.0",
   "description": "Nirvana for YouTube",
   "scripts": {
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inversepolarity/ZenTube.git"
+    "url": "git+https://github.com/inversepolarity/zyt.git"
   },
   "keywords": ["chrome-extension","youtube","zen"],
   "author": "inversepolarity",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inversepolarity/ZenTube/issues"
+    "url": "https://github.com/inversepolarity/zyt/issues"
   },
-  "homepage": "https://github.com/inversepolarity/ZenTube#readme",
+  "homepage": "https://github.com/inversepolarity/zyt#readme",
   "devDependencies": {
     "jest": "^29.4.3",
     "jest-chrome": "^0.8.0",

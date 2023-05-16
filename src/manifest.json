@@ -1,10 +1,10 @@
 {
-  "description": "Zen mode for YouTube",
+  "description": "Nirvana for YouTube",
   "manifest_version": 3,
-  "name": "ZenTube",
+  "name": "ZYT",
   "version": "1.1.5",
   "author": "surajsharma",
-  "homepage_url": "https://evenzero.in",
+  "homepage_url": "https://evenzero.in/experiments",
   "icons": {
       "144": "icons/favicon4_144.png"
   },
@@ -23,7 +23,7 @@
 
   "action": {
       "default_icon": "icons/favicon4_144.png",
-      "default_title": "Zen Mode for Youtube",
+      "default_title": "Nirvana for YouTube",
       "default_popup": "options/options.html"
   },
 
