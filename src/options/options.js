@@ -199,7 +199,7 @@ async function injectScript() {
     ver.addEventListener("click", () => {
       browser.tabs.create({
         active: true,
-        url: "https://github.com/inversepolarity/ZenTube"
+        url: "https://github.com/inversepolarity/ZenYT"
       });
     });
 
