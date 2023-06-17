@@ -61,12 +61,85 @@
       NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT
     );
 
+    var refId = 0;
+    // index to start allocating at
+
+    var refs = {};
+    // store all refs here
+
+    function mallocRef(obj) {
+      // will return an int to wa, which is the index at which obj starts
+      var id = refId;
+      ++refId;
+      refId[id] = obj;
+      return id;
+    }
+
+    // This looks up the JS object based upon its id
+    function lookupJsRef(id) {
+      return refs[id];
+    }
+
+    // This cleans up the memory for the JS object (by allowing it to be garbage collected)
+    function freeJsRef(id) {
+      delete refs[id];
+    }
+
+    var imports = {
+      env: {
+        // push: function (id, value) {
+        //   lookupJsRef(id).push(value);
+        // },
+
+        restore: function (hmapId, nodeId) {
+          let hmap = lookupJsRef(hmapId);
+          let n = lookupJsRef(nodeId);
+
+          for (let o = 0; o < Object.keys(hmap).length; o++) {
+            const el = hmap[Object.keys(hmap)[o]];
+            if (n.nodeValue == el.strip) {
+              n.nodeValue = el.orig;
+            }
+          }
+        },
+
+        createMapRef: function () {
+          return mallocRef(hashmap);
+        },
+
+        createNodeRef: function () {
+          return mallocRef(node);
+        },
+
+        length: function (id) {
+          return lookupJsRef(id).length;
+        },
+
+        logInt: function (value) {
+          console.log(value);
+        },
+
+        logRef: function (id) {
+          console.log(lookupJsRef(id));
+        },
+
+        free: function (id) {
+          freeJsRef(id);
+        }
+      }
+    };
+
     while ((node = treeWalker.nextNode())) {
-      // TODO: move loop to wasm
+      // TODO: move loop to wasm polynomial-time (currently exponential)
+
       if (nodesToScan.indexOf(node.parentElement.tagName) >= 0) {
+        // TODO: use google/re2-wasm to match(how else?)
+
         const matches = node.nodeValue && node.nodeValue.match(pattern);
 
         if (matches && remove) {
+          // TODO: replace string in WA
+
           let strip = node.nodeValue.replace(pattern, "");
 
           if (!strip.length) {
@@ -92,16 +165,16 @@
         }
 
         if (!emojishow) {
-          for (let o = 0; o < Object.keys(hashmap).length; o++) {
-            const el = hashmap[Object.keys(hashmap)[o]];
-            if (node.nodeValue == el.strip) {
-              node.nodeValue = el.orig;
-            }
-          }
+          var wasmPath = chrome.runtime.getURL("wasm/emoji.wasm");
+          fetch(wasmPath)
+            .then((response) => response.arrayBuffer())
+            .then((bytes) => WebAssembly.instantiate(bytes, imports))
+            .then((results) => {
+              results.instance.exports.put_back();
+            });
         }
       }
     }
-
     return;
   }
 
