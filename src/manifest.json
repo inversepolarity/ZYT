@@ -6,25 +6,42 @@
   "author": "surajsharma",
   "homepage_url": "https://evenzero.in/experiments",
   "icons": {
-      "144": "icons/favicon4_144.png"
+    "144": "icons/favicon4_144.png"
   },
 
   "background": {
-      "service_worker": "background.js"
+    "service_worker": "background.js"
   },
 
   "content_scripts": [
-      {
-          "matches": ["*://*.youtube.com/*"],
-          "js": ["browser-polyfill.js", "defaultSettings.js", "emoji.js", "contentscript.js"],
-          "run_at": "document_start"
-      }
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": [
+        "browser-polyfill.js",
+        "defaultSettings.js",
+        "emoji.js",
+        "contentscript.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "wasm/emoji.wasm",
+        "defaultSettings.js",
+        "emoji.js",
+        "contentscript.js"
+      ],
+      "matches": ["*://*.youtube.com/*"]
+    }
   ],
 
   "action": {
-      "default_icon": "icons/favicon4_144.png",
-      "default_title": "Nirvana for YouTube",
-      "default_popup": "options/options.html"
+    "default_icon": "icons/favicon4_144.png",
+    "default_title": "Nirvana for YouTube",
+    "default_popup": "options/options.html"
   },
 
   "permissions": ["storage", "tabs", "scripting", "activeTab"],
