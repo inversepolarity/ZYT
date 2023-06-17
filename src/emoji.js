@@ -19,6 +19,50 @@
     node,
     hashmap = new Map();
 
+  var imports = {
+    env: {
+      restore: function (hmapId, nodeId) {
+        let hmap = lookupJsRef(hmapId);
+        let n = lookupJsRef(nodeId);
+
+        for (let o = 0; o < Object.keys(hmap).length; o++) {
+          const el = hmap[Object.keys(hmap)[o]];
+          if (n.nodeValue == el.strip) {
+            n.nodeValue = el.orig;
+          }
+        }
+      },
+
+      createMapRef: function () {
+        return mallocRef(hashmap);
+      },
+
+      createNodeRef: function () {
+        return mallocRef(node);
+      },
+
+      length: function (id) {
+        return lookupJsRef(id).length;
+      },
+
+      logInt: function (value) {
+        console.log(value);
+      },
+
+      logRef: function (id) {
+        console.log(lookupJsRef(id));
+      },
+
+      free: function (id) {
+        freeJsRef(id);
+      }
+    }
+  };
+
+  var wasmPath = browser.runtime.getURL("wasm/emoji.wasm");
+  var bytes = (await fetch(wasmPath)).arrayBuffer();
+  var results = WebAssembly.instantiateStreaming(bytes, imports);
+
   function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
     const scheduled = fullClearTimeout !== null;
 
@@ -85,50 +129,6 @@
       delete refs[id];
     }
 
-    var imports = {
-      env: {
-        // push: function (id, value) {
-        //   lookupJsRef(id).push(value);
-        // },
-
-        restore: function (hmapId, nodeId) {
-          let hmap = lookupJsRef(hmapId);
-          let n = lookupJsRef(nodeId);
-
-          for (let o = 0; o < Object.keys(hmap).length; o++) {
-            const el = hmap[Object.keys(hmap)[o]];
-            if (n.nodeValue == el.strip) {
-              n.nodeValue = el.orig;
-            }
-          }
-        },
-
-        createMapRef: function () {
-          return mallocRef(hashmap);
-        },
-
-        createNodeRef: function () {
-          return mallocRef(node);
-        },
-
-        length: function (id) {
-          return lookupJsRef(id).length;
-        },
-
-        logInt: function (value) {
-          console.log(value);
-        },
-
-        logRef: function (id) {
-          console.log(lookupJsRef(id));
-        },
-
-        free: function (id) {
-          freeJsRef(id);
-        }
-      }
-    };
-
     while ((node = treeWalker.nextNode())) {
       // TODO: move loop to wasm polynomial-time (currently exponential)
 
@@ -160,18 +160,11 @@
               strip
             };
           }
-
           node.nodeValue = strip;
         }
 
         if (!emojishow) {
-          var wasmPath = chrome.runtime.getURL("wasm/emoji.wasm");
-          fetch(wasmPath)
-            .then((response) => response.arrayBuffer())
-            .then((bytes) => WebAssembly.instantiate(bytes, imports))
-            .then((results) => {
-              results.instance.exports.put_back();
-            });
+          results?.instance?.exports?.put_back();
         }
       }
     }
