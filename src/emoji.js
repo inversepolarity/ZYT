@@ -62,11 +62,16 @@
     );
 
     while ((node = treeWalker.nextNode())) {
-      // TODO: move loop to wasm
+      // TODO: move loop to wasm polynomial-time (currently exponential)
+
       if (nodesToScan.indexOf(node.parentElement.tagName) >= 0) {
+        // TODO: use google/re2-wasm to match(how else?)
+
         const matches = node.nodeValue && node.nodeValue.match(pattern);
 
         if (matches && remove) {
+          // TODO: replace string in WA
+
           let strip = node.nodeValue.replace(pattern, "");
 
           if (!strip.length) {
@@ -76,7 +81,7 @@
           if (hashmap[node.nodeValue] === undefined) {
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
-              strip
+              strip,
             };
             return;
           }
@@ -84,7 +89,7 @@
           if (hashmap[node.nodeValue] != undefined) {
             hashmap[node.nodeValue] = {
               orig: node.nodeValue,
-              strip
+              strip,
             };
           }
 
@@ -92,6 +97,7 @@
         }
 
         if (!emojishow) {
+          //TODO: move to WA
           for (let o = 0; o < Object.keys(hashmap).length; o++) {
             const el = hashmap[Object.keys(hashmap)[o]];
             if (node.nodeValue == el.strip) {
@@ -140,7 +146,7 @@
   observer.observe(document, {
     attributes: true,
     childList: true,
-    subtree: true
+    subtree: true,
   });
 
   await browser.runtime.onMessage.addListener(async (request, sender) => {
