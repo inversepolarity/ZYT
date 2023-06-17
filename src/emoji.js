@@ -61,7 +61,6 @@
 
   var wasmPath = browser.runtime.getURL("wasm/emoji.wasm");
   var bytes = (await fetch(wasmPath)).arrayBuffer();
-  var results = WebAssembly.instantiateStreaming(bytes, imports);
 
   function scheduleDebouncedFullClear(debounceTimeMs, maxDebounceTimeMs) {
     const scheduled = fullClearTimeout !== null;
@@ -164,7 +163,9 @@
         }
 
         if (!emojishow) {
-          results?.instance?.exports?.put_back();
+          WebAssembly.instantiateStreaming(bytes, imports).then((obj) =>
+            obj.instance.exports.put_back()
+          );
         }
       }
     }

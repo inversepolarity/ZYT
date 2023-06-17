@@ -19,16 +19,13 @@
   ;; exports
   (func (export "put_back")
   	(local $hashmap i32)
-	(local $node i32)
+	  (local $node i32)
+	  (local.set $hashmap (call $createMapRef))
+	  (local.set $node (call $createNodeRef))
 
-	(local.set $hashmap (call $createMapRef))
-	(local.set $node (call $createNodeRef))
+    (call $restore (local.get $hashmap) (local.get $node))
 
-	(call $restore (local.get $hashmap (local.get $node)))
-
-	(call $logInt (call $length (local.get $hashmap)))
-    (call $logRef (local.get $node))
     (call $free (local.get $node))
-	(call $free (local.get $hashmap))
-	)
+	  (call $free (local.get $hashmap))
+	  )
   )
