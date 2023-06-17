@@ -29,5 +29,6 @@
 	(call $logInt (call $length (local.get $hashmap)))
     (call $logRef (local.get $node))
     (call $free (local.get $node))
+	(call $free (local.get $hashmap))
 	)
   )

@@ -165,8 +165,6 @@
         }
 
         if (!emojishow) {
-          //TODO: move to WA
-          let p_b = null;
           var wasmPath = chrome.runtime.getURL("wasm/emoji.wasm");
           fetch(wasmPath)
             .then((response) => response.arrayBuffer())
