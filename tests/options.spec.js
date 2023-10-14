@@ -45,7 +45,7 @@ describe("test suite for options popup", () => {
   it("ip link event listener", async () => {
     await extPage.evaluate(() => document.querySelector("#brand").click());
     const donationPage = await getNewBrowserTab(browser);
-    expect(donationPage.url()).toBe("https://ko-fi.com/evenzero");
+    expect(donationPage.url()).toBe("https://ip.evenzero.in");
     donationPage.close();
   });
 
