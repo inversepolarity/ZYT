@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> [!WARNING]
+> Maintainance temporarily halted, functionality restricted.
+
 <img src="https://raw.githubusercontent.com/inversepolarity/ZenTube/main/src/promo/ZYT.png" height="454"/>
 
 ### Installation
